@@ -36,3 +36,5 @@ const keepsData = [
         backgroundColor: 'lightpurple'
     },
 ]
+
+export default keepsData
