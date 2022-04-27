@@ -5,7 +5,8 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
+    from: { fullName: 'Momo Mo', email: 'momo@momo.com' },
     category: 'inbox',
     isStar: false,
     file: '../../../assets/pages/email/file-storage/imgs/img1.jpg',
@@ -16,10 +17,11 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Momo Mo', email: 'momo@momo.com' },
+    from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     category: 'sent',
     isStar: false,
-    file: ''
+    file: '',
   },
   {
     id: '1y0Oq',
@@ -27,10 +29,11 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Momo Mo', email: 'momo@momo.com' },
+    from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     category: 'draft',
     isStar: false,
-    file: '../../../assets/pages/email/file-storage/imgs/img2.jpg'
+    file: '../../../assets/pages/email/file-storage/imgs/img2.jpg',
   },
   {
     id: 'kSnfI',
@@ -38,10 +41,11 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
+    from: { fullName: 'Momo Mo', email: 'momo@momo.com' },
     category: 'inbox',
     isStar: false,
-    file: ''
+    file: '',
   },
   {
     id: 'f4iuV',
@@ -49,10 +53,11 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Momo Mo', email: 'momo@momo.com' },
+    from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     category: 'sent',
     isStar: false,
-    file: '../../../assets/pages/email/file-storage/imgs/img3.jpg'
+    file: '../../../assets/pages/email/file-storage/imgs/img3.jpg',
   },
   {
     id: 'U2rfZ',
@@ -60,10 +65,11 @@ const emailsData = [
     body: 'Would love to catch up sometimes',
     isRead: false,
     sentAt: 1551133930594,
-    to: 'momo@momo.com',
+    to: { fullName: 'Momo Mo', email: 'momo@momo.com' },
+    from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     category: 'draft',
     isStar: false,
-    file: ''
+    file: '',
   },
 ]
 

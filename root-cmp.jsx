@@ -1,3 +1,4 @@
+import { EmailDetails } from './apps/email/pages/email-details.jsx'
 import { EmailEdit } from './apps/email/pages/email-edit.jsx'
 import { EmailIndex } from './apps/email/pages/email-index.jsx'
 import { NoteIndex } from './apps/keep/pages/note-index.jsx'
@@ -14,6 +15,7 @@ export function App() {
       <section className="app">
         <AppHeader />
         <Switch>
+          <Route path="/email/:emailId" component={EmailDetails} />
           <Route path="/email/edit" component={EmailEdit} />
           <Route path="/keep" component={NoteIndex} />
           <Route path="/email" component={EmailIndex} />
