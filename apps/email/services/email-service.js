@@ -18,15 +18,14 @@ function query(filterBy) {
         _saveToStorage(emails)
     }
 
-    if (filterBy) {
-        let { vendor, minSpeed, maxSpeed } = filterBy
-        if (!minSpeed) minSpeed = 0;
-        if (!maxSpeed) maxSpeed = Infinity
-        cars = cars.filter(car =>
-            car.vendor.includes(vendor) &&
-            car.speed <= maxSpeed &&
-            car.speed >= minSpeed)
-    }
+    // if (filterBy) {
+    //     let { inbox, sent, draft } = filterBy
+    //     if (!inbox) inbox = true;
+    //     emails = emails.filter(email =>
+    //         email.vendor.includes(vendor) &&
+    //         email.speed <= maxSpeed &&
+    //         email.speed >= minSpeed)
+    // }
 
     return Promise.resolve(cars)
 }
