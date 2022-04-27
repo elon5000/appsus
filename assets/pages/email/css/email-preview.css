@@ -37,6 +37,11 @@
     background-color: #9999993b;
 }
 
+.attachment-container:active {
+    background-color: #9999996b;
+    color: var(--light-grey);
+}
+
 .attachment-container img {
     width: 1.5rem;
 }
