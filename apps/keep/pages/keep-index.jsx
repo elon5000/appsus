@@ -6,9 +6,28 @@ const { Link } = ReactRouterDOM
 export class KeepIndex extends React.Component {
   state = {
     keeps: [],
+    filterBy: 'type'
   }
-  
+
+  componentDidMount() {
+    this.loadKeeps()
+  }
+
+  loadKeeps = () => {
+    keepService
+      .query(this.state.filterBy)
+      .then((keeps) => this.setSgittate({ keeps }))
+  }
+
   render() {
-    return <section>Im Keep Index</section>
+    const { keeps } = this.state
+    return (
+      <section className="keep-index">
+        <Link to="/email/edit">
+          <button>New Keep</button>
+        </Link>
+        <KeepList keeps={keeps} onSelectEmail={this.onSelectKeep} />
+      </section>
+    )
   }
 }
