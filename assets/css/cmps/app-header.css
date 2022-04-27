@@ -1,21 +1,22 @@
 .app-header{
-    background-color: lightpink;
+    background-color: var(--white);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     text-align: center;
-    width: 100%;
     position: fixed;
     top: 0;
     width: 100%;
     left: 0;
-}
-.app-header h1, h2{
-    margin: 0.4rem;
+    padding: 10px;
 }
 
 .logo-wrapper {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.navbar-wrapper {
     width: 1.75rem;
     height: 1.75rem;
 }
