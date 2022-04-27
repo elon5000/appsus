@@ -5,8 +5,8 @@ export function KeepPreview({ keep }) {
             <article className="keep-preview">
                 <h2>{keep.subject}</h2>
                 <h3>{keep.txt}</h3>
-                {(keep.file) && <div className="attachment-container">
-                    <span className="attachment-span">
+                {(keep.file) && <div className="file-container">
+                    <span className="file-span">
                         {(keep.file.includes('.jpg', '.gif')) && <img src="./assets/imgs/attachment.png" />}
                         {(keep.file.includes('.mp4')) && <video width="320" height="240" controls>
                             <source src={keep.file} type="video/mp4"></source>
