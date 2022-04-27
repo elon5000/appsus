@@ -10,6 +10,7 @@ export const emailService = {
   deleteEmail,
   getNextEmailId,
   saveEmail,
+  saveDraft,
 }
 
 const KEY = 'emailDB'
@@ -68,8 +69,8 @@ function deleteEmail(emailId) {
 }
 
 function saveDraft(email) {
-  if (email.id) return _update(email)
-  else return _add(email)
+  if (email.id) return _updateDraft(email)
+  else return _addDraft(email)
 }
 
 function _add(emailToAdd) {
