@@ -72,12 +72,12 @@ function _update(emailToUpdate) {
 }
 
 
-function _composeEmail(to, subject, content) {
+function _composeEmail() {
     return {
         id: utilService.makeId(),
-        to,
-        subject,
-        content,
+        to: makeLorem(2),
+        subject: makeLorem(5),
+        content: makeLorem(100),
         ctg: (Math.random() > 0.5) ? 'Important' : 'Sales'
     }
 }
@@ -85,14 +85,13 @@ function _composeEmail(to, subject, content) {
 function _createEmails() {
     const emails = []
     for (let i = 0; i < 10; i++) {
-        const vendor = gVendors[utilService.getRandomIntInclusive(0, gVendors.length - 1)]
-        cars.push(_createCar(vendor))
+        emails.push(_composeEmail())
     }
-    return cars
+    return emails
 }
 
-function _saveToStorage(cars) {
-    storageService.saveToStorage(KEY, cars)
+function _saveToStorage(emails) {
+    storageService.saveToStorage(KEY, emails)
 }
 
 function _loadFromStorage() {
