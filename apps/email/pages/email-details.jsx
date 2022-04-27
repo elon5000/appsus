@@ -31,8 +31,12 @@ export class EmailDetails extends React.Component {
     return (
       <section className="email-details">
         <div className="details-top flex">
-          <h2>{email.subject}</h2>
-          <button>Favorite</button>
+          <div className="details-subject">
+            <h2>{email.subject}</h2>
+          </div>
+          <div className="details-favorite-btn">
+            <button>Favorite</button>
+          </div>
         </div>
         <div>
           <h3>{email.to.fullName}</h3>
