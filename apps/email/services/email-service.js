@@ -18,15 +18,14 @@ function query(filterBy) {
         _saveToStorage(emails)
     }
 
-    if (filterBy) {
-        let { vendor, minSpeed, maxSpeed } = filterBy
-        if (!minSpeed) minSpeed = 0;
-        if (!maxSpeed) maxSpeed = Infinity
-        cars = cars.filter(car =>
-            car.vendor.includes(vendor) &&
-            car.speed <= maxSpeed &&
-            car.speed >= minSpeed)
-    }
+    // if (filterBy) {
+    //     let { isInbox, isSent, isDtaft, isStarred } = filterBy
+    //     if (!inbox) inbox = true;
+    //     emails = emails.filter(email =>
+    //         email.vendor.includes(vendor) &&
+    //         email.speed <= maxSpeed &&
+    //         email.speed >= minSpeed)
+    // }
 
     return Promise.resolve(cars)
 }
@@ -72,21 +71,23 @@ function _update(emailToUpdate) {
 }
 
 
-function _composeEmail() {
+function _creatEmail() {
     return {
         id: utilService.makeId(),
         to: makeLorem(2),
         subject: makeLorem(5),
         content: makeLorem(100),
         img,
-        ctg: (Math.random() > 0.5) ? 'Important' : 'Sales'
+        ctg: (Math.random() > 0.5) ? 'Important' : 'Sales',
+        isInbox: true,
+        isStarred: false
     }
 }
 
 function _createEmails() {
     const emails = []
     for (let i = 0; i < 10; i++) {
-        emails.push(_composeEmail())
+        emails.push(_creatEmail())
     }
     return emails
 }
