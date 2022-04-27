@@ -1,0 +1,16 @@
+.app-header{
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+.app-header h1, h2{
+    margin: 0.4rem;
+}
