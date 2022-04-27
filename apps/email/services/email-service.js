@@ -74,18 +74,18 @@ function _update(emailToUpdate) {
   return Promise.resolve()
 }
 
-function _creatEmail() {
-  return {
-    id: utilService.makeId(),
-    to: makeLorem(2),
-    subject: makeLorem(5),
-    content: makeLorem(100),
-    img,
-    ctg: Math.random() > 0.5 ? 'Important' : 'Sales',
-    isInbox: true,
-    isStarred: false,
-  }
-}
+// function _creatEmail() {
+//   return {
+//     id: utilService.makeId(),
+//     to: makeLorem(2),
+//     subject: makeLorem(5),
+//     content: makeLorem(100),
+//     img,
+//     ctg: Math.random() > 0.5 ? 'Important' : 'Sales',
+//     isInbox: true,
+//     isStarred: false,
+//   }
+// }
 
 function _createEmails() {
   const emails = emailsData

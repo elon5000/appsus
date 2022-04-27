@@ -4,9 +4,9 @@ export function EmailPreview({ email }) {
         <article className="email-preview" >
             <h3>From : {email.to}</h3>
             <h3>Subject : {email.subject}</h3>
-            <h5>Content : {email.content}</h5>
+            <h5>Content : {email.content.body}</h5>
             <div className="img-container">
-                <img src={`assets/img/${email.img}.jpg`} />
+                <img src={`assets/img/${email.file}.jpg`} />
             </div>
         </article>
     </Link>
