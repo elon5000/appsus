@@ -14,3 +14,8 @@
 .app-header h1, h2{
     margin: 0.4rem;
 }
+
+.logo-wrapper {
+    width: 1.75rem;
+    height: 1.75rem;
+}
