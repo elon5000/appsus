@@ -3,6 +3,10 @@ export function EmailPreview({ email }) {
   return (
     <Link to={`/email/${email.id}`}>
       <article className="email-preview">
+        <div className="email-options-right">
+          <button>Favorite</button>
+          <button>Label</button>
+        </div>
         <h2>{email.to.fullName}</h2>
         <h2>{email.to.email}</h2>
         <h3>Subject : {email.subject}</h3>
@@ -15,6 +19,10 @@ export function EmailPreview({ email }) {
             </span>
           </div>
         )}
+        <div className="email-options-right">
+          <button>Delete</button>
+          <button>Mark as Read</button>
+        </div>
       </article>
     </Link>
   )
