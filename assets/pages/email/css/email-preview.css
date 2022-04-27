@@ -11,6 +11,15 @@
     padding: 0.2rem;
 }
 
+.email-preview {
+    border: 2px solid var(--light-grey);
+    transition: all 0.2s ease-in-out;
+}
+
+.email-preview:hover {
+    border: 2px solid var(--grey);
+}
+
 .email-preview h2,
 .email-preview h3,
 .email-preview h4 {

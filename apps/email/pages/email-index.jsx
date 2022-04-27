@@ -24,7 +24,7 @@ export class EmailIndex extends React.Component {
     return (
       <section className="email-index">
         <Link to="/email/edit">
-          <button>New Email</button>
+          <button>Compose</button>
         </Link>
         <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
       </section>
