@@ -22,7 +22,7 @@ export class EmailIndex extends React.Component {
   render() {
     const { emails } = this.state
     return (
-      <section>
+      <section className="email-index">
         <Link to="/email/edit">
           <button>New Email</button>
         </Link>
