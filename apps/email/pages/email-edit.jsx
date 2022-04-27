@@ -31,7 +31,7 @@ export class EmailEdit extends React.Component {
     })
   }
 
-  onSaveDraft()
+  onSaveDraft() {}
 
   render() {
     const { subject, body, to, file } = this.state.email

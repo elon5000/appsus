@@ -9,6 +9,7 @@ export const emailService = {
   saveDraft,
   deleteEmail,
   getNextEmailId,
+  saveEmail,
 }
 
 const KEY = 'emailDB'
@@ -45,7 +46,19 @@ function getById(emailId) {
   return Promise.resolve(email)
 }
 
-function createEmail(email) {}
+function saveEmail(newEmail) {
+  const emails = _loadFromStorage()
+  const email = newEmail
+  email.id = utilService.makeId()
+  email.isRead = false
+  email.sentAt = new Date()
+  email.category = 'sent'
+  email.isStar = false
+  email.file = ''
+  emails.unshift(email)
+  _saveToStorage(emails)
+  return Promise.resolve()
+}
 
 function deleteEmail(emailId) {
   let emails = _loadFromStorage()

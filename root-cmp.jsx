@@ -1,3 +1,4 @@
+import { EmailEdit } from './apps/email/pages/email-edit.jsx'
 import { EmailIndex } from './apps/email/pages/email-index.jsx'
 import { NoteIndex } from './apps/keep/pages/note-index.jsx'
 import { AppFooter } from './cmps/app-footer.jsx'
@@ -13,6 +14,7 @@ export function App() {
       <section className="app">
         <AppHeader />
         <Switch>
+          <Route path="/email/edit" component={EmailEdit} />
           <Route path="/keep" component={NoteIndex} />
           <Route path="/email" component={EmailIndex} />
           <Route path="/" component={AppHome} />
