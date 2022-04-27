@@ -31,7 +31,10 @@ export class EmailEdit extends React.Component {
     })
   }
 
-  onSaveDraft() {}
+  onSaveDraft() {
+    emailService.saveDraft(this.state.email)
+    clearTimeout(this.timeoutId)
+  }
 
   render() {
     const { subject, body, to, file } = this.state.email
