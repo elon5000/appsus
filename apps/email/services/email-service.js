@@ -13,7 +13,7 @@ export const emailService = {
   saveDraft,
 }
 
-const KEY = 'emailDB'
+const KEY = 'emailsDB'
 
 function query(filterBy) {
   let emails = _loadFromStorage()
