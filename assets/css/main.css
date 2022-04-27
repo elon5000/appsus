@@ -1,13 +1,13 @@
 /* setup */
 @import './setup/variables.css';
-@import './setup/fonts.css';
 @import './setup/keyframes.css';
 
 /* basics */
-@import './basics/base.css';
-@import './basics/helpers.css';
+@import './parts/fonts.css';
+@import './parts/base.css';
+@import './parts/helpers.css';
 
 /* cmps */
-@import './cmps/app.css';
+@import './cmps/app-main.css';
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';

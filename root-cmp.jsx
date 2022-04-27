@@ -1,28 +1,25 @@
-// import { CarApp } from './pages/car-app.jsx'
-// import { Home } from './pages/home.jsx'
-// import { About } from './pages/about.jsx'
-// import { CarDetails } from './pages/car-details.jsx'
-// import {CarEdit} from './pages/car-edit.jsx'
-// import { AppHeader } from './cmps/app-header.jsx'
+import { EmailIndex } from './apps/email/pages/email-index.jsx'
+import { NoteIndex } from './apps/keep/pages/note-index.jsx'
 import { AppFooter } from './cmps/app-footer.jsx'
-// import { UserMsg } from './cmps/user-msg.jsx'
+import { AppHeader } from './cmps/app-header.jsx'
+import { AppHome } from './pages/app-home.jsx'
 
 const Router = ReactRouterDOM.HashRouter
 const { Route, Switch } = ReactRouterDOM
 
 export function App() {
-    return <Router>
-        <section className="app">
-       {/* <AppHeader />  */}
-            <Switch>
-                {/* <Route path="/car/edit/:carId?" component={CarEdit}/> */}
-                {/* <Route path="/car/:carId" component={CarDetails}/> */}
-                {/* <Route path="/car" component={CarApp} /> */}
-                {/* <Route path="/about" component={About} /> */}
-                {/* <Route path="/" component={Home} /> */}
-            </Switch>
+  return (
+    <Router>
+      <section className="app">
+        <AppHeader />
+        <Switch>
+          <Route path="/keep" component={NoteIndex} />
+          <Route path="/email" component={EmailIndex} />
+          <Route path="/" component={AppHome} />
+        </Switch>
         <AppFooter />
         {/* <UserMsg /> */}
-        </section>
+      </section>
     </Router>
+  )
 }
