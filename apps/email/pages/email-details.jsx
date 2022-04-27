@@ -22,7 +22,10 @@ export class EmailDetails extends React.Component {
   }
 
   onRemoveEmail = () => {
-    emailService.removeEmail(this.state.email.id).then(this.onGoBack)
+    emailService.deleteEmail(this.state.email.id).then(this.onGoBack)
+  }
+  onChangeRead = () => {
+    emailService.changeRead(this.state.state).then(this.loadEmail)
   }
 
   render() {
@@ -30,9 +33,15 @@ export class EmailDetails extends React.Component {
     if (!email) return <div>Loading...</div>
     return (
       <section className="email-details">
+        <div>
+          <button onClick={this.onGoBack}>Back</button>
+          <button onClick={this.onRemoveEmail}>Remove Email</button>
+          <button onClick={this.onChangeRead}>Change Read</button>
+          <button>Favorite</button>
+        </div>
         <div className="details-top flex">
           <h2 className="details-subject">{email.subject}</h2>
-          <button>Favorite</button>
+          <button>Label</button>
         </div>
         <div>
           <h3>{email.to.fullName}</h3>
