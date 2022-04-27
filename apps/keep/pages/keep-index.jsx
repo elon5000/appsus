@@ -1,5 +1,5 @@
 import { KeepList } from '../cmps/keep-list.jsx'
-import { keepService } from '../services/keep-service.js'
+import { keepService } from '../services/keep.service.js'
 
 const { Link } = ReactRouterDOM
 
@@ -16,17 +16,17 @@ export class KeepIndex extends React.Component {
   loadKeeps = () => {
     keepService
       .query(this.state.filterBy)
-      .then((keeps) => this.setSgittate({ keeps }))
+      .then((keeps) => this.setState({ keeps }))
   }
 
   render() {
     const { keeps } = this.state
     return (
       <section className="keep-index">
-        <Link to="/email/edit">
+        <Link to="/keep/edit">
           <button>New Keep</button>
         </Link>
-        <KeepList keeps={keeps} onSelectEmail={this.onSelectKeep} />
+        <KeepList keeps={keeps}  />
       </section>
     )
   }
