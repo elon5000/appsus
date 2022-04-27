@@ -1,31 +1,47 @@
-.email-list{
-    background-color: var(--light-grey)
+.email-list {
+    background-color: var(--light-grey);
+    width: 100%;
 }
 
-.attachment-span{
+.attachment-span {
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-content: center;
     padding: 0.2rem;
 }
-.email-preview h3 {
-    font-size: 1.2rem;
-    padding: 0.3rem;
-}
+
+.email-preview h2,
+.email-preview h3,
 .email-preview h4 {
-    font-size: 0.9rem;
     padding: 0.3rem;
 }
+
+.email-preview h2 {
+    font-size: 1.2rem;
+}
+
+.email-preview h3 {
+    font-size: 1rem;
+}
+
+.email-preview h4 {
+    font-size: 0.8rem;
+}
+
 .attachment-container {
+    margin: 0.3rem;
+    padding: 0.2rem 0.7rem;
     width: max-content;
-    border-radius: 5%;
+    border-radius: 1.5rem;
     background-color: #9999993b;
 }
-.attachment-container img{
+
+.attachment-container img {
     width: 1.5rem;
 }
-.attachment-container span{
+
+.attachment-container span {
     padding: 0.2rem;
     font-size: 0.9rem;
 }
