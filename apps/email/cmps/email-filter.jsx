@@ -3,10 +3,10 @@ export class EmailFilter extends React.Component {
 
     state = {
         filterBy: {
-            inbox,
-            sent,
-            dtaft,
-            isStarred: false
+            isInbox,
+            isSent,
+            isDtaft,
+            isStarred
         },
     }
 
@@ -32,12 +32,11 @@ export class EmailFilter extends React.Component {
 
 
     render() {
-        const { vendor, minSpeed, maxSpeed } = this.state.filterBy
-        return <section className="car-filter">
+        const { isInbox, isSent, isDraft, isStarred } = this.state.filterBy
+        return <section className="email-filter">
             <form onSubmit={this.onFilter}>
-                <label htmlFor="by-vendor">Vendor</label>
-                <input type="text" id="by-vendor" placeholder="by vendor" name="vendor"
-                    value={vendor} onChange={this.handleChange} ref={this.inputRef} />
+                <label htmlFor="by-inbox">Inbox</label>
+                <button  id="inbox-btn" onClick={this.handleChange} ref={this.inputRef}>Inbox</button>
 
                 <label htmlFor="by-minSpeed">Min Speed</label>
                 <input type="number" id="by-minSpeed" placeholder="by min speed" name="minSpeed"
