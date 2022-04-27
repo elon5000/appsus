@@ -1,6 +1,8 @@
 import { EmailList } from '../cmps/email-list.jsx'
 import { emailService } from '../services/email-service.js'
 
+const { Link } = ReactRouterDOM
+
 export class EmailIndex extends React.Component {
   state = {
     emails: [],
@@ -21,7 +23,10 @@ export class EmailIndex extends React.Component {
     const { emails } = this.state
     return (
       <section>
-        <EmailList emails={emails} />
+        <Link to="/email/edit">
+          <button>New Email</button>
+        </Link>
+        <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
       </section>
     )
   }

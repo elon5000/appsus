@@ -73,6 +73,26 @@ function saveDraft(email) {
   else return _addDraft(email)
 }
 
+function _updateDraft(updateEmail) {
+  let emails = _loadFromStorage()
+  updateEmail.sentAt = new Date()
+  emails = emails.map((email) =>
+    email.id === updateEmail.id ? updateEmail : email
+  )
+  _saveToStorage(emails)
+}
+
+function _addDraft(addDraft) {
+  let emails = _loadFromStorage()
+  addDraft.id = utilService.makeId()
+  updateEmail.isRead = false
+  updateEmail.sentAt = new Date()
+  updateEmail.category = 'draft'
+  updateEmail.isStar = false
+  updateEmail.file = ''
+  _saveToStorage(emails)
+}
+
 function _add(emailToAdd) {
   let emails = _loadFromStorage()
   const email = _createEmails()
@@ -90,19 +110,6 @@ function _update(emailToUpdate) {
   return Promise.resolve()
 }
 
-// function _creatEmail() {
-//   return {
-//     id: utilService.makeId(),
-//     to: makeLorem(2),
-//     subject: makeLorem(5),
-//     content: makeLorem(100),
-//     img,
-//     ctg: Math.random() > 0.5 ? 'Important' : 'Sales',
-//     isInbox: true,
-//     isStarred: false,
-//   }
-// }
-
 function _createEmails() {
   const emails = emailsData
   return emails
@@ -115,3 +122,16 @@ function _saveToStorage(emails) {
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
 }
+
+// function _creatEmail() {
+//   return {
+//     id: utilService.makeId(),
+//     to: makeLorem(2),
+//     subject: makeLorem(5),
+//     content: makeLorem(100),
+//     img,
+//     ctg: Math.random() > 0.5 ? 'Important' : 'Sales',
+//     isInbox: true,
+//     isStarred: false,
+//   }
+// }
