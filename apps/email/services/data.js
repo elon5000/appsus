@@ -8,7 +8,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'inbox',
     isStar: false,
-    file: '',
+    file: '../../../assets/pages/email/file-storage/img1.jpg'
   },
   {
     id: 'JYOJa2',
