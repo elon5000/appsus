@@ -58,7 +58,7 @@ function saveDraft(email) {
 
 function _add(emailToAdd) {
     let emails = _loadFromStorage()
-    const email = _createCar(emailToAdd.to, emailToAdd.subject, emailToAdd.content)
+    const email = _createEmails()
     emails = [email, ...emails]
     _saveToStorage(emails)
     return Promise.resolve()
@@ -78,6 +78,7 @@ function _composeEmail() {
         to: makeLorem(2),
         subject: makeLorem(5),
         content: makeLorem(100),
+        img,
         ctg: (Math.random() > 0.5) ? 'Important' : 'Sales'
     }
 }
