@@ -7,7 +7,10 @@ export function EmailPreview({ email }) {
         <h3>Subject : {email.subject}</h3>
         <h5>Content : {email.body}</h5>
         <div className="attachment-container">
-        {(email.file) && <img src="./assets/imgs/attachment.png" /> }
+          {(email.file) && <span className="attachment-span">
+            <img src="./assets/imgs/attachment.png" />
+            <span>{email.file.slice(46)}</span>
+          </span>}
         </div>
       </article>
     </Link>
