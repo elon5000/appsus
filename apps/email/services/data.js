@@ -19,7 +19,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'sent',
     isStar: false,
-    file: '',
+    file: ''
   },
   {
     id: '1y0Oq',
@@ -30,7 +30,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'draft',
     isStar: false,
-    file: '',
+    file: '../../../assets/pages/email/file-storage/imgs/img2.jpg'
   },
   {
     id: 'kSnfI',
@@ -41,7 +41,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'inbox',
     isStar: false,
-    file: '',
+    file: ''
   },
   {
     id: 'f4iuV',
@@ -52,7 +52,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'sent',
     isStar: false,
-    file: '',
+    file: '../../../assets/pages/email/file-storage/imgs/img3.jpg'
   },
   {
     id: 'U2rfZ',
@@ -63,7 +63,7 @@ const emailsData = [
     to: 'momo@momo.com',
     category: 'draft',
     isStar: false,
-    file: '',
+    file: ''
   },
 ]
 

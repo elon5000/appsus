@@ -11,3 +11,6 @@
 @import './cmps/app-main.css';
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';
+
+/* email */
+@import '../pages/email/css/email-preview.css'
