@@ -7,7 +7,7 @@ export function EmailPreview({ email }) {
         <h3>Subject : {email.subject}</h3>
         <h5>Content : {email.body}</h5>
         <div className="img-container">
-          <img src={`assets/img/${email.img}.jpg`} />
+          <img src={email.file} />
         </div>
       </article>
     </Link>
