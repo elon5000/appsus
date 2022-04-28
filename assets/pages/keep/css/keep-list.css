@@ -1,4 +1,7 @@
 .keep-list {
     width: 90%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
