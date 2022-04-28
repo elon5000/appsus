@@ -1,3 +1,5 @@
+import { EmailCompose } from '../cmps/email-compose.jsx'
+import { EmailCounter } from '../cmps/email-counter.jsx'
 import { EmailFilter } from '../cmps/email-filter.jsx'
 import { EmailList } from '../cmps/email-list.jsx'
 import { emailService } from '../services/email-service.js'
@@ -53,8 +55,17 @@ export class EmailIndex extends React.Component {
         <div className="unread-counter">
           <h2>Unread: {unread}</h2>
         </div>
-        <EmailFilter onSetSort={this.onSetSort} history={this.props.history} />
-        <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
+        <div className="sidebar">
+          <EmailCompose />
+          <EmailFilter
+            onSetSort={this.onSetSort}
+            history={this.props.history}
+          />
+          <EmailCounter email={emails} />
+        </div>
+        <div>
+          <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
+        </div>
       </section>
     )
   }

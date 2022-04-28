@@ -1,5 +1,3 @@
-const { Link } = ReactRouterDOM
-
 export class EmailFilter extends React.Component {
   onSort = ({ target }) => {
     const name = target.name
@@ -9,18 +7,6 @@ export class EmailFilter extends React.Component {
   render() {
     return (
       <section className="email-filter">
-        <div className="compose-wrapper">
-          <Link to="/email/edit">
-            <div className="plus-wrapper">
-              <span>
-                <i className="fa fa-plus"></i>
-              </span>
-            </div>
-            <div>
-              <span>Compose</span>
-            </div>
-          </Link>
-        </div>
         <div className="sidebar-email-filters flex column">
           <button name="inbox" onClick={this.onSort}>
             Inbox

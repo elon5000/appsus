@@ -23,7 +23,7 @@ function query(sortBy) {
   }
 
   if (sortBy) {
-    emails = emails.filter((email) => email.category === sortBy)
+    emails = emails.filter((email) => email.status === sortBy)
   }
 
   return Promise.resolve(emails)
@@ -48,7 +48,7 @@ function saveEmail(newEmail) {
   email.id = utilService.makeId()
   email.isRead = false
   email.sentAt = new Date()
-  email.category = 'sent'
+  email.status = 'sent'
   email.isStar = false
   email.file = ''
   emails.unshift(email)
@@ -82,7 +82,7 @@ function _addDraft(addDraft) {
   addDraft.id = utilService.makeId()
   updateEmail.isRead = false
   updateEmail.sentAt = new Date()
-  updateEmail.category = 'draft'
+  updateEmail.status = 'draft'
   updateEmail.isStar = false
   updateEmail.file = ''
   _saveToStorage(emails)
