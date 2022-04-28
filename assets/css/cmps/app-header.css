@@ -9,14 +9,13 @@
     width: 100%;
     left: 0;
     padding: 0.8rem;
+    border-bottom: 0.1rem solid var(--grey);
 }
 
 .logo-wrapper {
-    width: 1.75rem;
     height: 1.75rem;
 }
 
 .navbar-wrapper {
-    width: 1.75rem;
     height: 1.75rem;
 }

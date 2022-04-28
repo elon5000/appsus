@@ -1,0 +1,26 @@
+.email-filter {
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ width: 15%;
+ position: fixed;
+}
+
+.compose-wrapper {
+ margin-right: auto;
+}
+
+.compose-wrapper a {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-left: 0.5rem;
+ padding: 0.8rem;
+ border-radius: 2rem;
+ color: var(--grey);
+ border: 1px solid var(--grey);
+}
+
+.plus-wrapper {
+ margin-right: 0.5rem;
+}

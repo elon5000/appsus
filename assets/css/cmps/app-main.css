@@ -1,5 +1,7 @@
 .app {
-    margin: 4.5rem 0.5rem;
+    top: 4rem;
+    width: 100%;
+    position: fixed;
     display: flex;
     flex-flow: column;
     justify-content: center;

@@ -1,29 +1,48 @@
 const { Link } = ReactRouterDOM
-export function EmailPreview({ email }) {
-  return (
-    <Link to={`/email/${email.id}`}>
-      <article className="email-preview">
-        <div className="email-options-right">
-          <button>Favorite</button>
-          <button>Label</button>
-        </div>
-        <h2>{email.to.fullName}</h2>
-        <h2>{email.to.email}</h2>
-        <h3>Subject : {email.subject}</h3>
-        <h4>{email.body}</h4>
-        {email.file && (
-          <div className="attachment-container">
-            <span className="attachment-span">
-              <img src="./assets/imgs/attachment.png" />
-              <span>{email.file.slice(46)}</span>
-            </span>
+
+export class EmailPreview extends React.Component {
+  render() {
+    const { id, to, subject, body, file, isRead } = this.props.email
+    const grayBg = isRead ? '#F2F2F2' : 'white'
+    return (
+      <Link to={`/email/${id}`}>
+        <article className="email-preview" style={{ backgroundColor: grayBg }}>
+          <div className="email-options-right">
+            <button>
+              <i className="fa fa-star"></i>
+            </button>
+            <button>
+              <i className="fa fa-tag"></i>
+            </button>
           </div>
-        )}
-        <div className="email-options-right">
-          <button>Delete</button>
-          <button>Mark as Read</button>
-        </div>
-      </article>
-    </Link>
-  )
+          <h2>{to.fullName}</h2>
+          <h2>{to.email}</h2>
+          <h3>Subject : {subject}</h3>
+          <h4>{body}</h4>
+          {file && (
+            <div className="attachment-container">
+              <span className="attachment-span">
+                <img src="./assets/imgs/attachment.png" />
+                <span>{file.slice(46)}</span>
+              </span>
+            </div>
+          )}
+          <div className="email-options-right">
+            <button>
+              <i className="fa fa-trash"></i>
+            </button>
+            {(isRead && (
+              <button>
+                <i className="fa fa-envelope-open"></i>
+              </button>
+            )) || (
+              <button>
+                <i className="fa fa-envelope"></i>
+              </button>
+            )}
+          </div>
+        </article>
+      </Link>
+    )
+  }
 }

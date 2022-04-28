@@ -3,7 +3,7 @@ const emailsData = [
     id: 'OXeMG',
     subject: 'Miss you!',
     body: 'Would love to catch up sometimes',
-    isRead: false,
+    isRead: true,
     sentAt: 1551133930594,
     to: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     from: { fullName: 'Momo Mo', email: 'momo@momo.com' },

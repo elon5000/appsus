@@ -15,21 +15,16 @@ export const emailService = {
 
 const KEY = 'emailsDB'
 
-function query(filterBy) {
+function query(sortBy) {
   let emails = _loadFromStorage()
   if (!emails) {
     emails = _createEmails()
     _saveToStorage(emails)
   }
 
-  // if (filterBy) {
-  //     let { isInbox, isSent, isDtaft, isStarred } = filterBy
-  //     if (!inbox) inbox = true;
-  //     emails = emails.filter(email =>
-  //         email.vendor.includes(vendor) &&
-  //         email.speed <= maxSpeed &&
-  //         email.speed >= minSpeed)
-  // }
+  if (sortBy) {
+    emails = emails.filter((email) => email.category === sortBy)
+  }
 
   return Promise.resolve(emails)
 }

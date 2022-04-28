@@ -41,13 +41,27 @@ export class EmailDetails extends React.Component {
     return (
       <section className="email-details">
         <div>
-          <button onClick={this.onGoBack}>Back</button>
-          <button onClick={this.onRemoveEmail}>Remove Email</button>
-          <button onClick={this.onChangeRead}>Change Read</button>
+          <button onClick={this.onGoBack}>
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button onClick={this.onRemoveEmail}>
+            <i class="fa fa-trash"></i>
+          </button>
+          {(email.isRead && (
+            <button onClick={this.onChangeRead}>
+              <i class="fa fa-envelope-open"></i>
+            </button>
+          )) || (
+            <button onClick={this.onChangeRead}>
+              <i class="fa fa-envelope"></i>
+            </button>
+          )}
         </div>
         <div className="details-top flex">
           <h2 className="details-subject">{email.subject}</h2>
-          <button>Label</button>
+          <button>
+            <i class="fa fa-tag"></i>
+          </button>
         </div>
         <div className="details-from flex space-between align-center">
           <div className="details-from-left">
@@ -57,7 +71,9 @@ export class EmailDetails extends React.Component {
           </div>
           <div className="details-from-right flex">
             {dateFromNow}
-            <button>Favorite</button>
+            <button>
+              <i class="fa fa-star"></i>
+            </button>
           </div>
         </div>
         <div className="details-cotent">{email.body}</div>

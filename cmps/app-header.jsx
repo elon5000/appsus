@@ -5,7 +5,7 @@ export function AppHeader() {
         <h1>Appsus</h1>
       </div>
       <div className="navbar-wrapper flex align-center">
-        <img src="../assets/imgs/navbar.png" alt="" />
+        <i className="fa fa-bars"></i>
       </div>
     </section>
   )

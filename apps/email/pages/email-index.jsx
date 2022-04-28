@@ -1,12 +1,11 @@
+import { EmailFilter } from '../cmps/email-filter.jsx'
 import { EmailList } from '../cmps/email-list.jsx'
 import { emailService } from '../services/email-service.js'
-
-const { Link } = ReactRouterDOM
 
 export class EmailIndex extends React.Component {
   state = {
     emails: [],
-    filterBy: 'inbox',
+    sortBy: 'inbox',
   }
 
   componentDidMount() {
@@ -14,18 +13,21 @@ export class EmailIndex extends React.Component {
   }
 
   loadEmails = () => {
+    console.log(this.state.sortBy)
     emailService
-      .query(this.state.filterBy)
+      .query(this.state.sortBy)
       .then((emails) => this.setState({ emails }))
+  }
+
+  onSetSort = (sortBy) => {
+    this.setState({ sortBy }, this.loadEmails())
   }
 
   render() {
     const { emails } = this.state
     return (
       <section className="email-index">
-        <Link to="/email/edit">
-          <button>Compose</button>
-        </Link>
+        <EmailFilter onSetSort={this.onSetSort} hidden={this.props.history} />
         <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
       </section>
     )

@@ -1,5 +1,4 @@
 .email-list {
-    background-color: var(--light-grey);
     width: 100%;
 }
 
@@ -12,12 +11,12 @@
 }
 
 .email-preview {
-    border: 2px solid var(--light-grey);
-    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--light-grey);
+    transition: all 0.3s ease-in-out;
 }
 
 .email-preview:hover {
-    border: 2px solid var(--grey);
+    border: 1px solid var(--grey);
 }
 
 .email-preview h2,
