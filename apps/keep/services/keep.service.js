@@ -1,6 +1,6 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
-import keepsData from '../data.js'
+import keepsData from './data.js'
 
 export const keepService = {
   query,
