@@ -37,42 +37,43 @@ export class EmailDetails extends React.Component {
   render() {
     const { email } = this.state
     if (!email) return <div>Loading...</div>
+    const changeToForm = email.status === 'inbox' ? email.from : email.to
     const dateFromNow = this.DateMinusNow()
     return (
       <section className="email-details">
         <div>
           <button onClick={this.onGoBack}>
-            <i class="fa fa-arrow-left"></i>
+            <i className="fa fa-arrow-left"></i>
           </button>
           <button onClick={this.onRemoveEmail}>
-            <i class="fa fa-trash"></i>
+            <i className="fa fa-trash"></i>
           </button>
           {(email.isRead && (
             <button onClick={this.onChangeRead}>
-              <i class="fa fa-envelope-open"></i>
+              <i className="fa fa-envelope-open"></i>
             </button>
           )) || (
             <button onClick={this.onChangeRead}>
-              <i class="fa fa-envelope"></i>
+              <i className="fa fa-envelope"></i>
             </button>
           )}
         </div>
         <div className="details-top flex">
           <h2 className="details-subject">{email.subject}</h2>
           <button>
-            <i class="fa fa-tag"></i>
+            <i className="fa fa-tag"></i>
           </button>
         </div>
         <div className="details-from flex space-between align-center">
           <div className="details-from-left">
             <h3>
-              {email.from.fullName} {`<${email.from.email}>`}
+              {changeToForm.fullName} {`<${changeToForm.email}>`}
             </h3>
           </div>
           <div className="details-from-right flex">
             {dateFromNow}
             <button>
-              <i class="fa fa-star"></i>
+              <i className="fa fa-star"></i>
             </button>
           </div>
         </div>

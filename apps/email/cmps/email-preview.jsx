@@ -2,10 +2,13 @@ const { Link } = ReactRouterDOM
 
 export class EmailPreview extends React.Component {
   render() {
-    const { id, to, subject, body, file, isRead } = this.props.email
+    const { id, from, to, subject, body, file, isRead, status } =
+      this.props.email
+    const changeToForm = status === 'inbox' ? from : to
+    const linkTo = status === 'draft' ? `edit/${id}` : id
     const grayBg = isRead ? '#F2F2F2' : 'white'
     return (
-      <Link to={`/email/${id}`}>
+      <Link to={`/email/${linkTo}`}>
         <article className="email-preview" style={{ backgroundColor: grayBg }}>
           <div className="email-options-right">
             <button>
@@ -15,8 +18,8 @@ export class EmailPreview extends React.Component {
               <i className="fa fa-tag"></i>
             </button>
           </div>
-          <h2>{to.fullName}</h2>
-          <h2>{to.email}</h2>
+          <h2>{changeToForm.fullName}</h2>
+          <h2>{changeToForm.email}</h2>
           <h3>Subject : {subject}</h3>
           <h4>{body}</h4>
           {file && (

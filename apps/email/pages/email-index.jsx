@@ -7,11 +7,12 @@ import { emailService } from '../services/email-service.js'
 export class EmailIndex extends React.Component {
   state = {
     emails: [],
-    sortBy: 'inbox',
+    sortBy: '',
   }
 
   componentDidMount() {
     this.loadEmails()
+    this.onSetSort('inbox')
   }
 
   loadEmails = () => {
