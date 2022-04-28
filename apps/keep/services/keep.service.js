@@ -32,13 +32,34 @@ function saveKeep(newKeep) {
   keep.id = utilService.makeId()
   keep.isPinned = false
   keep.createdAt = new Date()
-  keep.type = ''
-  keep.backgroundColor = 'white'
-  keep.file = ''
+  // keep.type = _setKeepType(keep)
   keeps.unshift(keep)
   _saveToStorage(keeps)
   return Promise.resolve()
 }
+
+// function _setKeepType(keep) {
+//   const types = []
+//   const file = keep.file
+//   let fileType = ''
+//   let txtType = ''
+//   let listType = ''
+//   if (file.includes('.jpg', '.gif')) {
+//     fileType = 'note-img'
+//   } else if (file.includes('.mp3', '.wav')) {
+//     fileType = 'note-audio'
+//   }
+//   else if (file.includes('.mp4')) {
+//     fileType = 'note-video'
+//   }
+//   else if (keep.txt) {
+//     txtType = 'note-txt'
+//   }
+//   else if (keep.txt.includes('<ul>')) {
+//     listType = 'note-list'
+//   }
+//   types.push(fileType,txtType,listType)
+// }
 
 function deleteKeep(keepId) {
   let keeps = _loadFromStorage()

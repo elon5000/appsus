@@ -1,10 +1,8 @@
 import { keepService } from '../services/keep.service.js'
-import { utilService } from '../../../services/util.service.js'
 
 export class KeepEdit extends React.Component {
     state = {
         keep: {
-            id: null,
             type: '',
             subject: '',
             txt: '',
@@ -14,16 +12,12 @@ export class KeepEdit extends React.Component {
     }
 
     componentDidMount() {
-        console.log('props from keep edit', this.props);
         this.loadKeep()
     }
 
     loadKeep = () => {
-        const { keepId } = this.state.id
-        if (!keepId) {
-            this.setState({ id: utilService.makeId(4) })
-            console.log(this.state.id)
-        }
+        const { keepId } = this.props.match.params
+        if (!keepId) return
         keepService.getById(keepId)
             .then(keep => this.setState({ keep }))
     }
@@ -34,13 +28,12 @@ export class KeepEdit extends React.Component {
         this.setState((prevState) => ({
             keep: { ...prevState.keep, [field]: value },
         }))
-        console.log(this.state.keep)
     }
 
     onSaveKeep = (ev) => {
         ev.preventDefault()
         keepService.saveKeep(this.state.keep).then(() => {
-            this.props.keeps.push('/keep')
+            this.props.history.push('/keep')
         })
     }
 
