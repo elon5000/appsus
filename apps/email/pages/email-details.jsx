@@ -24,7 +24,8 @@ export class EmailDetails extends React.Component {
   onRemoveEmail = () => {
     emailService.deleteEmail(this.state.email.id).then(this.onGoBack)
   }
-  onChangeRead = () => {
+
+  setChangeRead = (emailId) => {
     emailService.changeRead(this.state.state).then(this.loadEmail)
   }
 
@@ -37,6 +38,7 @@ export class EmailDetails extends React.Component {
   render() {
     const { email } = this.state
     if (!email) return <div>Loading...</div>
+    if (!email.isRead) this.setChangeRead(email.id)
     const changeToForm = email.status === 'inbox' ? email.from : email.to
     const dateFromNow = this.DateMinusNow()
     return (
