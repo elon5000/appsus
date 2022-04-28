@@ -12,7 +12,6 @@ export class EmailIndex extends React.Component {
 
   componentDidMount() {
     this.loadEmails()
-    this.onSetSort('inbox')
   }
 
   loadEmails = () => {
@@ -62,7 +61,7 @@ export class EmailIndex extends React.Component {
             onSetSort={this.onSetSort}
             history={this.props.history}
           />
-          <EmailCounter email={emails} />
+          <EmailCounter emails={emails} />
         </div>
         <div>
           <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />

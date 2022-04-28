@@ -27,7 +27,7 @@ export class EmailEdit extends React.Component {
   onSaveEmail = (ev) => {
     ev.preventDefault()
     emailService.saveEmail(this.state.email).then(() => {
-      this.props.history.push('/email')
+      this.props.history.push('/email?sent=')
     })
   }
 
