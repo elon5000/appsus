@@ -38,23 +38,10 @@ export class EmailIndex extends React.Component {
     return emails.filter((email) => email.category === etg)
   }
 
-  RenderCounter = () => {
-    const emails = this.state.emails
-    if (!emails) return 0
-    const unread = emails.filter((email) => !email.isRead)
-    console.log(unread)
-    const counter = unread.length
-    return counter
-  }
-
   render() {
     const { emails } = this.state
-    const unread = this.RenderCounter()
     return (
       <section className="email-index">
-        <div className="unread-counter">
-          <h2>Unread: {unread}</h2>
-        </div>
         <div className="sidebar">
           <EmailCompose />
           <EmailFilter
