@@ -20,14 +20,27 @@ export class EmailIndex extends React.Component {
   }
 
   onSetSort = (sortBy) => {
-    this.setState({ sortBy: sortBy }, this.loadEmails())
+    this.setState({ sortBy }, this.loadEmails)
+
+    const urlSrcPrm = new URLSearchParams(sortBy)
+    const searchStr = urlSrcPrm.toString()
+    this.props.history.push(`/email?${searchStr}`)
+  }
+
+  get emailsToDisplay() {
+    const { emails } = this.state
+    const urlSrcPrm = new URLSearchParams(this.props.location)
+
+    const etg = urlSrcPrm.get('etg')
+    if (!etg) return emails
+    return emails.filter((email) => email.category === etg)
   }
 
   render() {
     const { emails } = this.state
     return (
       <section className="email-index">
-        <EmailFilter onSetSort={this.onSetSort} hidden={this.props.history} />
+        <EmailFilter onSetSort={this.onSetSort} history={this.props.history} />
         <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
       </section>
     )
