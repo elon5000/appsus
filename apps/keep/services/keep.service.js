@@ -1,5 +1,6 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
+import { uploadService } from '../../../services/upload.service.js'
 import keepsData from './data.js'
 
 export const keepService = {
@@ -32,6 +33,7 @@ function saveKeep(newKeep) {
   keep.id = utilService.makeId()
   keep.isPinned = false
   keep.createdAt = new Date()
+  keep.file = uploadService.readURL(keep.file)
   // keep.type = _setKeepType(keep)
   keeps.unshift(keep)
   _saveToStorage(keeps)
