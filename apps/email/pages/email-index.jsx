@@ -38,7 +38,7 @@ export class EmailIndex extends React.Component {
     return (
       <section className="email-index">
         <div className='unread-counter'>
-          <h2>Unread: {unread}</h2>
+          <h2>Unread emails: {unread}</h2>
         </div>
         <EmailFilter onSetSort={this.onSetSort} hidden={this.props.history} />
         <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
