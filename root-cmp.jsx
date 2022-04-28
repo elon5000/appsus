@@ -17,9 +17,9 @@ export function App() {
       <section className="app">
         <AppHeader />
         <Switch>
-          <Route path="/email/edit" component={EmailEdit} />
+          <Route path="/email/edit:keepId?" component={EmailEdit} />
           <Route path="/email/:emailId" component={EmailDetails} />
-          <Route path="/keep/edit" component={KeepEdit} />
+          <Route path="/keep/edit/:keepId?" component={KeepEdit} />
           <Route path="/keep/:keepId" component={KeepDetails} />
           <Route path="/keep" component={KeepIndex} />
           <Route path="/email" component={EmailIndex} />

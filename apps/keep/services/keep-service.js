@@ -7,7 +7,7 @@ export const keepService = {
   query,
   getById,
   saveKeep,
-  deleteKeep,
+  removeKeep,
 }
 
 const KEY = 'keepsDB'
@@ -63,7 +63,7 @@ function saveKeep(newKeep) {
 //   types.push(fileType,txtType,listType)
 // }
 
-function deleteKeep(keepId) {
+function removeKeep(keepId) {
   let keeps = _loadFromStorage()
   keeps = keeps.filter((keep) => keep.id !== keepId)
   _saveToStorage(keeps)

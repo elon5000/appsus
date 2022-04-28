@@ -12,6 +12,7 @@ export class KeepEdit extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     this.loadKeep()
   }
 
@@ -57,12 +58,12 @@ export class KeepEdit extends React.Component {
             placeholder="note"
             value={txt}
           />
-          <input
+          {/* <input
             type="file"
             name="file"
             onChange={this.handleChange}
             value={file}
-          />
+          /> */}
           <input
             type="color"
             name="backgroundColor"
