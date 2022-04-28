@@ -1,6 +1,5 @@
 export const uploadService = {
     readURL,
-    getUploadedImageSrc
 }
 
 let gUploadedImageSrc
@@ -15,8 +14,6 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
     }
-}
-
-function getUploadedImageSrc() {
     return gUploadedImageSrc
 }
+

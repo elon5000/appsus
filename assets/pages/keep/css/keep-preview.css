@@ -1,0 +1,29 @@
+.keep-preview {
+    display: flex;
+    background-color: rgba(189, 232, 247, 0.877);
+    margin: 0.2rem;
+    flex-direction: column;
+    min-height: 6rem;
+    max-height: 18rem;
+    width: 18rem;
+    padding: 0.5rem 0.5rem;
+    align-content: center;
+}
+
+.keep-preview img {
+    width: 14rem;
+    height: 14rem;
+}
+
+.keep-preview h2,
+.keep-preview h3 {
+    padding: 0.1rem;
+}
+
+.keep-preview h2 {
+    font-size: 1.4rem;
+}
+.keep-preview h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
