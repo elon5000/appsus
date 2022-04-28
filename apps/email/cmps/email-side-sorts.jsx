@@ -1,4 +1,4 @@
-export class EmailFilter extends React.Component {
+export class EmailSideSorts extends React.Component {
   onSort = ({ target }) => {
     const name = target.name
     this.props.onSetSort(name)

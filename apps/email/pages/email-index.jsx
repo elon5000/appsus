@@ -1,6 +1,6 @@
 import { EmailCompose } from '../cmps/email-compose.jsx'
 import { EmailCounter } from '../cmps/email-counter.jsx'
-import { EmailFilter } from '../cmps/email-filter.jsx'
+import { EmailSideSorts } from '../cmps/email-side-sorts.jsx'
 import { EmailList } from '../cmps/email-list.jsx'
 import { emailService } from '../services/email-service.js'
 
@@ -15,7 +15,6 @@ export class EmailIndex extends React.Component {
   }
 
   loadEmails = () => {
-    console.log(this.state.sortBy)
     emailService
       .query(this.state.sortBy)
       .then((emails) => this.setState({ emails }))
@@ -44,7 +43,7 @@ export class EmailIndex extends React.Component {
       <section className="email-index">
         <div className="sidebar">
           <EmailCompose />
-          <EmailFilter
+          <EmailSideSorts
             onSetSort={this.onSetSort}
             history={this.props.history}
           />

@@ -14,6 +14,10 @@ export class EmailDetails extends React.Component {
     emailService.getById(emailId).then((email) => {
       if (!email) return this.onGoBack()
       this.setState({ email })
+      // if (this.state.email.isRead === false) {
+      //   emailService.changeRead(this.state.email.id)
+      //   this.loadEmail()
+      // }
     })
   }
 
@@ -25,8 +29,8 @@ export class EmailDetails extends React.Component {
     emailService.deleteEmail(this.state.email.id).then(this.onGoBack)
   }
 
-  setChangeRead = (emailId) => {
-    emailService.changeRead(this.state.state).then(this.loadEmail)
+  onChangeRead = () => {
+    emailService.changeRead(this.state.email.id).then(this.loadEmail())
   }
 
   DateMinusNow = () => {
@@ -38,7 +42,6 @@ export class EmailDetails extends React.Component {
   render() {
     const { email } = this.state
     if (!email) return <div>Loading...</div>
-    if (!email.isRead) this.setChangeRead(email.id)
     const changeToForm = email.status === 'inbox' ? email.from : email.to
     const dateFromNow = this.DateMinusNow()
     return (
