@@ -11,11 +11,12 @@ const keepsData = [
         id: 'z6Po0',
         type: 'note-list',
         subject: 'Shopping list',
-        txt: {
-            text1: 'milk',
-            text2: 'cookies',
-            text3: 'toiletpaper'
-        },
+        txt: 'milk',
+        // {
+        //     // text1: 'milk',
+        //     // text2: 'cookies',
+        //     // text3: 'toiletpaper'
+        // },
         file: '',
         backgroundColor: 'lightgreen'
     },
