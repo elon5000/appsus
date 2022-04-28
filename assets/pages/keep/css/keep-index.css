@@ -11,3 +11,7 @@
 .keep-index a {
     width: min-content;
 }
+
+.keep-index span {
+    background-color: var(--light-grey);
+}
