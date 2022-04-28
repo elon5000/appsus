@@ -58,6 +58,7 @@ export class EmailIndex extends React.Component {
   get emailsToDisplay() {
     const { emails } = this.state
     const urlSrcPrm = new URLSearchParams(this.props.location)
+    console.log('check')
 
     const etg = urlSrcPrm.get('etg')
     if (!etg) return emails
