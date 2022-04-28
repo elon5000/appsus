@@ -1,13 +1,11 @@
 import { KeepList } from '../cmps/keep-list.jsx'
-import { keepService } from '../services/keep.service.js'
+import { keepService } from '../services/keep-service.js'
 import { CreateKeep } from '../cmps/create-keep.jsx'
-
-const { Link } = ReactRouterDOM
 
 export class KeepIndex extends React.Component {
   state = {
     keeps: [],
-    filterBy: 'type'
+    filterBy: 'type',
   }
 
   componentDidMount() {
@@ -27,7 +25,7 @@ export class KeepIndex extends React.Component {
         <div>
           <CreateKeep />
         </div>
-        <KeepList keeps={keeps}  />
+        <KeepList keeps={keeps} />
       </section>
     )
   }

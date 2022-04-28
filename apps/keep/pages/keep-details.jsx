@@ -1,12 +1,12 @@
-import { emailService } from '../services/email-service.js'
+import { keepService } from '../services/keep-service.js'
 
-export class EmailDetails extends React.Component {
+export class KeepDetails extends React.Component {
   state = {
-    email: null,
+    keep: null,
   }
 
   componentDidMount() {
-    this.loadEmail()
+    this.loadKeep()
   }
 
   loadKeep = () => {
@@ -38,9 +38,9 @@ export class EmailDetails extends React.Component {
             <button>Pin</button>
           </div>
         </div>
-        <div>
+        {/* <div>
           <h3>{keep.to.fullName}</h3>
-        </div>
+        </div> */}
       </section>
     )
   }
