@@ -5,12 +5,6 @@ export class EmailFilter extends React.Component {
     sortBy: 'inbox',
   }
 
-  onSort = ({ target }) => {
-    const name = target.name
-    this.setState({ sortBy: name })
-    this.props.onSetSort(this.state.sortBy)
-  }
-
   render() {
     return (
       <section className="email-filter">
@@ -29,23 +23,23 @@ export class EmailFilter extends React.Component {
         <div className="sidebar-email-filters flex column">
           <button name="inbox" onClick={this.onSort}>
             Inbox
-            <i className="fa fa-inbox"></i>
+            {/* <i className="fa fa-inbox"></i> */}
           </button>
           <button name="starred" onClick={this.onSort}>
             Starred
-            <i className="fa fa-star"></i>
+            {/* <i className="fa fa-star"></i> */}
           </button>
           <button name="sent" onClick={this.onSort}>
             Sent
-            <i className="fa fa-paper-plane"></i>
+            {/* <i className="fa fa-paper-plane"></i> */}
           </button>
-          <button name="drafts" onClick={this.onSort}>
+          <button name="draft" onClick={this.onSort}>
             Drafts
-            <i className="fa fa-file"></i>
+            {/* <i className="fa fa-file"></i> */}
           </button>
           <button name="labels" onClick={this.onSort}>
             Labels
-            <i className="fa fa-tag"></i>
+            {/* <i className="fa fa-tag"></i> */}
           </button>
         </div>
       </section>

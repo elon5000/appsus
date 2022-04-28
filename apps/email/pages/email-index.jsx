@@ -20,7 +20,7 @@ export class EmailIndex extends React.Component {
   }
 
   onSetSort = (sortBy) => {
-    this.setState({ sortBy }, this.loadEmails())
+    this.setState({ sortBy: sortBy }, this.loadEmails())
   }
 
   render() {
