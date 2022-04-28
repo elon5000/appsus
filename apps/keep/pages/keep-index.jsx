@@ -25,9 +25,7 @@ export class KeepIndex extends React.Component {
     return (
       <section className="keep-index">
         <div>
-        <Link to="/keep/edit">
           <CreateKeep />
-        </Link>
         </div>
         <KeepList keeps={keeps}  />
       </section>
