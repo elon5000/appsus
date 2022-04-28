@@ -25,7 +25,7 @@ export class KeepIndex extends React.Component {
         <div>
           <CreateKeep />
         </div>
-        <KeepList keeps={keeps} />
+        <KeepList keeps={keeps} onSelectKeep={this.onSelectKeep} />
       </section>
     )
   }
