@@ -1,3 +1,5 @@
+import { EmailCompose } from '../cmps/email-compose.jsx'
+import { EmailCounter } from '../cmps/email-counter.jsx'
 import { EmailFilter } from '../cmps/email-filter.jsx'
 import { EmailList } from '../cmps/email-list.jsx'
 import { emailService } from '../services/email-service.js'
@@ -20,13 +22,26 @@ export class EmailIndex extends React.Component {
   }
 
   onSetSort = (sortBy) => {
-    this.setState({ sortBy: sortBy }, this.loadEmails())
+    this.setState({ sortBy }, this.loadEmails)
+
+    const urlSrcPrm = new URLSearchParams(sortBy)
+    const searchStr = urlSrcPrm.toString()
+    this.props.history.push(`/email?${searchStr}`)
+  }
+
+  get emailsToDisplay() {
+    const { emails } = this.state
+    const urlSrcPrm = new URLSearchParams(this.props.location)
+
+    const etg = urlSrcPrm.get('etg')
+    if (!etg) return emails
+    return emails.filter((email) => email.category === etg)
   }
 
   RenderCounter = () => {
     const emails = this.state.emails
     if (!emails) return 0
-    const unread = emails.filter(email => !email.isRead)
+    const unread = emails.filter((email) => !email.isRead)
     console.log(unread)
     const counter = unread.length
     return counter
@@ -37,11 +52,20 @@ export class EmailIndex extends React.Component {
     const unread = this.RenderCounter()
     return (
       <section className="email-index">
-        <div className='unread-counter'>
-          <h2>Unread emails: {unread}</h2>
+        <div className="unread-counter">
+          <h2>Unread: {unread}</h2>
         </div>
-        <EmailFilter onSetSort={this.onSetSort} hidden={this.props.history} />
-        <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
+        <div className="sidebar">
+          <EmailCompose />
+          <EmailFilter
+            onSetSort={this.onSetSort}
+            history={this.props.history}
+          />
+          <EmailCounter email={emails} />
+        </div>
+        <div>
+          <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
+        </div>
       </section>
     )
   }
