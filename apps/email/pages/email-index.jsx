@@ -23,10 +23,23 @@ export class EmailIndex extends React.Component {
     this.setState({ sortBy: sortBy }, this.loadEmails())
   }
 
+  RenderCounter = () => {
+    const emails = this.state.emails
+    if (!emails) return 0
+    const unread = emails.filter(email => !email.isRead)
+    console.log(unread)
+    const counter = unread.length
+    return counter
+  }
+
   render() {
     const { emails } = this.state
+    const unread = this.RenderCounter()
     return (
       <section className="email-index">
+        <div className='unread-counter'>
+          <h2>Unread: {unread}</h2>
+        </div>
         <EmailFilter onSetSort={this.onSetSort} hidden={this.props.history} />
         <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
       </section>
