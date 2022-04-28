@@ -1,5 +1,4 @@
 .keep-index {
-    overflow-y:auto;
     display: flex;
     flex-direction: column;
     width: 90%;
