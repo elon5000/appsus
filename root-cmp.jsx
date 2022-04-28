@@ -1,6 +1,7 @@
 import { EmailDetails } from './apps/email/pages/email-details.jsx'
 import { EmailEdit } from './apps/email/pages/email-edit.jsx'
 import { EmailIndex } from './apps/email/pages/email-index.jsx'
+import { KeepEdit } from './apps/keep/pages/keep-edit.jsx'
 import { KeepIndex } from './apps/keep/pages/keep-index.jsx'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { AppHeader } from './cmps/app-header.jsx'
@@ -17,6 +18,7 @@ export function App() {
         <Switch>
           <Route path="/email/edit" component={EmailEdit} />
           <Route path="/email/:emailId" component={EmailDetails} />
+          <Route path="/keep/edit" component={KeepEdit} />
           <Route path="/keep" component={KeepIndex} />
           <Route path="/email" component={EmailIndex} />
           <Route path="/" component={AppHome} />
