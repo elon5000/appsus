@@ -7,7 +7,7 @@ export function KeepPreview({ keep }) {
                 <h3>{keep.txt}</h3>
                 {(keep.file) && <div className="file-container">
                     <span className="file-span">
-                        {(keep.file.includes('.jpg', '.gif')) && <img src="./assets/imgs/attachment.png" />}
+                        {(keep.file.includes('.jpg', '.gif')) && <img src={keep.file} />}
                         {(keep.file.includes('.mp4')) && <video width="320" height="240" controls>
                             <source src={keep.file} type="video/mp4"></source>
                         </video>}
@@ -15,7 +15,6 @@ export function KeepPreview({ keep }) {
                             <source src={keep.file} type="audio/mpeg"></source>
                             Your browser does not support the audio...
                         </audio>}
-                        <span>{keep.file.slice(46)}</span>
                     </span>
                 </div>}
             </article>
