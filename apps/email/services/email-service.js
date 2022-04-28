@@ -11,6 +11,7 @@ export const emailService = {
   getNextEmailId,
   saveEmail,
   saveDraft,
+  changeRead,
 }
 
 const KEY = 'emailsDB'
@@ -88,26 +89,27 @@ function _addDraft(addDraft) {
   _saveToStorage(emails)
 }
 
-function _add(emailToAdd) {
-  let emails = _loadFromStorage()
-  const email = _createEmails()
-  emails = [email, ...emails]
-  _saveToStorage(emails)
-  return Promise.resolve()
-}
-
-function _update(emailToUpdate) {
-  let emails = _loadFromStorage()
-  emails = emails.map((email) =>
-    email.id === emailToUpdate.id ? emailToUpdate : email
-  )
-  _saveToStorage(emails)
+function changeRead(emailId) {
+  const emails = _loadFromStorage()
+  const email = emails.find((email) => email.id === emailId)
+  if (email.isRead) email.isRead = false
+  else email.isRead = true
+  _updateEmail(email)
   return Promise.resolve()
 }
 
 function _createEmails() {
   const emails = emailsData
   return emails
+}
+
+function _updateEmail(emailToUpdate) {
+  let emails = _loadFromStorage()
+  emails = emails.map((email) =>
+    email.id === emailToUpdate.id ? emailToUpdate : email
+  )
+  _saveToStorage(emails)
+  return Promise.resolve()
 }
 
 function _saveToStorage(emails) {
