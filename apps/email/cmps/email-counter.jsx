@@ -6,6 +6,6 @@ export function EmailCounter({ emails }) {
     console.log('All mail:',this.state.inboxMail, 'Unread mail',this.state.inboxUnreadMail)
 
     return <section className="email-counter">
-        <h2>Emails read {inboxMail}/{inboxUnreadMail} </h2>
+        <h2>Emails read {inboxMail.length}/{inboxUnreadMail.length} </h2>
     </section>
 }
