@@ -68,18 +68,18 @@ export class EmailIndex extends React.Component {
   render() {
     const { emails } = this.state
     if (!emails) return <div>Loading..</div>
-    const checkInbox = this.state.filterBy === 'inbox' ? true : false
+    const checkInbox = this.state.sortBy === 'inbox' ? true : false
     return (
-      <section className="email-index">
-        <div className="sidebar">
-          {checkInbox && <EmailCounter emails={emails} />}
+      <section className="email-index flex">
+        <div className="email-sidebar flex column">
           <EmailCompose />
           <EmailSideSorts
             onSetSort={this.onSetSort}
             history={this.props.history}
           />
+          {checkInbox && <EmailCounter emails={emails} />}
         </div>
-        <div>
+        <div className="email-main flex column">
           <EmailFilter
             onSetFilter={this.onSetFilter}
             history={this.props.history}

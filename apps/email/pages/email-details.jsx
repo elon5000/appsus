@@ -14,10 +14,6 @@ export class EmailDetails extends React.Component {
     emailService.getById(emailId).then((email) => {
       if (!email) return this.onGoBack()
       this.setState({ email })
-      // if (this.state.email.isRead === false) {
-      //   emailService.changeRead(this.state.email.id)
-      //   this.loadEmail()
-      // }
     })
   }
 
@@ -66,7 +62,7 @@ export class EmailDetails extends React.Component {
         <div className="details-top flex">
           <h2 className="details-subject">{email.subject}</h2>
           <button>
-            <i className="fa fa-tag"></i>
+            <i class="fa fa-bookmark"></i>
           </button>
         </div>
         <div className="details-from flex space-between align-center">

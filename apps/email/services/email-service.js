@@ -49,6 +49,9 @@ function getById(emailId) {
 }
 
 function saveEmail(newEmail) {
+  if (newEmail.id) {
+    deleteEmail(newEmail.id)
+  }
   const emails = _loadFromStorage()
   const email = newEmail
   email.id = utilService.makeId()

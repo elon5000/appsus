@@ -1,0 +1,27 @@
+.email-counter {
+ margin-top: 1rem;
+ display: flex;
+ align-items: center;
+ justify-content:center;
+ height: 1.5rem;
+}
+
+.email-progress-wrapper {
+ background-color: #d8d8d8;
+	border-radius: 1rem;
+	margin-right: 1rem;
+ margin-left: 0.6rem;
+	height: 100%;
+	width: 14rem;
+}
+
+.progress-inside {
+ background: linear-gradient(to right, var(--blue), var(--red));
+ border-radius: 1rem;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+ width: 50%;
+}

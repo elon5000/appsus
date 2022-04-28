@@ -4,12 +4,12 @@
     justify-content: space-between;
     align-content: center;
     text-align: center;
-    position: fixed;
     top: 0;
     width: 100%;
     left: 0;
     padding: 0.8rem;
-    border-bottom: 0.1rem solid var(--grey);
+    border-bottom: 0.1rem solid var(--light-grey);
+    margin-bottom: 1rem;
 }
 
 .logo-wrapper {
@@ -18,4 +18,9 @@
 
 .navbar-wrapper {
     height: 1.75rem;
+}
+
+.navbar-wrapper > * {
+    margin-left: 1rem;
+    cursor: pointer;
 }

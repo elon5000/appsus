@@ -12,8 +12,19 @@ export class EmailEdit extends React.Component {
   timeoutId
 
   componentDidMount() {
-    if (this.timeoutId) clearTimeout(this.timeoutId)
-    this.timeoutId = setTimeout(this.onSaveDraft, 5000)
+    this.loadEmail()
+    // if (this.timeoutId) clearTimeout(this.timeoutId)
+    // this.timeoutId = setTimeout(this.onSaveDraft, 5000)
+  }
+
+  loadEmail = () => {
+    console.log(this.props)
+    const { emailId } = this.props.match.params
+    if (!emailId) return
+    emailService.getById(emailId).then((email) => {
+      this.setState({ email })
+    })
+    console.log(this.state.email)
   }
 
   handleChange = ({ target }) => {
@@ -47,7 +58,7 @@ export class EmailEdit extends React.Component {
             name="to"
             onChange={this.handleChange}
             placeholder="To:"
-            value={to}
+            value={to.email}
           />
           <input
             type="text"

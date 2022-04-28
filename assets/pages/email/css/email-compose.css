@@ -1,0 +1,32 @@
+.email-compose {
+ margin-left: 0.5rem;
+ margin-right: auto;
+ margin-bottom: 1rem;
+}
+
+.email-compose-wrapper {
+ padding: 0.5rem 1.2rem;
+ border: 1px solid var(--light-grey);
+ border-radius: 5rem;
+ box-shadow: 0 0.15rem 0.2rem -0.15rem #1a1818;
+ transition: all 0.2s ease-in-out;
+}
+
+.email-compose-wrapper:hover {
+ box-shadow: 0 0.3rem 0.5rem -0.15rem #58525295;
+ background-color: var(--wlight);
+}
+
+
+.plus-wrapper {
+ font-size: 30px;
+ background: -webkit-linear-gradient(var(--yellow), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.email-compose-text {
+  padding-left: 0.5rem;
+ color: var(--black);
+ font-weight: semi-bold;
+}

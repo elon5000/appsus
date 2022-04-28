@@ -17,12 +17,12 @@ export function App() {
       <section className="app">
         <AppHeader />
         <Switch>
-          <Route path="/email/edit:keepId?" component={EmailEdit} />
+          <Route path="/email/edit/:emailId?" component={EmailEdit} />
           <Route path="/email/:emailId" component={EmailDetails} />
+          <Route path="/email" component={EmailIndex} />
           <Route path="/keep/edit/:keepId?" component={KeepEdit} />
           <Route path="/keep/:keepId" component={KeepDetails} />
           <Route path="/keep" component={KeepIndex} />
-          <Route path="/email" component={EmailIndex} />
           <Route path="/" component={AppHome} />
         </Switch>
         <AppFooter />

@@ -14,7 +14,9 @@
 
 /* email */
 @import '../pages/email/css/email-index.css';
+@import '../pages/email/css/email-compose.css';
 @import '../pages/email/css/email-side-sorts.css';
+@import '../pages/email/css/email-counter.css';
 @import '../pages/email/css/email-filters.css';
 @import '../pages/email/css/email-list.css';
 @import '../pages/email/css/email-preview.css';

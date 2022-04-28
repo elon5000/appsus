@@ -7,15 +7,95 @@
 }
 
 .email-preview {
-    border: 1px solid var(--light-grey);
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    width: 100%;
+    border-top: 0.1rem solid transparent;
+    border-bottom: 0.1rem solid var(--lgrey);
+    border-left: 0.1rem solid transparent;
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0 1rem;
+}
+
+.email-preview:first-child {
+    border-top: 0.1rem solid var(--lgrey);
+}
+
+.email-preview:last-child {
+    border-bottom: 0.1rem solid var(--lgrey);
 }
 
 .email-preview:hover {
-    border: 1px solid var(--grey);
+    border-top: 0.1rem solid var(--grey);
+    border-bottom: 0.1rem solid var(--grey);
+    border-left: 0.1rem solid var(--grey);
+    /* box-shadow: 0 0.05rem 0.05rem #00000040; */
 }
 
-.email-preview h2,
+.email-options-right {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.email-options-right .btn-star {
+    margin-right: 0.5rem;
+}
+
+.email-preview button {
+    background-color: transparent;
+    border:none;
+    border-radius: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-preview button:hover {
+    background-color: var(--grey);
+}
+
+.email-preview button i {
+    font-size: 18px;
+    color: var(--lgrey);
+}
+
+.email-preview h2 {
+    font-size: 18px;
+    width: 20rem;
+}
+
+.email-preview h2 span {
+    font-size: 16px;
+}
+
+.email-preview h3 {
+    font-size: 18px;
+    max-width: 14rem;
+}
+
+.email-preview .email-text-reg {
+    font-weight: 200;
+}
+
+.email-options-left {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 1rem;
+}
+
+.email-options-left button {
+    margin-left: 0.5rem;
+}
+
+/* .email-preview h2,
 .email-preview h3,
 .email-preview h4 {
     padding: 0.3rem;
@@ -33,17 +113,26 @@
     font-size: 0.8rem;
 }
 
+*/
+
 .attachment-container {
     margin: 0.3rem;
     padding: 0.2rem 0.7rem;
     width: max-content;
     border-radius: 1.5rem;
-    background-color: #9999993b;
+    /* background-color: #9999993b; */
+    background-color: var(--wlight);
+    border: 1px solid var(--grey);
+    transition: all 0.2s ease-in-out;
 }
 
 .attachment-container:active {
     background-color: #9999996b;
     color: var(--light-grey);
+}
+
+.attachment-container:hover {
+    background-color: var(--grey);
 }
 
 .attachment-container img {

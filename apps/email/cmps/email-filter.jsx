@@ -25,28 +25,35 @@ export class EmailFilter extends React.Component {
   render() {
     const { name, read } = this.state.filterBy
     return (
-      <section className="email-filter">
+      <section className="email-filters">
         <form
           onSubmit={this.onFilter}
           className="form-filter flex align-center"
         >
-          <input
-            type="text"
-            placeholder="Search"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-          />
-
-          <input
+          <label htmlFor="name" className="search-label flex align-center">
+            <input
+              type="text"
+              placeholder="Search mail"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+              className="email-filter-item"
+            />
+            <img
+              className="search-icon-filter"
+              src="../../../assets/imgs/search-icon.svg"
+              alt=""
+            />
+          </label>
+          {/* <input
             type="boolen"
             placeholder="Read"
             name="read"
             value={read}
             onChange={this.handleChange}
-          />
-
-          <button>Submit</button>
+          /> */}
+          {/* 
+          <button>Submit</button> */}
         </form>
       </section>
     )

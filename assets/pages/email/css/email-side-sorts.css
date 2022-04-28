@@ -1,26 +1,46 @@
-.email-filter {
- background-color: white;
- display: flex;
- flex-direction: column;
- width: 15%;
- position: fixed;
+.email-side-sorts {
+ width: 100%;
 }
 
-.compose-wrapper {
- margin-right: auto;
+.side-btn-wrapper {
+ width: 100%;
+ height: 2.2rem;
 }
 
-.compose-wrapper a {
- display: flex;
- justify-content: center;
- align-items: center;
- margin-left: 0.5rem;
- padding: 0.8rem;
- border-radius: 2rem;
+.side-btn-wrapper button {
+ width: 100%;
+ height: 100%;
+ border-radius: 0 1.2rem 1.2rem 0;
+ border: none;
  color: var(--grey);
- border: 1px solid var(--grey);
+ background-color: white;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ align-content: center;
+ color: var(--grey);
 }
 
-.plus-wrapper {
- margin-right: 0.5rem;
+.side-btn-wrapper button i {
+ width: 2rem;
+ font-size: 1.2rem;
+}
+
+.side-btn-wrapper button span {
+ font-weight: normal;
+ font-size: 16px;
+ margin-left: 0.5rem;
+}
+
+.side-btn-wrapper button:hover {
+ background-color: var(--lgrey);
+}
+
+.side-btn-wrapper button.side-active {
+ color: var(--red);
+ background-color: var(--lred)
+}
+
+.side-btn-wrapper button.side-active span {
+ font-weight: bold;
 }

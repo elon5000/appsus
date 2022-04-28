@@ -6,27 +6,35 @@ export class EmailSideSorts extends React.Component {
 
   render() {
     return (
-      <section className="email-side-sorts">
-        <div className="sidebar-email-filters flex column">
-          <button name="inbox" onClick={this.onSort}>
-            Inbox
+      <section className="email-side-sorts flex column">
+        <div className="side-btn-wrapper">
+          <button name="inbox" onClick={this.onSort} className="side-active">
             <i className="fa fa-inbox"></i>
+            <span>Inbox</span>
           </button>
+        </div>
+        <div className="side-btn-wrapper">
           <button name="starred" onClick={this.onSort}>
-            Starred
             <i className="fa fa-star"></i>
+            <span>Starred</span>
           </button>
+        </div>
+        <div className="side-btn-wrapper">
           <button name="sent" onClick={this.onSort}>
-            Sent
             <i className="fa fa-paper-plane"></i>
+            <span>Sent</span>
           </button>
+        </div>
+        <div className="side-btn-wrapper">
           <button name="draft" onClick={this.onSort}>
-            Drafts
             <i className="fa fa-file"></i>
+            <span>Drafts</span>
           </button>
+        </div>
+        <div className="side-btn-wrapper">
           <button name="labels" onClick={this.onSort}>
-            Labels
-            <i className="fa fa-tag"></i>
+            <i class="fa fa-bookmark"></i>
+            <span>Labels</span>
           </button>
         </div>
       </section>
