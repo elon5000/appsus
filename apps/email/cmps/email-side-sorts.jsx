@@ -6,7 +6,7 @@ export class EmailSideSorts extends React.Component {
 
   render() {
     return (
-      <section className="email-filter">
+      <section className="email-side-sorts">
         <div className="sidebar-email-filters flex column">
           <button name="inbox" onClick={this.onSort}>
             Inbox
