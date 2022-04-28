@@ -16,7 +16,7 @@ export const emailService = {
 
 const KEY = 'emailsDB'
 
-function query(sortBy) {
+function query(sortBy, filterBy) {
   let emails = _loadFromStorage()
   if (!emails) {
     emails = _createEmails()
@@ -25,6 +25,11 @@ function query(sortBy) {
 
   if (sortBy) {
     emails = emails.filter((email) => email.status === sortBy)
+  }
+
+  if (filterBy) {
+    let { name, read } = filterBy
+    console.log(name, read)
   }
 
   return Promise.resolve(emails)
