@@ -1,0 +1,13 @@
+.keep-index {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.keep-index a {
+    width: min-content;
+}
