@@ -3,15 +3,13 @@ import { keepService } from '../services/keep-service.js'
 export class EmailEdit extends React.Component {
     state = {
         keep: {
-            type,
+            type: '',
             subject: '',
             txt: '',
             file: '',
             backgroundColor: ''
         },
     }
-
-    timeoutId
 
     // componentDidMount() {
     //     if (this.timeoutId) clearTimeout(this.timeoutId)
@@ -29,7 +27,7 @@ export class EmailEdit extends React.Component {
     onSaveKeep = (ev) => {
         ev.preventDefault()
         keepService.saveKeep(this.state.keep).then(() => {
-            this.props.history.push('/keep')
+            this.props.keeps.push('/keep')
         })
     }
 

@@ -74,6 +74,5 @@ function _saveToStorage(keeps) {
 }
 
 function _loadFromStorage() {
-  console.log(storageService.loadFromStorage(KEY))
   return storageService.loadFromStorage(KEY)
 }
