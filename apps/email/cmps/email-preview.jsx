@@ -5,7 +5,13 @@ const { Link } = ReactRouterDOM
 export class EmailPreview extends React.Component {
   change = () => {
     emailService.changeRead(this.props.email.id)
-    console.log('check')
+  }
+
+  onDeleteEmail = (e, id) => {
+    e.preventDefault()
+    emailService.deleteEmail(id)
+
+    // const id = ev.target.name
   }
 
   render() {
@@ -38,7 +44,7 @@ export class EmailPreview extends React.Component {
             </div>
           )}
           <div className="email-options-right">
-            <button>
+            <button onClick={(e) => this.onDeleteEmail(e, id)}>
               <i className="fa fa-trash"></i>
             </button>
             {(isRead && (
