@@ -1,7 +1,6 @@
 import { keepService } from '../services/keep-service.js'
 import { uploadService } from '../../../services/upload.service.js'
 import { KeepRecorder } from '../cmps/keep-recorder.jsx'
-import { ColorInput } from '../cmps/color-input.jsx'
 
 export class KeepEdit extends React.Component {
   state = {
@@ -11,6 +10,7 @@ export class KeepEdit extends React.Component {
       txt: '',
       file: '',
       backgroundColor: '',
+      isList: false
     },
   }
 
@@ -47,10 +47,8 @@ export class KeepEdit extends React.Component {
     })
   }
 
-  setColor = (val) => {
-    console.log(val)
-    this.setState({ keep: {backgroundColor: val} })
-    console.log(this.state)
+  onSetColor = (val) => {
+    this.setState({keep: {backgroundColor: val}})
   }
 
   render() {
@@ -78,8 +76,12 @@ export class KeepEdit extends React.Component {
             name="file"
             onChange={this.handleChange}
           />
+          <input
+            type="color"
+            name="backgroundColor"
+            onChange={this.handleChange}
+          />
           <KeepRecorder />
-          <ColorInput setColor={this.setColor} />
           <button type='submit'>save!</button>
         </form>
       </section>
