@@ -65,7 +65,7 @@ function removeKeep(keepId) {
   let keeps = _loadFromStorage()
   keeps = keeps.filter((keep) => keep.id !== keepId)
   _saveToStorage(keeps)
-  return Promise.resolve()
+  return Promise.resolve(keeps)
 }
 
 function _add(keepToAdd) {
