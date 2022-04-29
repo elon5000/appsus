@@ -11,7 +11,12 @@ export class EmailPreview extends React.Component {
 
   onDeleteEmail = (e, id) => {
     e.preventDefault()
-    emailService.deleteEmail(id)
+    this.props.onDeleteEmail(id)
+  }
+
+  onMarkEmail = (e, id) => {
+    e.preventDefault()
+    this.props.onMarkEmail(id)
   }
 
   render() {
@@ -50,11 +55,11 @@ export class EmailPreview extends React.Component {
               <i className="fa fa-trash"></i>
             </button>
             {(isRead && (
-              <button>
+              <button onClick={(e) => this.onMarkEmail(e, id)}>
                 <i className="fa fa-envelope-open"></i>
               </button>
             )) || (
-              <button>
+              <button onClick={(e) => this.onMarkEmail(e, id)}>
                 <i className="fa fa-envelope"></i>
               </button>
             )}

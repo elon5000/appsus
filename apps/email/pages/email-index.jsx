@@ -19,7 +19,6 @@ export class EmailIndex extends React.Component {
       paramObj[value] = urlSrcPrm.get(value)
     }
     if (!Object.keys(paramObj)) paramObj = null
-    console.log(paramObj)
     this.setState(
       (prevState) => ({ ...prevState, filterBy: paramObj }),
       () => {
@@ -32,19 +31,25 @@ export class EmailIndex extends React.Component {
     // const urlSrcPrm = new URLSearchParams(this.props.location.search)
     // let paramObj = {}
     // for (var value of urlSrcPrm.keys()) {
-    //     paramObj[value] = urlSrcPrm.get(value);
+    //   paramObj[value] = urlSrcPrm.get(value)
     // }
+    // console.log(paramObj)
     // if (!Object.keys(paramObj)) paramObj = null
-    // console.log(paramObj);
     // this.setState(prevState => ({ ...prevState, filterBy: paramObj }), () => {
     //     this.loadCars()
     // })
   }
 
   loadEmails = () => {
-    emailService
-      .query(this.state.sortBy, this.state.filterBy)
-      .then((emails) => this.setState({ emails }))
+    emailService.query().then((emails) => this.setState({ emails }))
+  }
+
+  onDeleteEmail = (id) => {
+    emailService.deleteEmail(id).then((emails) => this.setState({ emails }))
+  }
+
+  onMarkEmail = (id) => {
+    emailService.changeRead(id).then((emails) => this.setState({ emails }))
   }
 
   onSetSort = (sortBy) => {
@@ -52,25 +57,44 @@ export class EmailIndex extends React.Component {
 
     const urlSrcPrm = new URLSearchParams(sortBy)
     const searchStr = urlSrcPrm.toString()
-    console.log(searchStr)
-    this.props.history.push(`/email?${searchStr}`)
+    this.props.history.push(`/email?=&${searchStr}`)
   }
 
   onSetFilter = (filterBy) => {
     this.setState({ filterBy }, this.loadEmails)
     const urlSrcPrm = new URLSearchParams(filterBy)
     const searchStr = urlSrcPrm.toString()
-    this.props.history.push(`/email?${this.state.sortBy}=&${searchStr}`)
+    this.props.history.push(`/email?=&${this.state.sortBy}=&${searchStr}`)
   }
 
   get emailsToDisplay() {
-    const { emails } = this.state
-    const urlSrcPrm = new URLSearchParams(this.props.location)
-    console.log('check')
-
-    const etg = urlSrcPrm.get('etg')
-    if (!etg) return emails
-    return emails.filter((email) => email.etg === etg)
+    let { emails } = this.state
+    const urlSrcPrm = new URLSearchParams(this.props.location.search)
+    const sort = urlSrcPrm.get('sortBy')
+    const name = urlSrcPrm.get('name')
+    const show = urlSrcPrm.get('show')
+    if (sort) {
+      emails = emails.filter((email) => email.status === sort)
+    } else {
+      emails = emails.filter((email) => email.status === 'inbox')
+    }
+    if (name) {
+      emails = emails.filter(
+        (email) =>
+          email.subject.toLowerCase().includes(name.toLowerCase()) ||
+          email.from.fullName.toLowerCase().includes(name.toLowerCase())
+      )
+    }
+    if (show) {
+      if (show === 'readcheck') {
+        emails = emails.filter((email) => email.isRead)
+      } else if (show === 'unreadcheck') {
+        emails = emails.filter((email) => !email.isRead)
+      } else {
+        emails = emails
+      }
+    }
+    return emails
   }
 
   render() {
@@ -92,7 +116,11 @@ export class EmailIndex extends React.Component {
             onSetFilter={this.onSetFilter}
             history={this.props.history}
           />
-          <EmailList emails={emails} onSelectEmail={this.onSelectEmail} />
+          <EmailList
+            emails={this.emailsToDisplay}
+            onDeleteEmail={this.onDeleteEmail}
+            onMarkEmail={this.onMarkEmail}
+          />
         </div>
       </section>
     )

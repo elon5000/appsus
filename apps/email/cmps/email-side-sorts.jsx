@@ -1,7 +1,15 @@
 export class EmailSideSorts extends React.Component {
+  state = {
+    sortBy: {
+      sortBy: 'inbox',
+    },
+  }
+
   onSort = ({ target }) => {
     const name = target.name
-    this.props.onSetSort(name)
+    this.setState({ sortBy: { sortBy: name } }, () => {
+      this.props.onSetSort(this.state.sortBy)
+    })
   }
 
   render() {
