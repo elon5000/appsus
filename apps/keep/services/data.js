@@ -6,6 +6,7 @@ const keepsData = [
     txt: '',
     file: '../../../assets/pages/keep/file-storage/imgs/image1.jpg',
     backgroundColor: 'rgb(243, 220, 212)',
+    isPin: false,
   },
   {
     id: '5UPi2',
@@ -19,6 +20,7 @@ const keepsData = [
     // },
     file: '../../../assets/pages/keep/file-storage/audio/audio1.m4a',
     backgroundColor: 'rgb(236, 201, 199)',
+    isPin: false,
   },
   {
     id: 'z6Po0',
@@ -32,6 +34,7 @@ const keepsData = [
     // },
     file: '',
     backgroundColor: 'rgb(217, 227, 218)',
+    isPin: false,
   },
   {
     id: '4uY5e',
@@ -40,6 +43,7 @@ const keepsData = [
     txt: 'Roses are red, violets are blue',
     file: '',
     backgroundColor: 'rgb(209, 207, 192)',
+    isPin: false,
   },
   {
     id: 'G6ua7',
@@ -48,6 +52,7 @@ const keepsData = [
     txt: 'lol its so funny XD',
     file: '../../../assets/pages/keep/file-storage/vids/video1.mp4',
     backgroundColor: 'rgb(194, 194, 180)',
+    isPin: false,
   },
 ]
 
