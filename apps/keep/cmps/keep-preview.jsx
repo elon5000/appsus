@@ -47,7 +47,7 @@ export class KeepPreview extends React.Component {
               <i className="fa fa-clipboard"></i>
             </button>
             <button onClick={(e) => this.onPinKeep(e, id)}>
-              <i class="fa fa-map-pin"></i>
+              <i className="fa fa-map-pin"></i>
             </button>
           </div>
         </article>
