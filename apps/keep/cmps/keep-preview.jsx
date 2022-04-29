@@ -8,13 +8,13 @@ export function KeepPreview({ keep }) {
         {keep.file && (
           <div className="file-container">
             <span className="file-span">
-              {keep.file.includes('jpg', 'gif', 'png', 'jpeg') && <img src={keep.file} />}
-              {keep.file.includes('mp4') && (
+              {keep.file.includes('image') && <img src={keep.file} />}
+              {keep.file.includes('video') && (
                 <video width="320" height="240" controls>
                   <source src={keep.file} type="video/mp4"></source>
                 </video>
               )}
-              {keep.file.includes('mp3', 'wav') && (
+              {keep.file.includes('audio') && (
                 <audio controls>
                   <source src={keep.file} type="audio/mpeg"></source>
                   Your browser does not support the audio...

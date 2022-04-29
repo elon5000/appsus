@@ -4,7 +4,7 @@ const keepsData = [
     type: 'note-img',
     subject: 'Bobi and me',
     txt: '',
-    file: '../../../assets/pages/keep/file-storage/imgs/img1.jpg',
+    file: '../../../assets/pages/keep/file-storage/imgs/image1.jpg',
     backgroundColor: '#123456',
   },
   {
@@ -33,7 +33,7 @@ const keepsData = [
     type: 'note-video',
     subject: 'My favroite video',
     txt: 'lol its so funny XD',
-    file: '../../../assets/pages/keep/file-storage/vids/vid1.mp4',
+    file: '../../../assets/pages/keep/file-storage/vids/video1.mp4',
     backgroundColor: '#123456',
   },
 ]
