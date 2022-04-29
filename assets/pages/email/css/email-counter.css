@@ -16,12 +16,12 @@
 }
 
 .progress-inside {
- background: linear-gradient(to right, var(--blue), var(--red));
+ background: linear-gradient(to right, var(--lgreen), var(--green));
  border-radius: 1rem;
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100%;
- width: 50%;
+ width: 100%;
 }

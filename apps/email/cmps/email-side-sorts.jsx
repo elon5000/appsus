@@ -13,35 +13,64 @@ export class EmailSideSorts extends React.Component {
   }
 
   render() {
-    const active = this.state.sortBy.sortBy
     return (
       <section className="email-side-sorts flex column">
         <div className="side-btn-wrapper">
-          <button name="inbox" onClick={this.onSort} className="side-active">
+          <button
+            name="inbox"
+            onClick={this.onSort}
+            className={
+              this.state.sortBy.sortBy === 'inbox' ? 'side-active' : null
+            }
+          >
             <i className="fa fa-inbox"></i>
             <span>Inbox</span>
           </button>
         </div>
         <div className="side-btn-wrapper">
-          <button name="starred" onClick={this.onSort}>
+          <button
+            name="starred"
+            onClick={this.onSort}
+            className={
+              this.state.sortBy.sortBy === 'starred' ? 'side-active' : null
+            }
+          >
             <i className="fa fa-star"></i>
             <span>Starred</span>
           </button>
         </div>
         <div className="side-btn-wrapper">
-          <button name="sent" onClick={this.onSort}>
+          <button
+            name="sent"
+            onClick={this.onSort}
+            className={
+              this.state.sortBy.sortBy === 'sent' ? 'side-active' : null
+            }
+          >
             <i className="fa fa-paper-plane"></i>
             <span>Sent</span>
           </button>
         </div>
         <div className="side-btn-wrapper">
-          <button name="draft" onClick={this.onSort}>
+          <button
+            name="draft"
+            onClick={this.onSort}
+            className={
+              this.state.sortBy.sortBy === 'draft' ? 'side-active' : null
+            }
+          >
             <i className="fa fa-file"></i>
             <span>Drafts</span>
           </button>
         </div>
         <div className="side-btn-wrapper">
-          <button name="labels" onClick={this.onSort}>
+          <button
+            name="labels"
+            onClick={this.onSort}
+            className={
+              this.state.sortBy.sortBy === 'labels' ? 'side-active' : null
+            }
+          >
             <i className="fa fa-bookmark"></i>
             <span>Labels</span>
           </button>

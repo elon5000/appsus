@@ -11,7 +11,7 @@ export class EmailIndex extends React.Component {
     sortBy: {
       sortBy: 'inbox',
     },
-    filterBy: 'all',
+    filterBy: '',
   }
 
   componentDidMount() {
@@ -47,7 +47,6 @@ export class EmailIndex extends React.Component {
     const urlSrcPrm = new URLSearchParams(sortBy)
     const searchStr = urlSrcPrm.toString()
     this.props.history.push(`/email?=&${searchStr}`)
-    const sortUrl = `/email?=&${searchStr}`
   }
 
   onSetFilter = (filterBy) => {
@@ -92,7 +91,7 @@ export class EmailIndex extends React.Component {
   render() {
     const { emails } = this.state
     if (!emails) return <div>Loading..</div>
-    const checkInbox = this.state.sortBy === 'inbox' ? true : false
+    const checkInbox = this.state.sortBy.sortBy === 'inbox' ? true : false
     return (
       <section className="email-index flex">
         <div className="email-sidebar flex column">
@@ -101,7 +100,7 @@ export class EmailIndex extends React.Component {
             onSetSort={this.onSetSort}
             location={this.props.location.search}
           />
-          {checkInbox && <EmailCounter emails={emails} />}
+          {checkInbox && <EmailCounter emails={this.emailsToDisplay} />}
         </div>
         <div className="email-main flex column">
           <EmailFilter
