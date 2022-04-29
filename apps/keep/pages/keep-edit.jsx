@@ -26,6 +26,7 @@ export class KeepEdit extends React.Component {
   handleChange = ({ target }) => {
     const field = target.name
     const value = target.value
+    if (field === 'file') this.handlefile(value)
     this.setState((prevState) => ({
       keep: { ...prevState.keep, [field]: value },
     }))
@@ -58,12 +59,12 @@ export class KeepEdit extends React.Component {
             placeholder="note"
             value={txt}
           />
-          {/* <input
+          <input
             type="file"
             name="file"
             onChange={this.handleChange}
             value={file}
-          /> */}
+          />
           <input
             type="color"
             name="backgroundColor"
@@ -71,7 +72,7 @@ export class KeepEdit extends React.Component {
             placeholder="white"
             value={backgroundColor}
           />
-          <button>save!</button>
+          <button type='submit'>save!</button>
         </form>
       </section>
     )
