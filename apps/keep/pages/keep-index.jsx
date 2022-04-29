@@ -64,9 +64,9 @@ export class KeepIndex extends React.Component {
     if (!keeps) return <div>Loading..</div>
     return (
       <section className="keep-index">
-        {/* <div>
+        <div>
           <CreateKeep />
-        </div> */}
+        </div>
         <KeepFilter
           onSetFilter={this.onSetFilter}
           history={this.props.history}

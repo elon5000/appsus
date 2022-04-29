@@ -100,6 +100,7 @@ function pinKeep(keepId) {
     return Promise.resolve(newKeeps)
   } else {
     const keepIdx = keeps.indexOf((keep) => keep.id === keepId)
+    console.log(keepIdx)
     keeps.splice(keepIdx, 1)
     keep.isPin = true
     keeps.unshift(keep)
