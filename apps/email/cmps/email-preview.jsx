@@ -3,8 +3,10 @@ import { emailService } from '../services/email-service.js'
 const { Link } = ReactRouterDOM
 
 export class EmailPreview extends React.Component {
-  change = () => {
-    emailService.changeRead(this.props.email.id)
+  onFirstEnter = () => {
+    if (this.props.email.isRead === false) {
+      emailService.changeRead(this.props.email.id)
+    }
   }
 
   onDeleteEmail = (e, id) => {
@@ -19,7 +21,7 @@ export class EmailPreview extends React.Component {
     const linkTo = status === 'draft' ? `edit/${id}` : id
     const grayBg = isRead ? 'whitesmoke' : 'white'
     return (
-      <Link to={`/email/${linkTo}`} onClick={this.change}>
+      <Link to={`/email/${linkTo}`} onClick={this.onFirstEnter}>
         <section className="email-preview" style={{ backgroundColor: grayBg }}>
           <div className="email-options-right">
             <button className="btn-star">
