@@ -37,6 +37,7 @@ export class KeepEdit extends React.Component {
     this.setState((prevState) => ({
       keep: { ...prevState.keep, [field]: val },
     }))
+    console.log('from handlechange at keep-edit')
   }
 
   onSaveKeep = (ev) => {
@@ -44,6 +45,12 @@ export class KeepEdit extends React.Component {
     keepService.saveKeep(this.state.keep).then(() => {
       this.props.history.push('/keep')
     })
+  }
+
+  setColor = (val) => {
+    console.log(val)
+    this.setState({ keep: {backgroundColor: val} })
+    console.log(this.state)
   }
 
   render() {
@@ -72,7 +79,7 @@ export class KeepEdit extends React.Component {
             onChange={this.handleChange}
           />
           <KeepRecorder />
-          <ColorInput />
+          <ColorInput setColor={this.setColor} />
           <button type='submit'>save!</button>
         </form>
       </section>
