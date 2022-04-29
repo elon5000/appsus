@@ -16,11 +16,27 @@
     height: 1.75rem;
 }
 
+.logo-wrapper {
+    background: -webkit-linear-gradient(var(--green), var(--yellow));
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .navbar-wrapper {
     height: 1.75rem;
 }
 
 .navbar-wrapper > * {
-    margin-left: 1rem;
+    font-size: 20px;
+    margin-left: 2rem;
     cursor: pointer;
+}
+
+.navbar-wrapper > *:first-child {
+    color: var(--green);
+}
+
+.navbar-wrapper > *:last-child {
+    color: var(--blue);
 }
