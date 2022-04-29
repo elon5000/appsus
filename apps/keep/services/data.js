@@ -8,6 +8,19 @@ const keepsData = [
     backgroundColor: '#123456',
   },
   {
+    id: '5UPi2',
+    type: 'note-img',
+    subject: 'Test Rec',
+    txt: 'Do not try it works!!',
+    // {
+    //     // text1: 'milk',
+    //     // text2: 'cookies',
+    //     // text3: 'toiletpaper'
+    // },
+    file: '../../../assets/pages/keep/file-storage/audio/audio1.m4a',
+    backgroundColor: '#123456',
+  },
+  {
     id: 'z6Po0',
     type: 'note-list',
     subject: 'Shopping list',
