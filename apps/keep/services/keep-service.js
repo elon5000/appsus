@@ -12,7 +12,7 @@ export const keepService = {
 
 const KEY = 'keepsDB'
 
-function query(filterBy) {
+function query() {
   let keeps = _loadFromStorage()
   if (!keeps) {
     keeps = _createKeeps()

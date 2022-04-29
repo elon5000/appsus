@@ -8,7 +8,6 @@ export class KeepDetails extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     this.loadKeep()
   }
 

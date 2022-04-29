@@ -32,7 +32,7 @@ export class EmailFilter extends React.Component {
           <label htmlFor="name" className="search-label flex align-center">
             <input
               type="text"
-              placeholder="Search mail"
+              placeholder="Search email"
               name="name"
               onChange={this.handleChange}
               className="email-filter-item"
