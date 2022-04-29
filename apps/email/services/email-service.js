@@ -28,8 +28,25 @@ function query(sortBy, filterBy) {
   }
 
   if (filterBy) {
-    let { name, read } = filterBy
-    console.log(name, read)
+    let { name, show } = filterBy
+    if (!name) name = ''
+    if (!show) show = 'all'
+    // if (!read) read = 'all'
+    emails = emails.filter(
+      (email) =>
+        email.subject.toLowerCase().includes(name.toLowerCase()) ||
+        email.from.fullName.toLowerCase().includes(name.toLowerCase())
+    )
+
+    if (show !== 'all') {
+      if (show === 'readcheck') {
+        emails = emails.filter((email) => email.isRead)
+      } else if (show === 'unreadcheck') {
+        emails = emails.filter((email) => !email.isRead)
+      }
+    } else {
+      console.log('all')
+    }
   }
 
   return Promise.resolve(emails)
