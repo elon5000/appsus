@@ -36,6 +36,10 @@ export class KeepIndex extends React.Component {
     keepService.copyKeep(id).then((keeps) => this.setState({ keeps }))
   }
 
+  onPinKeep = (id) => {
+    keepService.pinKeep(id).then((keeps) => this.setState({ keeps }))
+  }
+
   onSetFilter = (filterBy) => {
     this.setState({ filterBy }, this.loadKeeps)
     const urlSrcPrm = new URLSearchParams(filterBy)
@@ -71,6 +75,7 @@ export class KeepIndex extends React.Component {
           keeps={this.keepsToDisplay}
           onDeleteKeep={this.onDeleteKeep}
           onCopyKeep={this.onCopyKeep}
+          onPinKeep={this.onPinKeep}
         />
       </section>
     )

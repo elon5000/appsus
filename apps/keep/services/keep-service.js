@@ -8,6 +8,7 @@ export const keepService = {
   saveKeep,
   removeKeep,
   copyKeep,
+  pinKeep,
 }
 
 const KEY = 'keepsDB'
@@ -77,6 +78,34 @@ function copyKeep(keepId) {
   keeps.unshift(newKeep)
   _saveToStorage(keeps)
   return Promise.resolve(keeps)
+}
+
+function pinKeep(keepId) {
+  const keeps = _loadFromStorage()
+  const keep = keeps.find((keep) => keep.id === keepId)
+  if (keep.isPin === true) {
+    keep.isPin = undefined
+    const pinKeeps = keeps.filter((keep) => {
+      keep.isPin
+    })
+    const noPinKeeps = keeps.filter((keep) => {
+      keep.isPin === undefined
+    })
+    let newKeeps = []
+    newKeeps.push(pinKeeps)
+    newKeeps.push(keep)
+    newKeeps.push(noPinKeeps)
+
+    _saveToStorage(newKeeps)
+    return Promise.resolve(newKeeps)
+  } else {
+    const keepIdx = keeps.indexOf((keep) => keep.id === keepId)
+    keeps.splice(keepIdx - 1, 1)
+    keep.isPin = true
+    keeps.unshift(keep)
+    _saveToStorage(keeps)
+    return Promise.resolve(keeps)
+  }
 }
 
 function _add(keepToAdd) {

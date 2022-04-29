@@ -10,6 +10,11 @@ export class KeepPreview extends React.Component {
     this.props.onCopyKeep(id)
   }
 
+  onPinKeep = (e, id) => {
+    e.preventDefault()
+    this.props.onPinKeep(id)
+  }
+
   render() {
     const { subject, txt, id, file } = this.props.keep
     return (
@@ -40,6 +45,9 @@ export class KeepPreview extends React.Component {
             </button>
             <button onClick={(e) => this.onCopyKeep(e, id)}>
               <i className="fa fa-clipboard"></i>
+            </button>
+            <button onClick={(e) => this.onPinKeep(e, id)}>
+              <i class="fa fa-map-pin"></i>
             </button>
           </div>
         </article>

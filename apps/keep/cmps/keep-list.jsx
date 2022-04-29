@@ -1,6 +1,6 @@
 import { KeepPreview } from './keep-preview.jsx'
 
-export function KeepList({ keeps, onDeleteKeep, onCopyKeep }) {
+export function KeepList({ keeps, onDeleteKeep, onCopyKeep, onPinKeep }) {
   return (
     <section className="keep-list grid">
       {keeps.map((keep) => (
@@ -9,6 +9,7 @@ export function KeepList({ keeps, onDeleteKeep, onCopyKeep }) {
           key={keep.id}
           onDeleteKeep={onDeleteKeep}
           onCopyKeep={onCopyKeep}
+          onPinKeep={onPinKeep}
         />
       ))}
     </section>
