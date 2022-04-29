@@ -33,7 +33,7 @@ export class EmailSideSorts extends React.Component {
         </div>
         <div className="side-btn-wrapper">
           <button name="labels" onClick={this.onSort}>
-            <i class="fa fa-bookmark"></i>
+            <i className="fa fa-bookmark"></i>
             <span>Labels</span>
           </button>
         </div>

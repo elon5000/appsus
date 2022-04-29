@@ -28,7 +28,7 @@ export class EmailPreview extends React.Component {
               <i className="fa fa-star"></i>
             </button>
             <button>
-              <i class="fa fa-bookmark"></i>
+              <i className="fa fa-bookmark"></i>
             </button>
           </div>
           <h2>
