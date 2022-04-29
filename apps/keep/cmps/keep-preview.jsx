@@ -17,7 +17,6 @@ export function KeepPreview({ keep }) {
               {keep.file.includes('audio') && (
                 <audio controls>
                   <source src={keep.file} type="audio/mpeg"></source>
-                  Your browser does not support the audio...
                 </audio>
               )}
             </span>

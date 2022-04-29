@@ -1,5 +1,6 @@
 import { keepService } from '../services/keep-service.js'
 import { uploadService } from '../../../services/upload.service.js'
+import { KeepRecorder } from '../cmps/keep-recorder.jsx'
 
 export class KeepEdit extends React.Component {
   state = {
@@ -78,6 +79,7 @@ export class KeepEdit extends React.Component {
             placeholder="white"
             value={backgroundColor}
           />
+          <KeepRecorder />
           <button type='submit'>save!</button>
         </form>
       </section>
