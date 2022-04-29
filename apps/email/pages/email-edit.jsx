@@ -5,7 +5,10 @@ export class EmailEdit extends React.Component {
     email: {
       subject: '',
       body: '',
-      to: '',
+      to: {
+        fullName: '',
+        email: ',',
+      },
     },
   }
 
@@ -30,9 +33,21 @@ export class EmailEdit extends React.Component {
   handleChange = ({ target }) => {
     const field = target.name
     const value = target.value
-    this.setState((prevState) => ({
-      email: { ...prevState.email, [field]: value },
-    }))
+    if (field === 'email' || field === 'fullName') {
+      this.setState((prevState) => ({
+        email: {
+          ...prevState.email,
+          to: {
+            ...prevState.email.to,
+            [field]: value,
+          },
+        },
+      }))
+    } else {
+      this.setState((prevState) => ({
+        email: { ...prevState.email, [field]: value },
+      }))
+    }
   }
 
   onSaveEmail = (ev) => {
@@ -54,11 +69,18 @@ export class EmailEdit extends React.Component {
         <h2>Send new email</h2>
         <form className="email-form" onSubmit={this.onSaveEmail}>
           <input
-            type="text"
-            name="to"
+            type="email"
+            name="email"
             onChange={this.handleChange}
-            placeholder="To:"
+            placeholder="Enter Email"
             value={to.email}
+          />
+          <input
+            type="email"
+            name="fullName"
+            onChange={this.handleChange}
+            placeholder="Enter Email"
+            value={to.fullName}
           />
           <input
             type="text"

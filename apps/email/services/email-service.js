@@ -16,39 +16,12 @@ export const emailService = {
 
 const KEY = 'emailsDB'
 
-function query(sortBy, filterBy) {
+function query() {
   let emails = _loadFromStorage()
   if (!emails) {
     emails = _createEmails()
     _saveToStorage(emails)
   }
-
-  if (sortBy) {
-    emails = emails.filter((email) => email.status === sortBy)
-  }
-
-  if (filterBy) {
-    let { name, show } = filterBy
-    if (!name) name = ''
-    if (!show) show = 'all'
-    // if (!read) read = 'all'
-    emails = emails.filter(
-      (email) =>
-        email.subject.toLowerCase().includes(name.toLowerCase()) ||
-        email.from.fullName.toLowerCase().includes(name.toLowerCase())
-    )
-
-    if (show !== 'all') {
-      if (show === 'readcheck') {
-        emails = emails.filter((email) => email.isRead)
-      } else if (show === 'unreadcheck') {
-        emails = emails.filter((email) => !email.isRead)
-      }
-    } else {
-      console.log('all')
-    }
-  }
-
   return Promise.resolve(emails)
 }
 
@@ -86,7 +59,7 @@ function deleteEmail(emailId) {
   let emails = _loadFromStorage()
   emails = emails.filter((email) => email.id !== emailId)
   _saveToStorage(emails)
-  return Promise.resolve()
+  return Promise.resolve(emails)
 }
 
 function saveDraft(email) {
@@ -120,7 +93,7 @@ function changeRead(emailId) {
   if (email.isRead) email.isRead = false
   else email.isRead = true
   _updateEmail(email)
-  return Promise.resolve()
+  return Promise.resolve(emails)
 }
 
 function _createEmails() {
