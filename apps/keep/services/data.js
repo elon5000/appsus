@@ -5,7 +5,7 @@ const keepsData = [
     subject: 'Bobi and me',
     txt: '',
     file: '../../../assets/pages/keep/file-storage/imgs/image1.jpg',
-    backgroundColor: '#123456',
+    backgroundColor: 'rgb(243, 220, 212)',
   },
   {
     id: '5UPi2',
@@ -18,7 +18,7 @@ const keepsData = [
     //     // text3: 'toiletpaper'
     // },
     file: '../../../assets/pages/keep/file-storage/audio/audio1.m4a',
-    backgroundColor: '#123456',
+    backgroundColor: 'rgb(236, 201, 199)',
   },
   {
     id: 'z6Po0',
@@ -31,7 +31,7 @@ const keepsData = [
     //     // text3: 'toiletpaper'
     // },
     file: '',
-    backgroundColor: '#123456',
+    backgroundColor: 'rgb(217, 227, 218)',
   },
   {
     id: '4uY5e',
@@ -39,7 +39,7 @@ const keepsData = [
     subject: 'My poem',
     txt: 'Roses are red, violets are blue',
     file: '',
-    backgroundColor: '#123456',
+    backgroundColor: 'rgb(209, 207, 192)',
   },
   {
     id: 'G6ua7',
@@ -47,7 +47,7 @@ const keepsData = [
     subject: 'My favroite video',
     txt: 'lol its so funny XD',
     file: '../../../assets/pages/keep/file-storage/vids/video1.mp4',
-    backgroundColor: '#123456',
+    backgroundColor: 'rgb(194, 194, 180)',
   },
 ]
 
