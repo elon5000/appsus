@@ -16,10 +16,10 @@ export class KeepPreview extends React.Component {
   }
 
   render() {
-    const { subject, txt, id, file } = this.props.keep
+    const { subject, txt, id, file, backgroundColor } = this.props.keep
     return (
       <Link to={`/keep/${id}`}>
-        <article className="keep-preview">
+        <article className="keep-preview" style={{ backgroundColor: backgroundColor }}>
           <h2>{subject}</h2>
           <h3>{txt}</h3>
           {file && (
