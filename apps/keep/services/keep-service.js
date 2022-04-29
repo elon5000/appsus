@@ -84,22 +84,28 @@ function pinKeep(keepId) {
   const keeps = _loadFromStorage()
   const keep = keeps.find((keep) => keep.id === keepId)
   if (keep.isPin === true) {
+    console.log(keeps)
     keep.isPin = undefined
-    const pinKeeps = keeps.filter((keep) => {
-      keep.isPin
+    let pinKeeps = keeps.filter((keep) => {
+      keep.isPin === true ? keep : null
     })
-    const noPinKeeps = keeps.filter((keep) => {
-      keep.isPin === undefined
+    console.log(pinKeeps)
+    let noPinKeeps = keeps.filter((keep) => {
+      keep.isPin === undefined ? keep : null
     })
-    let newKeeps = []
-    newKeeps.push(pinKeeps)
-    newKeeps.push(keep)
-    newKeeps.push(noPinKeeps)
-
-    _saveToStorage(newKeeps)
-    return Promise.resolve(newKeeps)
+    console.log(noPinKeeps)
+    // let newKeeps = []
+    // pinKeeps.map((keep) => {
+    //   newKeeps.push(keep)
+    // })
+    // newKeeps.push(keep)
+    // noPinKeeps.map((keep) => {
+    //   newKeeps.push(keep)
+    // })
+    // _saveToStorage(newKeeps)
+    return Promise.resolve(keeps)
   } else {
-    const keepIdx = keeps.indexOf((keep) => keep.id === keepId)
+    const keepIdx = keeps.findIndex((keep) => keep.id === keepId)
     console.log(keepIdx)
     keeps.splice(keepIdx, 1)
     keep.isPin = true
