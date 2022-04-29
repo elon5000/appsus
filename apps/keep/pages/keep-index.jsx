@@ -22,6 +22,10 @@ export class KeepIndex extends React.Component {
     keepService.removeKeep(id).then((keeps) => this.setState({ keeps }))
   }
 
+  onCopyKeep = (id) => {
+    keepService.copyKeep(id).then((keeps) => this.setState({ keeps }))
+  }
+
   render() {
     const { keeps } = this.state
     return (
@@ -29,7 +33,11 @@ export class KeepIndex extends React.Component {
         <div>
           <CreateKeep />
         </div>
-        <KeepList keeps={keeps} onDeleteKeep={this.onDeleteKeep} />
+        <KeepList
+          keeps={keeps}
+          onDeleteKeep={this.onDeleteKeep}
+          onCopyKeep={this.onCopyKeep}
+        />
       </section>
     )
   }

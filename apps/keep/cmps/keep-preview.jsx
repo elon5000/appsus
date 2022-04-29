@@ -5,6 +5,11 @@ export class KeepPreview extends React.Component {
     this.props.onDeleteKeep(id)
   }
 
+  onCopyKeep = (e, id) => {
+    e.preventDefault()
+    this.props.onCopyKeep(id)
+  }
+
   render() {
     const { subject, txt, id, file } = this.props.keep
     return (
@@ -32,6 +37,9 @@ export class KeepPreview extends React.Component {
           <div>
             <button onClick={(e) => this.onDeleteKeep(e, id)}>
               <i className="fa fa-trash"></i>
+            </button>
+            <button onClick={(e) => this.onCopyKeep(e, id)}>
+              <i className="fa fa-clipboard"></i>
             </button>
           </div>
         </article>

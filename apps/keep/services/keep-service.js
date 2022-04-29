@@ -7,6 +7,7 @@ export const keepService = {
   getById,
   saveKeep,
   removeKeep,
+  copyKeep,
 }
 
 const KEY = 'keepsDB'
@@ -64,6 +65,16 @@ function saveKeep(newKeep) {
 function removeKeep(keepId) {
   let keeps = _loadFromStorage()
   keeps = keeps.filter((keep) => keep.id !== keepId)
+  _saveToStorage(keeps)
+  return Promise.resolve(keeps)
+}
+
+function copyKeep(keepId) {
+  let keeps = _loadFromStorage()
+  const keep = keeps.find((keep) => keep.id === keepId)
+  const newKeep = Object.assign({}, keep)
+  newKeep.id = utilService.makeId()
+  keeps.unshift(newKeep)
   _saveToStorage(keeps)
   return Promise.resolve(keeps)
 }
