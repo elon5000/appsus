@@ -10,6 +10,7 @@ export class KeepEdit extends React.Component {
       txt: '',
       file: '',
       backgroundColor: '',
+      isList: false
     },
   }
 
