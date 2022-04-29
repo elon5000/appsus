@@ -8,7 +8,9 @@ import { EmailFilter } from '../cmps/email-filter.jsx'
 export class EmailIndex extends React.Component {
   state = {
     emails: [],
-    sortBy: 'inbox',
+    sortBy: {
+      sortBy: 'inbox',
+    },
     filterBy: 'all',
   }
 
@@ -25,19 +27,6 @@ export class EmailIndex extends React.Component {
         this.loadEmails()
       }
     )
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    // const urlSrcPrm = new URLSearchParams(this.props.location.search)
-    // let paramObj = {}
-    // for (var value of urlSrcPrm.keys()) {
-    //   paramObj[value] = urlSrcPrm.get(value)
-    // }
-    // console.log(paramObj)
-    // if (!Object.keys(paramObj)) paramObj = null
-    // this.setState(prevState => ({ ...prevState, filterBy: paramObj }), () => {
-    //     this.loadCars()
-    // })
   }
 
   loadEmails = () => {
@@ -58,13 +47,16 @@ export class EmailIndex extends React.Component {
     const urlSrcPrm = new URLSearchParams(sortBy)
     const searchStr = urlSrcPrm.toString()
     this.props.history.push(`/email?=&${searchStr}`)
+    const sortUrl = `/email?=&${searchStr}`
   }
 
   onSetFilter = (filterBy) => {
     this.setState({ filterBy }, this.loadEmails)
     const urlSrcPrm = new URLSearchParams(filterBy)
     const searchStr = urlSrcPrm.toString()
-    this.props.history.push(`/email?=&${this.state.sortBy}=&${searchStr}`)
+    this.props.history.push(
+      `/email?=&sortBy=${this.state.sortBy.sortBy}&${searchStr}`
+    )
   }
 
   get emailsToDisplay() {
@@ -107,7 +99,7 @@ export class EmailIndex extends React.Component {
           <EmailCompose />
           <EmailSideSorts
             onSetSort={this.onSetSort}
-            history={this.props.history}
+            location={this.props.location.search}
           />
           {checkInbox && <EmailCounter emails={emails} />}
         </div>

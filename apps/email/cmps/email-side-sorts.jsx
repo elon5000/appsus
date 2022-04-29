@@ -13,6 +13,7 @@ export class EmailSideSorts extends React.Component {
   }
 
   render() {
+    const active = this.state.sortBy.sortBy
     return (
       <section className="email-side-sorts flex column">
         <div className="side-btn-wrapper">

@@ -25,6 +25,8 @@ export class EmailPreview extends React.Component {
     const changeToForm = status === 'inbox' ? from : to
     const linkTo = status === 'draft' ? `edit/${id}` : id
     const grayBg = isRead ? 'whitesmoke' : 'white'
+    const sentOrDraft =
+      status === 'starred' || status === 'inbox' ? true : false
     return (
       <Link to={`/email/${linkTo}`} onClick={this.onFirstEnter}>
         <section className="email-preview" style={{ backgroundColor: grayBg }}>
@@ -54,15 +56,17 @@ export class EmailPreview extends React.Component {
             <button onClick={(e) => this.onDeleteEmail(e, id)}>
               <i className="fa fa-trash"></i>
             </button>
-            {(isRead && (
-              <button onClick={(e) => this.onMarkEmail(e, id)}>
-                <i className="fa fa-envelope-open"></i>
-              </button>
-            )) || (
-              <button onClick={(e) => this.onMarkEmail(e, id)}>
-                <i className="fa fa-envelope"></i>
-              </button>
-            )}
+            {sentOrDraft
+              ? (isRead && (
+                  <button onClick={(e) => this.onMarkEmail(e, id)}>
+                    <i className="fa fa-envelope-open"></i>
+                  </button>
+                )) || (
+                  <button onClick={(e) => this.onMarkEmail(e, id)}>
+                    <i className="fa fa-envelope"></i>
+                  </button>
+                )
+              : null}
           </div>
         </section>
       </Link>
