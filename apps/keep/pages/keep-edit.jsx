@@ -1,4 +1,5 @@
 import { keepService } from '../services/keep-service.js'
+import { uploadService } from '../../../services/upload.service.js'
 
 export class KeepEdit extends React.Component {
   state = {
@@ -12,23 +13,29 @@ export class KeepEdit extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     this.loadKeep()
   }
 
   loadKeep = () => {
     const { keepId } = this.props.match.params
-    console.log(keepId)
     if (!keepId) return
     keepService.getById(keepId).then((keep) => this.setState({ keep }))
   }
 
   handleChange = ({ target }) => {
     const field = target.name
-    const value = target.value
-    if (field === 'file') this.handlefile(value)
+    const val = target.value
+    if (field === 'file') {
+      uploadService
+        .readURL(target.files)
+        .then((uploadedFile) => this.setState((prevState) => ({
+          keep: { ...prevState.keep, file: uploadedFile },
+        })))
+    } else {
+      console.log('im here')
+    }
     this.setState((prevState) => ({
-      keep: { ...prevState.keep, [field]: value },
+      keep: { ...prevState.keep, [field]: val },
     }))
   }
 
@@ -63,7 +70,6 @@ export class KeepEdit extends React.Component {
             type="file"
             name="file"
             onChange={this.handleChange}
-            value={file}
           />
           <input
             type="color"
