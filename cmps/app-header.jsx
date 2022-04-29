@@ -6,7 +6,7 @@ export function AppHeader() {
       </div>
       <div className="navbar-wrapper flex align-center">
         <i className="fa fa-bars"></i>
-        <i class="fa fa-user"></i>
+        <i className="fa fa-user"></i>
       </div>
     </section>
   )

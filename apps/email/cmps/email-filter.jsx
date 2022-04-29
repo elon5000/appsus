@@ -2,13 +2,13 @@ export class EmailFilter extends React.Component {
   state = {
     filterBy: {
       name: '',
-      read: '',
+      show: '',
     },
   }
 
   handleChange = ({ target }) => {
-    const value = target.value
     const field = target.name
+    const value = target.value
     this.setState(
       (prevState) => ({ filterBy: { ...prevState.filterBy, [field]: value } }),
       () => {
@@ -23,7 +23,6 @@ export class EmailFilter extends React.Component {
   }
 
   render() {
-    const { name, read } = this.state.filterBy
     return (
       <section className="email-filters">
         <form
@@ -35,23 +34,21 @@ export class EmailFilter extends React.Component {
               type="text"
               placeholder="Search mail"
               name="name"
-              value={name}
               onChange={this.handleChange}
               className="email-filter-item"
             />
             <img
+              onClick={this.onFilter}
               className="search-icon-filter"
               src="../../../assets/imgs/search-icon.svg"
               alt=""
             />
           </label>
-          {/* <input
-            type="boolen"
-            placeholder="Read"
-            name="read"
-            value={read}
-            onChange={this.handleChange}
-          /> */}
+          <select name="show" onChange={this.handleChange}>
+            <option value="all">All</option>
+            <option value="readcheck">Read</option>
+            <option value="unreadcheck">Unread</option>
+          </select>
           {/* 
           <button>Submit</button> */}
         </form>

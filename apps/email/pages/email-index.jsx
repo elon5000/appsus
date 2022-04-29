@@ -9,28 +9,36 @@ export class EmailIndex extends React.Component {
   state = {
     emails: [],
     sortBy: 'inbox',
-    filterBy: null,
+    filterBy: 'all',
   }
 
   componentDidMount() {
-    this.loadEmails()
+    const urlSrcPrm = new URLSearchParams(this.props.location.search)
+    let paramObj = {}
+    for (var value of urlSrcPrm.keys()) {
+      paramObj[value] = urlSrcPrm.get(value)
+    }
+    if (!Object.keys(paramObj)) paramObj = null
+    console.log(paramObj)
+    this.setState(
+      (prevState) => ({ ...prevState, filterBy: paramObj }),
+      () => {
+        this.loadEmails()
+      }
+    )
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     // const urlSrcPrm = new URLSearchParams(this.props.location.search)
     // let paramObj = {}
     // for (var value of urlSrcPrm.keys()) {
-    //   paramObj[value] = urlSrcPrm.get(value)
+    //     paramObj[value] = urlSrcPrm.get(value);
     // }
     // if (!Object.keys(paramObj)) paramObj = null
-    // console.log(paramObj)
-    // this.setState(
-    //   (prevState) => ({ ...prevState, sortBy: paramObj }),
-    //   () => {
-    //     this.loadEmails()
-    //   }
-    // )
-    // loadEmails()
+    // console.log(paramObj);
+    // this.setState(prevState => ({ ...prevState, filterBy: paramObj }), () => {
+    //     this.loadCars()
+    // })
   }
 
   loadEmails = () => {
@@ -49,7 +57,7 @@ export class EmailIndex extends React.Component {
   }
 
   onSetFilter = (filterBy) => {
-    this.setState({ filterBy }, this.loadEmails())
+    this.setState({ filterBy }, this.loadEmails)
     const urlSrcPrm = new URLSearchParams(filterBy)
     const searchStr = urlSrcPrm.toString()
     this.props.history.push(`/email?${this.state.sortBy}=&${searchStr}`)
@@ -62,7 +70,7 @@ export class EmailIndex extends React.Component {
 
     const etg = urlSrcPrm.get('etg')
     if (!etg) return emails
-    return emails.filter((email) => email.subject === etg)
+    return emails.filter((email) => email.etg === etg)
   }
 
   render() {
