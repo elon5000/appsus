@@ -1,6 +1,6 @@
 import { keepService } from '../services/keep-service.js'
 import { uploadService } from '../../../services/upload.service.js'
-import { KeepRecorder } from '../cmps/keep-recorder.jsx'
+// import { KeepRecorder } from '../cmps/keep-recorder.jsx'
 import { KeepTodo } from '../cmps/keep-todo.jsx'
 
 export class KeepEdit extends React.Component {
@@ -60,7 +60,7 @@ export class KeepEdit extends React.Component {
   render() {
     const { subject, txt, file, backgroundColor } = this.state.keep
     return (
-      <section className="keep-edit flex column align-center">
+      <section className="keep-edit">
         <h2>Edit keep</h2>
         <form className="keep-form" onSubmit={this.onSaveKeep}>
           <input
@@ -83,7 +83,7 @@ export class KeepEdit extends React.Component {
             name="backgroundColor"
             onChange={this.handleChange}
           />
-          <KeepRecorder />
+          {/* <KeepRecorder /> */}
           <button type="submit">save!</button>
         </form>
         <KeepTodo onSaveTodo={this.onSaveTodo} />

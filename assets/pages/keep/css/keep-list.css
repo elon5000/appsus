@@ -31,8 +31,7 @@
 
 @media only screen and (min-width: 1200px) {
     .keep-list {
-    grid-template-columns: repeat(4, 1fr);
-        
+    grid-template-columns: repeat(4, 1.2fr);
     }
 }
 

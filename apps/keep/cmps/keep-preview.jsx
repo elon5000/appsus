@@ -59,7 +59,7 @@ export class KeepPreview extends React.Component {
               </span>
             </div>
           )}
-          <div>
+          <div className="keep-btn">
             <button onClick={(e) => this.onDeleteKeep(e, id)}>
               <i className="fa fa-trash"></i>
             </button>

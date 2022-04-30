@@ -23,7 +23,9 @@
     .add-keep-button {
         font-size: 4rem;
         padding: 0.1rem 1.3rem;
+        bottom: 80px;
     }
+
     .add-keep-button:hover {
         transform: scale(1.1);
     }
