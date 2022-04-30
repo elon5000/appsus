@@ -11,8 +11,8 @@ export class KeepEdit extends React.Component {
       txt: '',
       file: '',
       backgroundColor: '',
-      todoData: null
-    }
+      todoData: '',
+    },
   }
 
   componentDidMount() {
@@ -29,11 +29,11 @@ export class KeepEdit extends React.Component {
     const field = target.name
     const val = target.value
     if (field === 'file') {
-      uploadService
-        .readURL(target.files)
-        .then((uploadedFile) => this.setState((prevState) => ({
+      uploadService.readURL(target.files).then((uploadedFile) =>
+        this.setState((prevState) => ({
           keep: { ...prevState.keep, file: uploadedFile },
-        })))
+        }))
+      )
     }
     this.setState((prevState) => ({
       keep: { ...prevState.keep, [field]: val },
@@ -49,7 +49,9 @@ export class KeepEdit extends React.Component {
   }
 
   onSaveTodo = (todos) => {
-    this.setState((prevState) => ({keep: { ...prevState.keep, todoData: todos }}))
+    this.setState((prevState) => ({
+      keep: { ...prevState.keep, todoData: todos },
+    }))
     console.log(this.state.keep)
   }
 
@@ -77,18 +79,14 @@ export class KeepEdit extends React.Component {
             placeholder="note"
             value={txt}
           />
-          <input
-            type="file"
-            name="file"
-            onChange={this.handleChange}
-          />
+          <input type="file" name="file" onChange={this.handleChange} />
           <input
             type="color"
             name="backgroundColor"
             onChange={this.handleChange}
           />
           <KeepRecorder />
-          <button type='submit'>save!</button>
+          <button type="submit">save!</button>
         </form>
         <KeepTodo onSaveTodo={this.onSaveTodo} />
       </section>
