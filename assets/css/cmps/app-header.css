@@ -9,7 +9,7 @@
     left: 0;
     padding: 0.8rem;
     border-bottom: 0.1rem solid var(--light-grey);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     position: relative;
 }
 
@@ -19,6 +19,7 @@
 
 .logo-wrapper {
     font-weight: bold;
+    font-size: 1.4rem;
 }
 .a-1, .u{
     color: var(--blue);
