@@ -29,15 +29,8 @@ function getById(keepId) {
 }
 
 function saveKeep(newKeep) {
-  const keeps = _loadFromStorage()
-  const keep = newKeep
-  keep.id = utilService.makeId()
-  // keep.todoData = newKeep.todoData
-  keep.isPinned = false
-  keep.createdAt = new Date()
-  keep.todoData = ''
-  keeps.unshift(keep)
-  _saveToStorage(keeps)
+  if (newKeep.id) _update(newKeep)
+  else _add(newKeep)
   return Promise.resolve()
 }
 
@@ -80,14 +73,19 @@ function pinKeep(keepId) {
 }
 
 function _add(keepToAdd) {
+  console.log('add')
   let keeps = _loadFromStorage()
-  const keep = _createEmails()
-  keeps = [keep, ...keeps]
+  const keep = keepToAdd
+  keep.id = utilService.makeId()
+  keep.isPin = false
+  keeps.push(keep)
   _saveToStorage(keeps)
   return Promise.resolve()
 }
 
 function _update(keepToUpdate) {
+  console.log('update')
+  console.log(keepToUpdate)
   let keeps = _loadFromStorage()
   keeps = keeps.map((keep) =>
     keep.id === keepToUpdate.id ? keepToUpdate : keep
