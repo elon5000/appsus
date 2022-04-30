@@ -4,15 +4,6 @@ import { LongText } from './long-text.jsx'
 const { Link } = ReactRouterDOM
 
 export class EmailPreview extends React.Component {
-  onFirstEnter = () => {
-    if (
-      this.props.email.isRead === false &&
-      this.props.email.state === 'inbox'
-    ) {
-      emailService.changeRead(this.props.email.id)
-    }
-  }
-
   onDeleteEmail = (e, id) => {
     e.preventDefault()
     this.props.onDeleteEmail(id)
@@ -57,7 +48,7 @@ export class EmailPreview extends React.Component {
       status === 'starred' || status === 'inbox' ? true : false
     const sentTime = this.getSentDate(sentAt)
     return (
-      <Link to={`/email/${linkTo}`} onClick={this.onFirstEnter}>
+      <Link to={`/email/${linkTo}`}>
         <section className="email-preview" style={{ backgroundColor: grayBg }}>
           <div className="email-options-right">
             <button
