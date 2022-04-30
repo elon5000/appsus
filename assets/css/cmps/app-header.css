@@ -10,6 +10,7 @@
     padding: 0.8rem;
     border-bottom: 0.1rem solid var(--light-grey);
     margin-bottom: 1rem;
+    position: relative;
 }
 
 .logo-wrapper {
@@ -39,4 +40,15 @@
 
 .navbar-wrapper > *:last-child {
     color: var(--blue);
+}
+
+.hide-modal {
+    display: none;
+}
+
+.show-modal {
+    display: block;
+    position: absolute;
+    bottom: -3.5rem;
+    right: 3rem;
 }

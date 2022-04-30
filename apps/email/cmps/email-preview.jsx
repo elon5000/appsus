@@ -48,7 +48,7 @@ export class EmailPreview extends React.Component {
     const changeToForm = status === 'inbox' ? from : to
     const linkTo = status === 'draft' ? `edit/${id}` : id
     const grayBg = isRead ? 'whitesmoke' : 'white'
-    const starBg = isStar ? '#FFD700' : '#999999'
+    const starBg = isStar ? '#FFD700' : '#e8e8e8f3'
     const sentOrDraft =
       status === 'starred' || status === 'inbox' ? true : false
     const sentTime = this.getSentDate(sentAt)
