@@ -9,13 +9,13 @@ export class HeaderModal extends React.Component {
     return (
       <section className="header-modal flex align-center">
         <Link to="/book" onClick={this.onCloseModal}>
-          <i className="fa fa-book"></i>
+          <i className="fa fa-book book-pick"></i>
         </Link>
         <Link to="/email" onClick={this.onCloseModal}>
-          <i className="fa-solid fa-envelopes-bulk"></i>
+          <i className="fa-solid fa-envelopes-bulk email-pick"></i>
         </Link>
         <Link to="/keep" onClick={this.onCloseModal}>
-          <i className="fa-solid fa-file-pen"></i>
+          <i className="fa-solid fa-file-pen keep-pick"></i>
         </Link>
       </section>
     )
