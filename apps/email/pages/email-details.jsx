@@ -20,8 +20,8 @@ export class EmailDetails extends React.Component {
   loadEmail = () => {
     const { emailId } = this.props.match.params
     emailService.getById(emailId).then((email) => {
+      emailService.changeRead(email.id)
       if (!email) return this.onGoBack()
-      emailService.changeRead()
       this.setState({ email })
     })
   }
@@ -35,7 +35,7 @@ export class EmailDetails extends React.Component {
   }
 
   onChangeRead = () => {
-    emailService.changeRead(this.state.email.id).then(this.loadEmail())
+    this.loadEmail()
   }
 
   getSentDate = () => {
@@ -64,11 +64,11 @@ export class EmailDetails extends React.Component {
             </button>
             {(email.isRead === false && (
               <button onClick={this.onChangeRead}>
-                <i className="fa fa-envelope"></i>
+                <i className="fa fa-envelope-open"></i>
               </button>
             )) || (
               <button onClick={this.onChangeRead}>
-                <i className="fa fa-envelope-open"></i>
+                <i className="fa fa-envelope"></i>
               </button>
             )}
             <button>
