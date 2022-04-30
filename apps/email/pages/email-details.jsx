@@ -21,6 +21,7 @@ export class EmailDetails extends React.Component {
     const { emailId } = this.props.match.params
     emailService.getById(emailId).then((email) => {
       if (!email) return this.onGoBack()
+      emailService.changeRead()
       this.setState({ email })
     })
   }
@@ -61,13 +62,13 @@ export class EmailDetails extends React.Component {
             <button onClick={this.onRemoveEmail}>
               <i className="fa fa-trash"></i>
             </button>
-            {(email.isRead && (
+            {(email.isRead === false && (
               <button onClick={this.onChangeRead}>
-                <i className="fa fa-envelope-open"></i>
+                <i className="fa fa-envelope"></i>
               </button>
             )) || (
               <button onClick={this.onChangeRead}>
-                <i className="fa fa-envelope"></i>
+                <i className="fa fa-envelope-open"></i>
               </button>
             )}
             <button>
