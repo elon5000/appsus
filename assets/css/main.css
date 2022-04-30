@@ -9,6 +9,7 @@
 
 /* cmps */
 @import './cmps/app-main.css';
+@import './cmps/app-homepage.css';
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';
 @import './cmps/header-modal.css';

@@ -27,6 +27,8 @@ export class AppHome extends React.Component {
   }
 
   render() {
-    return <section>Home</section>
+    return <section className='homepage-container'><h1 className='welcome-text'> Welcome to Apsus </h1>
+      <img className='homepage-image' src="../assets/imgs/home-page.jpg"></img>
+    </section>
   }
 }

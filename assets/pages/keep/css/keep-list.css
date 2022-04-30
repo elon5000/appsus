@@ -5,9 +5,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(2, auto);
-    grid-auto-rows: auto;
-    grid-gap: 0.4rem;
+    grid-template-columns: repeat(2, 12rem);
+    grid-auto-rows: 8rem;
+    grid-gap: 0.3rem;
     overflow: hidden;
 }
 
@@ -19,7 +19,6 @@
     overflow: hidden;
     transition: 0.2s ease-in-out;
     cursor: default;
-    border-radius: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -36,8 +35,15 @@
 .file-span img,
 .file-span audio,
 .file-span video{
-    width: 60%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     object-position: 50% 50%;
+}
+.file-span audio{
+    cursor: pointer;
+
+}
+.file-span video{
+    cursor: pointer;
 }
