@@ -1,0 +1,11 @@
+.book-edit-title {
+ margin-top: 10px;
+}
+
+.edit-form {
+ margin-top: 10px;
+}
+
+.edit-form >* {
+ margin-top: 10px;
+}

@@ -1,3 +1,6 @@
+import { BookApp } from './apps/books/pages/book-app.jsx'
+import { BookDetails } from './apps/books/pages/book-details.jsx'
+import { bookEdit } from './apps/books/pages/book-edit.jsx'
 import { EmailDetails } from './apps/email/pages/email-details.jsx'
 import { EmailEdit } from './apps/email/pages/email-edit.jsx'
 import { EmailIndex } from './apps/email/pages/email-index.jsx'
@@ -16,6 +19,9 @@ export function App() {
       <section className="app">
         <AppHeader />
         <Switch>
+          <Route path="/book/edit/:bookId?" component={bookEdit} />
+          <Route path="/book/:bookId" component={BookDetails} />
+          <Route path="/book" component={BookApp} />
           <Route path="/email/edit/:emailId?" component={EmailEdit} />
           <Route path="/email/:emailId" component={EmailDetails} />
           <Route path="/email" component={EmailIndex} />

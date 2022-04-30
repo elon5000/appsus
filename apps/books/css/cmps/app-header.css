@@ -1,0 +1,17 @@
+.app-header {
+ padding: 10px;
+}
+
+.logo {
+ cursor: pointer;
+ font-size: 22px;
+ font-weight: 900;
+}
+
+.app-header nav>*:not(:last-child) {
+ margin-right: 12px;
+}
+
+.active {
+ color: rgb(21, 177, 212);
+}

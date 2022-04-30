@@ -1,0 +1,5 @@
+.book-list {
+ margin-top: 15px;
+ flex-wrap: wrap;
+ gap: 30px;
+}
