@@ -29,39 +29,19 @@ function getById(keepId) {
 }
 
 function saveKeep(newKeep) {
+  console.log(newKeep)
   const keeps = _loadFromStorage()
   const keep = newKeep
   keep.id = utilService.makeId()
+  // keep.todoData = newKeep.todoData
   keep.isPinned = false
   keep.createdAt = new Date()
-  // keep.type = _setKeepType(keep)
+  keep.todoData = null
   keeps.unshift(keep)
   _saveToStorage(keeps)
   return Promise.resolve()
 }
 
-// function _setKeepType(keep) {
-//   const types = []
-//   const file = keep.file
-//   let fileType = ''
-//   let txtType = ''
-//   let listType = ''
-//   if (file.includes('.jpg', '.gif')) {
-//     fileType = 'note-img'
-//   } else if (file.includes('.mp3', '.wav')) {
-//     fileType = 'note-audio'
-//   }
-//   else if (file.includes('.mp4')) {
-//     fileType = 'note-video'
-//   }
-//   else if (keep.txt) {
-//     txtType = 'note-txt'
-//   }
-//   else if (keep.txt.includes('<ul>')) {
-//     listType = 'note-list'
-//   }
-//   types.push(fileType,txtType,listType)
-// }
 
 function removeKeep(keepId) {
   let keeps = _loadFromStorage()
@@ -133,3 +113,4 @@ function _saveToStorage(keeps) {
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
 }
+

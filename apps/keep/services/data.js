@@ -28,8 +28,8 @@ const keepsData = [
     backgroundColor: 'rgb(217, 227, 218)',
     isPin: false,
     todoData: {
-      item1: {txt: 'buy milk', isMarked: true},
-      item2: {txt: 'buy coockies', isMarked: false}
+      x5Y: {txt: 'buy milk', isMarked: true},
+      zL7: {txt: 'buy coockies', isMarked: false}
     }
   },
   {

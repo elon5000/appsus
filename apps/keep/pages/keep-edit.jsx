@@ -11,8 +11,8 @@ export class KeepEdit extends React.Component {
       txt: '',
       file: '',
       backgroundColor: '',
-      isList: false
-    },
+      todoData: null
+    }
   }
 
   componentDidMount() {
@@ -48,8 +48,13 @@ export class KeepEdit extends React.Component {
     })
   }
 
+  onSaveTodo = (todos) => {
+    this.setState((prevState) => ({keep: { ...prevState.keep, todoData: todos }}))
+    console.log(this.state.keep)
+  }
+
   onSetColor = (val) => {
-    this.setState({keep: {backgroundColor: val}})
+    this.setState({ keep: { backgroundColor: val } })
   }
 
   render() {
@@ -85,7 +90,7 @@ export class KeepEdit extends React.Component {
           <KeepRecorder />
           <button type='submit'>save!</button>
         </form>
-        <KeepTodo />
+        <KeepTodo onSaveTodo={this.onSaveTodo} />
       </section>
     )
   }
