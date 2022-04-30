@@ -11,6 +11,13 @@
     overflow: hidden;
 }
 
+@media only screen and (max-width: 1200px) {
+    .keep-list {
+    grid-template-columns: repeat(2, 1fr);
+        
+    }
+}
+
 /* .keep-list article {
     height: min-content;
     overflow: hidden;
