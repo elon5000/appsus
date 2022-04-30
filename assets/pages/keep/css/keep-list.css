@@ -5,24 +5,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: max-content;
     grid-gap: 0.4rem;
     overflow: hidden;
 }
 
-.gallery-item {
-    height: 100%;
-}
-
 .keep-list a {
+    box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: max-content;
     position: relative;
     overflow: hidden;
-    border-radius: 1rem;
     transition: 0.1s ease-in-out;
     cursor: default;
+    border-radius: 1rem;
 }
 
 .keep-list a:hover{

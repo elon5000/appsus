@@ -1,7 +1,6 @@
 const keepsData = [
   {
     id: 'Hy98B',
-    type: 'note-img',
     subject: 'Bobi and me',
     txt: '',
     file: '../../../assets/pages/keep/file-storage/imgs/image1.jpg',
@@ -11,7 +10,6 @@ const keepsData = [
   },
   {
     id: '5UPi2',
-    type: 'note-img',
     subject: 'Test Rec',
     txt: 'Do not try it works!!',
     file: '../../../assets/pages/keep/file-storage/audio/audio1.m4a',
@@ -21,7 +19,6 @@ const keepsData = [
   },
   {
     id: 'z6Po0',
-    type: 'note-list',
     subject: 'Shopping list',
     txt: '',
     file: '',
@@ -34,7 +31,6 @@ const keepsData = [
   },
   {
     id: '4uY5e',
-    type: 'note-txt',
     subject: 'My poem',
     txt: 'Roses are red, violets are blue',
     file: '',
@@ -44,7 +40,6 @@ const keepsData = [
   },
   {
     id: 'G6ua7',
-    type: 'note-video',
     subject: 'My favroite video',
     txt: 'lol its so funny XD',
     file: '../../../assets/pages/keep/file-storage/vids/video1.mp4',

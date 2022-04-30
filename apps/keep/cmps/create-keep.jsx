@@ -5,7 +5,7 @@ export function CreateKeep() {
     <section>
       <Link to="/keep/edit">
         <div>
-          <button>New Keep</button>
+          <button className="add-keep-button">+</button>
         </div>
       </Link>
     </section>
