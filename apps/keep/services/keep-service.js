@@ -36,12 +36,11 @@ function saveKeep(newKeep) {
   // keep.todoData = newKeep.todoData
   keep.isPinned = false
   keep.createdAt = new Date()
-  keep.todoData = null
+  keep.todoData = ''
   keeps.unshift(keep)
   _saveToStorage(keeps)
   return Promise.resolve()
 }
-
 
 function removeKeep(keepId) {
   let keeps = _loadFromStorage()
@@ -113,4 +112,3 @@ function _saveToStorage(keeps) {
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
 }
-
