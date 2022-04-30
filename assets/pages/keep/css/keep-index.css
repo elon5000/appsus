@@ -1,7 +1,7 @@
 .keep-index {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 94%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -10,4 +10,14 @@
 
 .keep-index span {
     background-color: var(--light-grey);
+}
+
+.add-keep-button {
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    position: absolute;
+    bottom: 60px;
+    right: 25px;
+    font-size: 1.7rem;
+    border-style: none;
 }
