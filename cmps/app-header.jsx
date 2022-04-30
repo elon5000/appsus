@@ -7,10 +7,6 @@ export class AppHeader extends React.Component {
     modal: 'hide-modal',
   }
 
-  // componentDidMount() {
-
-  // }
-
   toggleModal = () => {
     if (this.state.modal === 'hide-modal')
       this.setState({ modal: 'show-modal' })
@@ -26,7 +22,14 @@ export class AppHeader extends React.Component {
     return (
       <section className="app-header">
         <div className="logo-wrapper">
-          <h1>Appsus</h1>
+          <h1>
+            <span className='a-1'>A</span>
+            <span className='p-1'>p</span>
+            <span className='p-2'>p</span>
+            <span className='s-1'>s</span>
+            <span className='u'>u</span>
+            <span className='s-2'>s</span>
+          </h1>
         </div>
         <div className="navbar-wrapper flex align-center">
           <button onClick={this.toggleModal}>
