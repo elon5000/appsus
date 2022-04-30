@@ -40,14 +40,16 @@ export class KeepIndex extends React.Component {
     keepService.pinKeep(id).then((keeps) => this.setState({ keeps }))
   }
 
+  onSendAsEmail = (id) => {
+    keepService.sendAsEmail(id)
+  }
+
   onSetFilter = (filterBy) => {
     this.setState({ filterBy }, this.loadKeeps)
     const urlSrcPrm = new URLSearchParams(filterBy)
     const searchStr = urlSrcPrm.toString()
     this.props.history.push(`/keep?=&${searchStr}`)
   }
-
-  onSendAsEmail = (id) => {}
 
   get keepsToDisplay() {
     let { keeps } = this.state

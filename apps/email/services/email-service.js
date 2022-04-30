@@ -1,5 +1,6 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
+// import { keepService } from '../../keep/services/keep-service.js'
 
 import emailsData from './data.js'
 
@@ -15,6 +16,8 @@ export const emailService = {
   getMoreEmailId,
   changeIsStarred,
   removeDraft,
+  addKeep,
+  sendAsEmail,
 }
 
 const KEY = 'emailsDB'
@@ -149,6 +152,24 @@ function _saveToStorage(emails) {
 
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
+}
+
+function addKeep(keep) {
+  let emails = _loadFromStorage()
+  const newEmail = keep
+  newEmail.id = utilService.makeId()
+  newEmail.body = newEmail.txt
+  newEmail.from = { fullName: 'from keep', email: 'keep@appsus.com' }
+  newEmail.isPin = false
+  newEmail.status = 'inbox'
+  newEmail.isRead = false
+  newEmail.sentAt = new Date()
+  emails.unshift(newEmail)
+  _saveToStorage(emails)
+}
+
+function sendAsEmail(email) {
+  keepService.addEmail(email)
 }
 
 // function _creatEmail() {

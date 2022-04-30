@@ -70,7 +70,7 @@ export class KeepPreview extends React.Component {
               <i className="fa fa-map-pin"></i>
             </button>
             <button onClick={(e) => this.onSendAsEmail(e, id)}>
-              <i className="fa fa-map-pin"></i>
+              <i className="fa-solid fa-envelope"></i>
             </button>
           </div>
         </article>
