@@ -1,14 +1,5 @@
-import { keepService } from '../appus/keep/services/keep.service'
+import { keepService } from '../apps/keep/services/keep-service.js'
 
 export function AppHome() {
-  componentDidMount = () => {
-    this.getTodoData()
-    this.getEmailsData()
-  }
-
-  getTodoData = () => {
-    keepService.query()
-  }
-
   return <section>Hello from Home</section>
 }
