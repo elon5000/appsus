@@ -19,20 +19,48 @@ export class EmailPreview extends React.Component {
     this.props.onMarkEmail(id)
   }
 
+  onSetIsStarred = (e, id) => {
+    e.preventDefault()
+    this.props.onSetIsStarred(id)
+  }
+
+  getSentDate = (sentAt) => {
+    const emailTime = sentAt
+    const timeToString = new Date(emailTime)
+    let time = timeToString.toLocaleString()
+    time = time.slice(0, 10)
+    return time
+  }
+
   render() {
-    const { id, from, to, subject, body, file, isRead, status } =
-      this.props.email
+    const {
+      id,
+      from,
+      to,
+      subject,
+      body,
+      file,
+      isRead,
+      status,
+      sentAt,
+      isStar,
+    } = this.props.email
     const changeToForm = status === 'inbox' ? from : to
     const linkTo = status === 'draft' ? `edit/${id}` : id
     const grayBg = isRead ? 'whitesmoke' : 'white'
+    const starBg = isStar ? '#FFD700' : '#999999'
     const sentOrDraft =
       status === 'starred' || status === 'inbox' ? true : false
+    const sentTime = this.getSentDate(sentAt)
     return (
       <Link to={`/email/${linkTo}`} onClick={this.onFirstEnter}>
         <section className="email-preview" style={{ backgroundColor: grayBg }}>
           <div className="email-options-right">
-            <button className="btn-star">
-              <i className="fa fa-star"></i>
+            <button
+              className="btn-star"
+              onClick={(e) => this.onSetIsStarred(e, id)}
+            >
+              <i className="fa fa-star" style={{ color: starBg }}></i>
             </button>
             <button>
               <i className="fa fa-bookmark"></i>
@@ -53,20 +81,23 @@ export class EmailPreview extends React.Component {
                 </span>
               </div>
             )}
-            <button onClick={(e) => this.onDeleteEmail(e, id)}>
-              <i className="fa fa-trash"></i>
-            </button>
-            {sentOrDraft
-              ? (isRead && (
-                  <button onClick={(e) => this.onMarkEmail(e, id)}>
-                    <i className="fa fa-envelope-open"></i>
-                  </button>
-                )) || (
-                  <button onClick={(e) => this.onMarkEmail(e, id)}>
-                    <i className="fa fa-envelope"></i>
-                  </button>
-                )
-              : null}
+            <div className="email-time">{sentTime}</div>
+            <div className="email-show-btns flex">
+              <button onClick={(e) => this.onDeleteEmail(e, id)}>
+                <i className="fa fa-trash"></i>
+              </button>
+              {sentOrDraft
+                ? (isRead && (
+                    <button onClick={(e) => this.onMarkEmail(e, id)}>
+                      <i className="fa fa-envelope-open"></i>
+                    </button>
+                  )) || (
+                    <button onClick={(e) => this.onMarkEmail(e, id)}>
+                      <i className="fa fa-envelope"></i>
+                    </button>
+                  )
+                : null}
+            </div>
           </div>
         </section>
       </Link>

@@ -12,6 +12,8 @@ export const emailService = {
   saveEmail,
   saveDraft,
   changeRead,
+  getMoreEmailId,
+  changeIsStarred,
 }
 
 const KEY = 'emailsDB'
@@ -94,6 +96,28 @@ function changeRead(emailId) {
   else email.isRead = true
   _updateEmail(email)
   return Promise.resolve(emails)
+}
+
+function changeIsStarred(emailId) {
+  const emails = _loadFromStorage()
+  const email = emails.find((email) => email.id === emailId)
+  if (email.isStar) email.isStar = false
+  else email.isStar = true
+  _updateEmail(email)
+  return Promise.resolve(emails)
+}
+
+function getMoreEmailId(emailId, bol) {
+  const emails = _loadFromStorage()
+  const inboxEmails = emails.filter((email) => email.status === 'inbox')
+  const emailIdx = emails.findIndex((email) => emailId === email.id)
+  let moreEmailIdx
+  if (bol) {
+    moreEmailIdx = emailIdx + 1 === inboxEmails.length ? 0 : emailIdx + 1
+  } else {
+    moreEmailIdx = emailIdx - 1 === -1 ? inboxEmails.length - 1 : emailIdx - 1
+  }
+  return emails[moreEmailIdx].id
 }
 
 function _createEmails() {

@@ -41,6 +41,10 @@ export class EmailIndex extends React.Component {
     emailService.changeRead(id).then((emails) => this.setState({ emails }))
   }
 
+  onSetIsStarred = (id) => {
+    emailService.changeIsStarred(id).then((emails) => this.setState({ emails }))
+  }
+
   onSetSort = (sortBy) => {
     this.setState({ sortBy }, this.loadEmails)
 
@@ -111,6 +115,7 @@ export class EmailIndex extends React.Component {
             emails={this.emailsToDisplay}
             onDeleteEmail={this.onDeleteEmail}
             onMarkEmail={this.onMarkEmail}
+            onSetIsStarred={this.onSetIsStarred}
           />
         </div>
       </section>
