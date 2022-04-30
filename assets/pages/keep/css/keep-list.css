@@ -5,8 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(3, auto);
-    grid-auto-rows: max-content;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: auto;
     grid-gap: 0.4rem;
     overflow: hidden;
 }
@@ -17,13 +17,15 @@
     height: max-content;
     position: relative;
     overflow: hidden;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
     cursor: default;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .keep-list a:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .file-span {
@@ -34,7 +36,7 @@
 .file-span img,
 .file-span audio,
 .file-span video{
-    width: 70%;
+    width: 60%;
     height: auto;
     object-fit: cover;
     object-position: 50% 50%;

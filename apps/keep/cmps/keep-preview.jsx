@@ -28,9 +28,8 @@ export class KeepPreview extends React.Component {
         >
           <h2>{subject}</h2>
           <h3>{txt}</h3>
-          {todos && (
+          {todoData && (
             <div className="todo-container">
-              Hello from todo
               <ul>
                 {todosTxts.map((todo) => (
                   <li key={todo}>{todo}</li>

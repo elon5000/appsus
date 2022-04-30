@@ -13,11 +13,11 @@
 }
 
 .add-keep-button {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 5rem;
     position: absolute;
     bottom: 60px;
     right: 25px;
-    font-size: 1.7rem;
+    font-size: 2rem;
     border-style: none;
 }

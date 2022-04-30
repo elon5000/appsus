@@ -29,7 +29,6 @@ function getById(keepId) {
 }
 
 function saveKeep(newKeep) {
-  console.log(newKeep)
   const keeps = _loadFromStorage()
   const keep = newKeep
   keep.id = utilService.makeId()
@@ -68,11 +67,8 @@ function pinKeep(keepId) {
     keep.isPin = false
     const newKeeps = []
     keeps.filter((keep) => ((keep.isPin = true) ? newKeeps.push(keep) : null))
-    console.log(newKeeps)
     newKeeps.push(keep)
-    console.log(newKeeps)
     keeps.filter((keep) => ((keep.isPin = false) ? newKeeps.push(keep) : null))
-    console.log(newKeeps)
     _saveToStorage(newKeeps)
     return Promise.resolve(newKeeps)
   } else {
