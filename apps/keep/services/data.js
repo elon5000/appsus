@@ -5,7 +5,7 @@ const keepsData = [
     subject: 'Bobi and me',
     txt: '',
     file: '../../../assets/pages/keep/file-storage/imgs/image1.jpg',
-    backgroundColor: 'rgb(243, 220, 212)',
+    backgroundColor: 'rgb(66 133 244)',
     isPin: false,
     todoData: ''
   },
@@ -15,7 +15,7 @@ const keepsData = [
     subject: 'Test Rec',
     txt: 'Do not try it works!!',
     file: '../../../assets/pages/keep/file-storage/audio/audio1.m4a',
-    backgroundColor: 'rgb(236, 201, 199)',
+    backgroundColor: 'rgb(219 68 55)',
     isPin: false,
     todoData: ''
   },
@@ -25,7 +25,7 @@ const keepsData = [
     subject: 'Shopping list',
     txt: '',
     file: '',
-    backgroundColor: 'rgb(217, 227, 218)',
+    backgroundColor: 'rgb(244 180 0)',
     isPin: false,
     todoData: {
       x5Y: {txt: 'buy milk', isMarked: true},
@@ -38,7 +38,7 @@ const keepsData = [
     subject: 'My poem',
     txt: 'Roses are red, violets are blue',
     file: '',
-    backgroundColor: 'rgb(209, 207, 192)',
+    backgroundColor: 'rgb(15 157 88)',
     isPin: false,
     todoData: ''
   },
@@ -48,7 +48,7 @@ const keepsData = [
     subject: 'My favroite video',
     txt: 'lol its so funny XD',
     file: '../../../assets/pages/keep/file-storage/vids/video1.mp4',
-    backgroundColor: 'rgb(194, 194, 180)',
+    backgroundColor: 'rgb(66 133 244)',
     isPin: false,
     todoData: ''
   },
