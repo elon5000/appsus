@@ -11,9 +11,20 @@
 .add-keep-button {
     padding: 0.4rem 1rem;
     border-radius: 5rem;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
     right: 25px;
     font-size: 2rem;
     border-style: none;
+    animation: fade-in 3s;
+}
+
+@media only screen and (min-width: 760px) {
+    .add-keep-button {
+        font-size: 4rem;
+        padding: 0.1rem 1.3rem;
+    }
+    .add-keep-button:hover {
+        transform: scale(1.1);
+    }
 }

@@ -4,50 +4,36 @@
     display: grid;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 0.9fr);
     grid-auto-rows: auto;
     grid-gap: 0.3rem;
     overflow: hidden;
+    margin-bottom: 2rem;
+
 }
 
-@media only screen and (max-width: 1200px) {
+.gallery-item{
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 700px) {
     .keep-list {
     grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width: 920px) {
+    .keep-list {
+    grid-template-columns: repeat(3, 1fr);
         
     }
 }
 
-/* .keep-list article {
-    height: min-content;
-    overflow: hidden;
-    transition: 0.2s ease-in-out;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
+@media only screen and (min-width: 1200px) {
+    .keep-list {
+    grid-template-columns: repeat(4, 1fr);
+        
+    }
 }
 
-.keep-list a:hover{
-    transform: scale(1.03);
-}
 
-.file-span {
-    width: 2.5rem;
-    height: 2.5rem;
-}
-
-.file-span img,
-.file-span audio,
-.file-span video{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: 50% 50%;
-}
-.file-span audio{
-    cursor: pointer;
-
-}
-.file-span video{
-    cursor: pointer;
-} */
