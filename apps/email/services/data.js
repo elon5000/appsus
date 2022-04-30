@@ -2,7 +2,7 @@ const emailsData = [
   {
     id: 'OXeMG',
     subject: 'Join Tesla!',
-    body: 'Join Best company',
+    body: 'Join Best company, Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur animi necessitatibus explicabo id non ut.',
     isRead: true,
     sentAt: 1551133930594,
     to: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
@@ -14,7 +14,7 @@ const emailsData = [
   {
     id: 'kSnfI',
     subject: 'Amazon Prime',
-    body: 'You got a delivery',
+    body: 'You got a delivery, Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur animi necessitatibus explicabo id non ut.',
     isRead: false,
     sentAt: 1551133930594,
     to: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },

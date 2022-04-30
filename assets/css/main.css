@@ -22,6 +22,7 @@
 @import '../pages/email/css/email-list.css';
 @import '../pages/email/css/email-preview.css';
 @import '../pages/email/css/email-details.css';
+@import '../pages/email/css/email-edit.css';
 
 /* keep */
 @import '../pages/keep/css/keep-index.css';

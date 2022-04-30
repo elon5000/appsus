@@ -14,6 +14,7 @@ export const emailService = {
   changeRead,
   getMoreEmailId,
   changeIsStarred,
+  removeDraft,
 }
 
 const KEY = 'emailsDB'
@@ -67,6 +68,12 @@ function deleteEmail(emailId) {
 function saveDraft(email) {
   if (email.id) return _updateDraft(email)
   else return _addDraft(email)
+}
+
+function removeDraft(email) {
+  let emails = _loadFromStorage()
+  emails = emails.filter((email) => (email.id !== email ? email : null))
+  _saveToStorage(emails)
 }
 
 function _updateDraft(updateEmail) {

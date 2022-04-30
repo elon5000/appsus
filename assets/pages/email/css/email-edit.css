@@ -1,0 +1,49 @@
+.email-edit {
+ width: 100%;
+}
+
+.email-edit-header {
+ align-items: center;
+ text-align: center;
+ padding: 1rem;
+ background-color: rgb(80, 80, 80);
+ color: whitesmoke;
+ justify-content: space-between;
+ width: 100%;
+}
+
+.email-form {
+ width: 97%;
+ margin: 0 auto;
+}
+
+.email-form > input,
+.email-form > textarea {
+ border: none;
+ padding: 0.8rem;
+ border-bottom: 1px solid var(--lgrey);
+}
+
+.email-form > textarea {
+ border: none;
+ font-family: sans-serif;
+}
+
+.email-form > input:focus,
+.email-form > textarea:focus {
+ outline: none;
+}
+
+textarea {
+ font-size: 14px;
+}
+
+.form-btn {
+ padding: 0.5rem 0;
+ width: 15%;
+ font-size: 16px;
+ color: whitesmoke;
+ background-color: var(--blue);
+ border: none;
+ border-radius: 0.2rem;
+}

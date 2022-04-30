@@ -83,7 +83,7 @@
 
 .email-preview h3 {
     font-size: 18px;
-    max-width: 14rem;
+    width: 8rem;
 }
 
 .email-preview .email-text-reg {
@@ -131,12 +131,12 @@
 */
 
 .attachment-container {
-    margin: 0.3rem;
-    padding: 0.2rem 0.7rem;
+    margin-right: 0.5rem;
+    padding: 0.2rem 0.3rem;
     width: max-content;
     border-radius: 1.5rem;
     /* background-color: #9999993b; */
-    background-color: var(--wlight);
+    background-color:transparent;
     border: 1px solid var(--grey);
     transition: all 0.2s ease-in-out;
 }
@@ -157,4 +157,44 @@
 .attachment-container span {
     padding: 0.2rem;
     font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1488px) {
+    .attachment-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1070px) {
+    .email-options-right {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .email-text-reg {
+        display: none
+    }
+
+    .tablet-none {
+        display: none
+    }
+}
+
+@media only screen and (max-width: 598px) {
+    .email-preview {
+        flex-direction: column;
+        height: 9rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        align-items: start;
+    }
+
+    .email-preview > * {
+        padding-top: 0.5rem;
+    }
+
+    .email-text-reg {
+        display: block;
+    }
 }

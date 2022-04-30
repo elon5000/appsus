@@ -44,3 +44,9 @@
 .side-btn-wrapper button.side-active span {
  font-weight: bold;
 }
+
+@media only screen and (max-width: 598px) {
+ .side-btn-wrapper button span {
+  display: none;
+ }
+}

@@ -30,6 +30,7 @@
 
 .email-filter-item::placeholder {
  margin-left: 5rem;
+ color: var(--grey);
 }
 
 svg {
@@ -42,4 +43,20 @@ svg {
  position: absolute;
  left: 1rem;
  cursor: pointer;
+}
+
+@media only screen and (max-width: 950px) {
+ .email-filters {
+  width: 90%;
+ }
+
+ .search-label {
+  width: 100%;
+ }
+}
+
+@media only screen and (max-width: 542px) {
+ .email-filter-item::placeholder {
+  color: transparent;
+ }
 }

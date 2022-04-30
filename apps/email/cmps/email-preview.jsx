@@ -1,10 +1,14 @@
 import { emailService } from '../services/email-service.js'
+import { LongText } from './long-text.jsx'
 
 const { Link } = ReactRouterDOM
 
 export class EmailPreview extends React.Component {
   onFirstEnter = () => {
-    if (this.props.email.isRead === false) {
+    if (
+      this.props.email.isRead === false &&
+      this.props.email.state === 'inbox'
+    ) {
       emailService.changeRead(this.props.email.id)
     }
   }
@@ -70,8 +74,12 @@ export class EmailPreview extends React.Component {
             {changeToForm.fullName} <br />
             <span>{changeToForm.email}</span>
           </h2>
-          <h3>{subject}&nbsp;&nbsp;-</h3>
-          <h4 className="email-text-reg">&nbsp;&nbsp;{body}</h4>
+          <h3>{subject}</h3>
+          <span className="tablet-none">-</span>
+          <h4 className="email-text-reg">
+            &nbsp;
+            <LongText text={body} />
+          </h4>
           <div className="email-options-left">
             {file && (
               <div className="attachment-container">

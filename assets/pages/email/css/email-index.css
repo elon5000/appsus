@@ -3,10 +3,20 @@
 }
 
 .email-sidebar {
- width: 20%;
+ width: 12%;
 }
 
 .email-main {
  margin-left: auto;
- width: 78%;
+ width: 87%;
+}
+
+@media only screen and (max-width: 950px) {
+ .email-sidebar {
+  width: 20%;
+ }
+
+ .email-main {
+  width: 79%;
+ }
 }

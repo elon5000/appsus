@@ -1,5 +1,7 @@
 import { emailService } from '../services/email-service.js'
 
+const { Link } = ReactRouterDOM
+
 export class EmailEdit extends React.Component {
   state = {
     email: {
@@ -21,7 +23,6 @@ export class EmailEdit extends React.Component {
   }
 
   loadEmail = () => {
-    console.log(this.props)
     const { emailId } = this.props.match.params
     if (!emailId) return
     emailService.getById(emailId).then((email) => {
@@ -62,38 +63,57 @@ export class EmailEdit extends React.Component {
     clearTimeout(this.timeoutId)
   }
 
+  onRemoveDraft() {
+    if (this.state.email) emailService.removeDraft(this.state.email)
+  }
+
   render() {
     const { subject, body, to, file } = this.state.email
+    const checkTo = to.email ? to.email : 'Enter-Address@gmail.com'
     return (
       <section className="email-edit flex column align-center">
-        <h2>Send new email</h2>
-        <form className="email-form" onSubmit={this.onSaveEmail}>
+        <div className="email-edit-header flex">
+          <h2>New Message</h2>
+          <div>
+            <Link to="/email">
+              <i className="fa-solid fa-x"></i>
+            </Link>
+          </div>
+        </div>
+        <form className="email-form flex column" onSubmit={this.onSaveEmail}>
           <input
-            type="email"
-            name="email"
-            onChange={this.handleChange}
-            placeholder="Enter Email"
-            value={to.email}
-          />
-          <input
-            type="email"
+            type="text"
             name="fullName"
             onChange={this.handleChange}
-            placeholder="Enter Email"
+            placeholder="Enter Name"
             value={to.fullName}
           />
+          {(to.fullName && (
+            <input
+              type="email"
+              name="email"
+              onChange={this.handleChange}
+              value={to.email}
+            />
+          )) || (
+            <input
+              type="email"
+              name="email"
+              onChange={this.handleChange}
+              placeholder="To email"
+            />
+          )}
           <input
             type="text"
             name="subject"
             onChange={this.handleChange}
-            placeholder="Enter subject"
+            placeholder="Subject"
             value={subject}
           />
-          <input
-            type="text"
+          <textarea
             name="body"
             onChange={this.handleChange}
-            placeholder="Your text"
+            placeholder="Content"
             value={body}
           />
           {/* <input
@@ -102,8 +122,13 @@ export class EmailEdit extends React.Component {
             onChange={this.handleChange}
             value={file}
           /> */}
-          <button>Submit</button>
         </form>
+        <button onClick={this.onSaveEmail} className="form-btn">
+          Send
+        </button>
+        <button className="edit-delete" onClick={this.removeDraft}>
+          <i className="fa fa-trash"></i>
+        </button>
       </section>
     )
   }

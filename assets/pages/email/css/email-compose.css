@@ -30,3 +30,15 @@
  color: var(--black);
  font-weight: semi-bold;
 }
+
+@media only screen and (max-width: 1425px) {
+  .email-compose-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 598px) {
+  .plus-wrapper {
+    font-size: 20px;
+  }
+}
