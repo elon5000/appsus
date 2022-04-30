@@ -38,7 +38,6 @@ export class KeepEdit extends React.Component {
     this.setState((prevState) => ({
       keep: { ...prevState.keep, [field]: val },
     }))
-    console.log('from handlechange at keep-edit')
   }
 
   onSaveKeep = (ev) => {

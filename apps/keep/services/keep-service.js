@@ -73,7 +73,6 @@ function pinKeep(keepId) {
 }
 
 function _add(keepToAdd) {
-  console.log('add')
   let keeps = _loadFromStorage()
   const keep = keepToAdd
   keep.id = utilService.makeId()
