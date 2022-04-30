@@ -1,5 +1,6 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
+// import { keepService } from '../../keep/services/keep-service.js'
 
 import emailsData from './data.js'
 
@@ -16,6 +17,7 @@ export const emailService = {
   changeIsStarred,
   removeDraft,
   addKeep,
+  sendAsEmail,
 }
 
 const KEY = 'emailsDB'
@@ -162,8 +164,12 @@ function addKeep(keep) {
   newEmail.status = 'inbox'
   newEmail.isRead = false
   newEmail.sentAt = new Date()
-  emails.push(newEmail)
+  emails.unshift(newEmail)
   _saveToStorage(emails)
+}
+
+function sendAsEmail(email) {
+  keepService.addEmail(email)
 }
 
 // function _creatEmail() {

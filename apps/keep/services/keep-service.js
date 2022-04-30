@@ -11,6 +11,7 @@ export const keepService = {
   copyKeep,
   pinKeep,
   sendAsEmail,
+  addEmail,
 }
 
 const KEY = 'keepsDB'
@@ -113,4 +114,8 @@ function sendAsEmail(id) {
   getById(id).then((keep) => {
     emailService.addKeep(keep)
   })
+}
+
+function addEmail(email) {
+  console.log(email)
 }
