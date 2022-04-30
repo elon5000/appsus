@@ -1,7 +1,17 @@
 .homepage-container {
-width: 100%;
+    width: 100%;
+    display: flex;
 }
 
-.homepage-image{
-width: 100%;
+.homepage-image {
+    width: 100%;
+}
+
+.welcome-text {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 30rem;
+    color: var(--black);
 }
