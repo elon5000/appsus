@@ -18,10 +18,19 @@
 }
 
 .logo-wrapper {
-    background: -webkit-linear-gradient(var(--green), var(--yellow));
     font-weight: bold;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+}
+.a-1, .u{
+    color: var(--blue);
+}
+.p-1, .s-2{
+    color: var(--green);
+}
+.p-2{
+    color: var(--red);
+}
+.s-1{
+    color: var(--yellow);
 }
 
 .navbar-wrapper {
