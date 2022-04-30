@@ -16,23 +16,28 @@ export class KeepPreview extends React.Component {
   }
 
   render() {
-    const { subject, txt, id, file, backgroundColor, todoData } = this.props.keep
+    const { subject, txt, id, file, backgroundColor, todoData } =
+      this.props.keep
     const todos = Object.entries(todoData)
-    const todosTxts = todos.map(item=>item[1].txt)
+    const todosTxts = todos.map((item) => item[1].txt)
     return (
-      <Link to={`/keep/${id}`}>
-        <article className="keep-preview gallery-item" style={{ backgroundColor: backgroundColor }}>
+      <Link to={`/keep/edit/${id}`}>
+        <article
+          className="keep-preview gallery-item"
+          style={{ backgroundColor: backgroundColor }}
+        >
           <h2>{subject}</h2>
           <h3>{txt}</h3>
-          {todos &&
-            (<div className="todo-container">
+          {todos && (
+            <div className="todo-container">
               Hello from todo
               <ul>
-                {todosTxts.map(todo =>
+                {todosTxts.map((todo) => (
                   <li key={todo}>{todo}</li>
-                )}
+                ))}
               </ul>
-            </div>)}
+            </div>
+          )}
           {file && (
             <div className="file-container">
               <span className="file-span">
