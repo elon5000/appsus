@@ -2,7 +2,8 @@ export class KeepTodo extends React.Component {
 
     state = {
         newTextLine: '',
-        todoList: []
+        todoList: [],
+        isMarked: 0
     }
 
     onTodos = (ev) => {
@@ -28,19 +29,19 @@ export class KeepTodo extends React.Component {
     onDeleteTodo = (ev) => {
         ev.preventDefault()
         ev.stopPropagation()
-        this.setState({
-            todoList:
-                this.state.todoList.filter(todo => { todo !== ev.target.value })
+        this.setState(
+            {todoList: this.state.todoList.filter(() => {!ev.target.value })
         })
     }
 
-    isFalse
     onToggleMark = (ev) => {
         ev.preventDefault()
         const elTodo = ev.target
         elTodo.value = !elTodo.value
-        this.isFalse = elTodo.value
-        console.log(this.isFalse)
+        this.setState({ isMarked: elTodo.value })
+        console.log('this.isMarked value:', this.state.isMarked,
+            'class:', ev.target,
+            'claas val:', ev.target.value)
     }
 
     render() {
@@ -66,9 +67,9 @@ export class KeepTodo extends React.Component {
                 <ul>
                     {this.state.todoList.map(todo =>
                         <li key={todo}
-                        value={0}
+                            value={0}
                             onClick={this.onToggleMark}
-                            className={this.isFalse === 0 ? "marked" : "unmarked"}>
+                            className={this.state.isMarked === 1 ? 'marked' : null}>
                             {todo}
                             <button className="delete"
                                 value={todo}
