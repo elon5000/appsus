@@ -47,6 +47,8 @@ export class KeepIndex extends React.Component {
     this.props.history.push(`/keep?=&${searchStr}`)
   }
 
+  onSendAsEmail = (id) => {}
+
   get keepsToDisplay() {
     let { keeps } = this.state
     const urlSrcPrm = new URLSearchParams(this.props.location.search)
@@ -76,6 +78,7 @@ export class KeepIndex extends React.Component {
           onDeleteKeep={this.onDeleteKeep}
           onCopyKeep={this.onCopyKeep}
           onPinKeep={this.onPinKeep}
+          onSendAsEmail={this.onSendAsEmail}
         />
       </section>
     )

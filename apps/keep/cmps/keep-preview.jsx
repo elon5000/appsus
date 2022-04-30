@@ -15,6 +15,11 @@ export class KeepPreview extends React.Component {
     this.props.onPinKeep(id)
   }
 
+  onSendAsEmail = (e, id) => {
+    e.preventDefault()
+    this.props.onSendAsEmail(id)
+  }
+
   render() {
     const { subject, txt, id, file, backgroundColor, todoData } =
       this.props.keep
@@ -62,6 +67,9 @@ export class KeepPreview extends React.Component {
               <i className="fa fa-clipboard"></i>
             </button>
             <button onClick={(e) => this.onPinKeep(e, id)}>
+              <i className="fa fa-map-pin"></i>
+            </button>
+            <button onClick={(e) => this.onSendAsEmail(e, id)}>
               <i className="fa fa-map-pin"></i>
             </button>
           </div>
