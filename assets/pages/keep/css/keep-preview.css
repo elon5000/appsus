@@ -1,18 +1,19 @@
 .keep-preview {
+    box-sizing: border-box;
     display: flex;
-    /* background-color: rgba(189, 232, 247, 0.877); */
     margin: 0.2rem;
     flex-direction: column;
     min-height: 6rem;
     max-height: 18rem;
-    width: 18rem;
-    padding: 0.5rem 0.5rem;
+    width: 100%;
     align-content: center;
+    padding: 0.4rem;
+
 }
 
 .keep-preview img {
-    width: 14rem;
-    height: 14rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .keep-preview h2,
@@ -20,10 +21,19 @@
     padding: 0.1rem;
 }
 
+.keep-preview h1 {
+    font-size: 1rem;
+    font-size: 1rem;
+}
 .keep-preview h2 {
     font-size: 1.4rem;
+    font-size: 1rem;
 }
 .keep-preview h3 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: normal;
+}
+
+.keep-preview audio{
+    width: 1rem;
 }
