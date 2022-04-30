@@ -1,8 +1,17 @@
 .header-modal {
  align-items: center;
+ background: var(--white);
+ padding: 0.5rem;
 }
 
 .header-modal i {
  font-size: 1.5rem;
- padding: 1rem;
+ padding: 0.5rem;
+ margin-left: 0.5rem;
+}
+
+.header-modal i:hover {
+ background-color: var(--grey);
+ border-radius: 0.5rem;
+ color: white;
 }

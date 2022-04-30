@@ -85,14 +85,16 @@ function _updateDraft(updateEmail) {
   _saveToStorage(emails)
 }
 
-function _addDraft(addDraft) {
+function _addDraft(email) {
+  console.log('save draft')
   let emails = _loadFromStorage()
-  addDraft.id = utilService.makeId()
-  updateEmail.isRead = false
-  updateEmail.sentAt = new Date()
-  updateEmail.status = 'draft'
-  updateEmail.isStar = false
-  updateEmail.file = ''
+  email.id = utilService.makeId()
+  email.isRead = false
+  email.sentAt = new Date()
+  email.status = 'draft'
+  email.isStar = false
+  email.file = ''
+  emails.unshift(email)
   _saveToStorage(emails)
 }
 

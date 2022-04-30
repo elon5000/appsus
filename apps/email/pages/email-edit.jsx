@@ -18,8 +18,11 @@ export class EmailEdit extends React.Component {
 
   componentDidMount() {
     this.loadEmail()
-    // if (this.timeoutId) clearTimeout(this.timeoutId)
-    // this.timeoutId = setTimeout(this.onSaveDraft, 5000)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.timeoutId) clearTimeout(this.timeoutId)
+    this.timeoutId = setTimeout(this.onSaveDraft, 5000, prevState)
   }
 
   loadEmail = () => {
@@ -58,8 +61,8 @@ export class EmailEdit extends React.Component {
     })
   }
 
-  onSaveDraft() {
-    emailService.saveDraft(this.state.email)
+  onSaveDraft(prevState) {
+    emailService.saveDraft(prevState.email)
     clearTimeout(this.timeoutId)
   }
 

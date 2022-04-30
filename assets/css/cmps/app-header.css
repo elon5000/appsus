@@ -38,6 +38,10 @@
     color: var(--green);
 }
 
+.navbar-wrapper > *:first-child:focus {
+    outline: none;
+}
+
 .navbar-wrapper > *:last-child {
     color: var(--blue);
 }
