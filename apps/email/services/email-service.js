@@ -15,6 +15,7 @@ export const emailService = {
   getMoreEmailId,
   changeIsStarred,
   removeDraft,
+  addKeep,
 }
 
 const KEY = 'emailsDB'
@@ -149,6 +150,20 @@ function _saveToStorage(emails) {
 
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
+}
+
+function addKeep(keep) {
+  let emails = _loadFromStorage()
+  const newEmail = keep
+  newEmail.id = utilService.makeId()
+  newEmail.body = newEmail.txt
+  newEmail.from = { fullName: 'from keep', email: 'keep@appsus.com' }
+  newEmail.isPin = false
+  newEmail.status = 'inbox'
+  newEmail.isRead = false
+  newEmail.sentAt = new Date()
+  emails.push(newEmail)
+  _saveToStorage(emails)
 }
 
 // function _creatEmail() {

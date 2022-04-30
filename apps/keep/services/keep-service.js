@@ -1,5 +1,6 @@
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
+import { emailService } from '../../email/services/email-service.js'
 import keepsData from './data.js'
 
 export const keepService = {
@@ -9,6 +10,7 @@ export const keepService = {
   removeKeep,
   copyKeep,
   pinKeep,
+  sendAsEmail,
 }
 
 const KEY = 'keepsDB'
@@ -105,4 +107,10 @@ function _saveToStorage(keeps) {
 
 function _loadFromStorage() {
   return storageService.loadFromStorage(KEY)
+}
+
+function sendAsEmail(id) {
+  getById(id).then((keep) => {
+    emailService.addKeep(keep)
+  })
 }
