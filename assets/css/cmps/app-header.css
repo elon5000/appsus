@@ -9,7 +9,7 @@
     left: 0;
     padding: 0.8rem;
     border-bottom: 0.1rem solid var(--light-grey);
-    margin-bottom: 1.2rem;
+    /* margin-bottom: 1.2rem; */
     position: relative;
 }
 
