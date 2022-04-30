@@ -6,10 +6,6 @@ export class KeepTodo extends React.Component {
     todoData: [],
   }
 
-  componentDidMount() {
-    console.log('todos loaded...')
-  }
-
   onTodos = (ev) => {
     ev.preventDefault()
   }
@@ -45,7 +41,6 @@ export class KeepTodo extends React.Component {
     ev.preventDefault()
     ev.stopPropagation()
     const arr = this.state.todoData
-    console.log('curr array:', arr)
     const todoID = ev.target.value
     const newArr = arr.filter((todo) => todo[0] !== todoID)
     this.setState({ todoData: newArr })

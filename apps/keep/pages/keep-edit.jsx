@@ -52,7 +52,6 @@ export class KeepEdit extends React.Component {
     this.setState((prevState) => ({
       keep: { ...prevState.keep, todoData: todos },
     }))
-    console.log(this.state.keep)
   }
 
   onSetColor = (val) => {
