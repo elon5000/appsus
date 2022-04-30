@@ -34,12 +34,14 @@ export class KeepTodo extends React.Component {
         })
     }
 
+    isFalse
     onToggleMark = (ev) => {
         ev.preventDefault()
-        this.isFalse = !this.isFalse
+        const elTodo = ev.target
+        elTodo.value = !elTodo.value
+        this.isFalse = elTodo.value
         console.log(this.isFalse)
     }
-    isFalse = false
 
     render() {
         return <div className="todo-container">
@@ -64,8 +66,9 @@ export class KeepTodo extends React.Component {
                 <ul>
                     {this.state.todoList.map(todo =>
                         <li key={todo}
+                        value={0}
                             onClick={this.onToggleMark}
-                            className={this.isFalse ? "marked" : null}>
+                            className={this.isFalse === 0 ? "marked" : "unmarked"}>
                             {todo}
                             <button className="delete"
                                 value={todo}
