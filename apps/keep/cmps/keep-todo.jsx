@@ -1,23 +1,35 @@
+import { utilService } from "../../../services/util.service.js"
+
 export class KeepTodo extends React.Component {
 
     state = {
         newTextLine: '',
-        todoList: [],
-        isMarked: 0
+        todoData: [],
+    }
+
+    componentDidMount() {
+        console.log('todos loaded...')
     }
 
     onTodos = (ev) => {
         ev.preventDefault()
     }
 
-    onSaveTodo = (ev) => {
+    onSubmit = (ev) => {
         ev.preventDefault()
+        this.props.onSaveTodo(this.state.todoData)
+        console.log(this.state.todoData)
     }
 
     onAddNewLine = (ev) => {
         ev.preventDefault()
-        const todos = this.state.todoList
-        todos.push(this.state.newTextLine)
+        const todos = this.state.todoData
+        const textLine = [
+            utilService.makeId(3),
+            this.state.newTextLine,
+            false
+        ]
+        todos.push(textLine)
         this.setState({ newTextLine: '' })
     }
 
@@ -29,25 +41,18 @@ export class KeepTodo extends React.Component {
     onDeleteTodo = (ev) => {
         ev.preventDefault()
         ev.stopPropagation()
-        this.setState(
-            {todoList: this.state.todoList.filter(() => {!ev.target.value })
-        })
+        const arr = this.state.todoData
+        console.log('curr array:', arr)
+        const todoID = ev.target.value
+        const newArr = arr.filter(todo => todo[0] !== todoID)
+        this.setState({ todoData: newArr })
     }
 
-    onToggleMark = (ev) => {
-        ev.preventDefault()
-        const elTodo = ev.target
-        elTodo.value = !elTodo.value
-        this.setState({ isMarked: elTodo.value })
-        console.log('this.isMarked value:', this.state.isMarked,
-            'class:', ev.target,
-            'claas val:', ev.target.value)
-    }
 
     render() {
+        const todosArr = this.state.todoData
         return <div className="todo-container">
-            <h1>hello from KeepTodo!</h1>
-            <form className="todos-form" onSubmit={this.onSaveTodo}>
+            <form className="todos-form" onSubmit={this.onSubmit}>
                 <input
                     type="text"
                     name="new-line"
@@ -58,21 +63,19 @@ export class KeepTodo extends React.Component {
                 <button onClick={this.onAddNewLine}>
                     add new line
                 </button>
-                <button onClick={this.onTodos}>
-                    add todos
+                <button>
+                    save todos
                 </button>
             </form>
             <div className="todo-container">
-                Hello from todo
                 <ul>
-                    {this.state.todoList.map(todo =>
-                        <li key={todo}
-                            value={0}
-                            onClick={this.onToggleMark}
-                            className={this.state.isMarked === 1 ? 'marked' : null}>
-                            {todo}
+                    {todosArr.map(todo =>
+                        <li key={todo[0]}
+                            value={todo[0]}
+                        >
+                            {todo[1]}
                             <button className="delete"
-                                value={todo}
+                                value={todo[0]}
                                 onClick={this.onDeleteTodo}>x</button>
                         </li>
                     )}
