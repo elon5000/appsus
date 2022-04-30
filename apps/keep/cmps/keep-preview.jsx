@@ -21,7 +21,7 @@ export class KeepPreview extends React.Component {
     const todosTxts = todos.map(item=>item[1].txt)
     return (
       <Link to={`/keep/${id}`}>
-        <article className="keep-preview" style={{ backgroundColor: backgroundColor }}>
+        <article className="keep-preview gallery-item" style={{ backgroundColor: backgroundColor }}>
           <h2>{subject}</h2>
           <h3>{txt}</h3>
           {todos &&
