@@ -41,7 +41,7 @@ export class KeepFilter extends React.Component {
             <img
               onClick={this.onFilter}
               className="search-icon-filter"
-              src="../../../assets/imgs/search-icon.svg"
+              src="assets/imgs/search-icon.svg"
               alt=""
             />
           </label>
