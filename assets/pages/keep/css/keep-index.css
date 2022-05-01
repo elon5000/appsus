@@ -25,6 +25,8 @@
         font-size: 4rem;
         padding: 0.1rem 1.3rem;
         bottom: 80px;
+        box-shadow: 0.2rem 0.2rem rgba(29, 29, 29, 0.103);
+
     }
 
     .add-keep-button:hover {

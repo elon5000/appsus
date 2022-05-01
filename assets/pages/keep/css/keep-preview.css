@@ -79,6 +79,7 @@
     font-family:cursive;
     width: fit-content;
     font-size: 1rem;
+    cursor: text;
 }
 
 .keep-btn {
