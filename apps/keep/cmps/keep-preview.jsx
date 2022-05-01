@@ -23,8 +23,7 @@ export class KeepPreview extends React.Component {
   render() {
     const { subject, txt, id, file, backgroundColor, todoData } =
       this.props.keep
-    const todos = Object.entries(todoData)
-    const todosTxts = todos.map((item) => item[1].txt)
+    const todoArr = Object.values(todoData)
     return (
       <Link to={`/keep/edit/${id}`}>
         <article
@@ -33,11 +32,15 @@ export class KeepPreview extends React.Component {
         >
           <h2>{subject}</h2>
           <h3>{txt}</h3>
-          {todoData && (
+          {todoArr && (
             <div className="todo-container">
               <ul>
-                {todosTxts.map((todo) => (
-                  <li key={todo}>{todo}</li>
+                {todoArr.map((todo) => (
+                  <li
+                    key={todo[0]}
+                    className={todo[2] ? 'marked' : ''}>
+                    {todo[1]}
+                  </li>
                 ))}
               </ul>
             </div>

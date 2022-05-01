@@ -51,6 +51,7 @@ export class KeepEdit extends React.Component {
     this.setState((prevState) => ({
       keep: { ...prevState.keep, todoData: todos },
     }))
+    console.log(todos)
   }
 
   onSetColor = (val) => {
@@ -80,7 +81,6 @@ export class KeepEdit extends React.Component {
             value={txt}
           />
           {/* <KeepRecorder /> */}
-          <KeepTodo onSaveTodo={this.onSaveTodo} />
           <input
             type="color"
             className="color-input"
@@ -92,8 +92,9 @@ export class KeepEdit extends React.Component {
             name="file"
             className="file-input"
             onChange={this.handleChange} />
-          <button className="save-btn" type="submit">done</button>
+          <button className="save-btn" type="submit">save</button>
         </form>
+          <KeepTodo onSaveTodo={this.onSaveTodo} />
       </section>
     )
   }

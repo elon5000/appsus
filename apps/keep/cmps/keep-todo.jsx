@@ -58,8 +58,10 @@ export class KeepTodo extends React.Component {
             placeholder="todo"
             value={this.state.newTextLine}
           />
-          <button onClick={this.onAddNewLine}>add new line</button>
-          <button>save todos</button>
+          <section className='todo-btn-container'>
+          <button onClick={this.onAddNewLine}>add todo</button>
+          <button>save list</button>
+          </section>
         </form>
         <div className="todo-container">
           <ul>

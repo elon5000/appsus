@@ -24,10 +24,10 @@ const keepsData = [
     file: '',
     backgroundColor: 'rgb(244 180 0)',
     isPin: false,
-    todoData: {
-      x5Y: { txt: 'buy milk', isMarked: true },
-      zL7: { txt: 'buy coockies', isMarked: false },
-    },
+    todoData: [
+      ['x5Y', 'buy milk', false],
+      ['zL7', 'buy coockies', true],
+    ],
   },
   {
     id: '4uY5e',

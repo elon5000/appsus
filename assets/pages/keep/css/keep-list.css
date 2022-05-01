@@ -15,24 +15,29 @@
 .gallery-item{
     border-radius: 1rem;
     padding: 1rem;
-    border: 0.2rem solid var(--lgrey);
+    border: 0.15rem solid var(--lgrey);
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 640px) {
     .keep-list {
     grid-template-columns: repeat(2, 1fr);
     }
 }
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 820px) {
     .keep-list {
     grid-template-columns: repeat(3, 1fr);
         
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 980px) {
     .keep-list {
     grid-template-columns: repeat(4, 1.2fr);
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .keep-list {
+    grid-template-columns: repeat(5, 1.2fr);
     }
 }
 

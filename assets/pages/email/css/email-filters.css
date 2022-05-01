@@ -1,76 +1,80 @@
 .email-filters {
- width: 80%;
- height: 3rem;
- margin-bottom: 1rem;
+    width: 80%;
+    height: 3rem;
+    margin-bottom: 1rem;
 }
 
 .form-filter {
- width: 100%;
- height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .search-label {
- width: 70%;
- height: 100%;
- position: relative;
- margin-right: 0.5rem;
- color: var(--grey);
+    width: 70%;
+    height: 100%;
+    position: relative;
+    margin-right: 0.5rem;
+    color: var(--grey);
 }
 
 .email-filter-item {
- width: 100%;
- height: 100%;
- font-size: 20px;
- padding-left: 3rem;
- border-radius: 0.5rem;
- border: none;
- background-color: var(--lgrey);
- font-size: 16px;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    padding-left: 3rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--lgrey);
+    font-size: 16px;
 }
 
 .email-filter-item::placeholder {
- margin-left: 5rem;
- color: var(--grey);
+    margin-left: 5rem;
+    color: var(--grey);
+}
+
+.email-filter-item:focus {
+    outline: none;
 }
 
 svg {
- color: var(--grey);
+    color: var(--grey);
 }
 
 .search-icon-filter {
- width: 1.2rem;
- height: 1.2rem;
- position: absolute;
- left: 1rem;
- cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 1rem;
+    cursor: pointer;
 }
 
 select {
- border: none;
- background-color: var(--lgrey);
- height: 100%;
- width: 4rem;
- font-size: 16px;
- border-radius: 0.5rem;
- padding: 0.3rem;
+    border: none;
+    background-color: var(--lgrey);
+    height: 100%;
+    width: 4rem;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
 }
 
 select:focus {
- outline: none;
+    outline: none;
 }
 
 @media only screen and (max-width: 950px) {
- .email-filters {
-  width: 90%;
- }
+    .email-filters {
+        width: 90%;
+    }
 
- .search-label {
-  width: 100%;
- }
+    .search-label {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 542px) {
- .email-filter-item::placeholder {
-  color: transparent;
- }
+    .email-filter-item::placeholder {
+        color: transparent;
+    }
 }

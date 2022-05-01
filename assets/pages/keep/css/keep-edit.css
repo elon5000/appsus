@@ -1,8 +1,8 @@
 .keep-edit {
     font-size: 1.4rem;
     display: flex;
-    background-color: var(--lgrey);
-    margin: 0.2rem;
+    background-color: rgb(241, 233, 159);
+    margin: 0.4rem;
     padding-bottom: 5rem;
     flex-direction: column;
     width: 90%;
@@ -31,6 +31,12 @@
     width: 25%;
     align-self: center;
     margin: 0.2rem;
+    border-style: none ;
+    background-color:var(--white);
+    color: var(--black);
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
 }
 
 .todos-form {
@@ -40,7 +46,17 @@
 }
 
 .text-input {
-    margin: 0.2rem 0rem;
+    margin: 0.4rem 0rem;
     width: 50%;
     align-self: center;
 }
+
+.color-input {
+    width: initial;
+    margin: 0.5rem;
+}
+
+.save-btn {
+    margin-top: 1rem;
+}
+
