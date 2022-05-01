@@ -21,6 +21,7 @@ export class AppHeader extends React.Component {
     const modalStyle = this.state.modal
     return (
       <section className="app-header">
+        <Link to="/">
         <div className="logo-wrapper">
           <h1>
             <span className='a-1'>A</span>
@@ -31,6 +32,7 @@ export class AppHeader extends React.Component {
             <span className='s-2'>s</span>
           </h1>
         </div>
+        </Link>
         <div className="navbar-wrapper flex align-center">
           <button onClick={this.toggleModal}>
             <i className="fa fa-bars"></i>

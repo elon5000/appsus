@@ -11,8 +11,9 @@
 }
 
 .file-span {
-    display: flex;
+    /* display: flex; */
     width: fit-content;
+    top: 0;
 }
 .keep-preview img {
     width: 8rem;
@@ -90,10 +91,10 @@
 }
 .keep-btn button{
     height: 100%;
-    width: 2rem;
-    padding: 0.3rem;
-    border-radius: 0.2rem;
-    background-color: var(--lgrey);
+    font-size: 1.2rem;
+    padding: 0.1rem 0.4rem;
+    background-color: transparent;
+    border-style: none;
     color: var(--black);
 }
 
