@@ -25,11 +25,28 @@ export class KeepPreview extends React.Component {
       this.props.keep
     const todoArr = Object.values(todoData)
     return (
-      <Link to={`/keep/edit/${id}`}>
-        <article
-          className="keep-preview gallery-item"
-          style={{ backgroundColor: backgroundColor }}
-        >
+      <Link to={`/keep/edit/${id}`}
+      className="keep-preview gallery-item"
+      style={{ backgroundColor: backgroundColor }
+     }>
+          {file && (
+            <div className="file-container">
+                {file.includes('image') && <img src={file} />}
+                {file.includes('video') && (
+                  <video width="320" height="240" controls>
+                    <source src={file} type="video/mp4"></source>
+                  </video>
+                )}
+                {file.includes('audio') && (
+                  <div className="audio-container">
+                  <audio controls>
+                    <source src={file} type="audio/mpeg"></source>
+                  </audio>
+                  </div>
+                )}
+            </div>
+          )}
+          <div className="text-container">
           <h2>{subject}</h2>
           <h3>{txt}</h3>
           {todoArr && (
@@ -38,6 +55,7 @@ export class KeepPreview extends React.Component {
                 {todoArr.map((todo) => (
                   <li
                     key={todo[0]}
+                    value={todo[2]}
                     className={todo[2] ? 'marked' : ''}>
                     {todo[1]}
                   </li>
@@ -45,24 +63,9 @@ export class KeepPreview extends React.Component {
               </ul>
             </div>
           )}
-          {file && (
-            <div className="file-container">
-              <span className="file-span">
-                {file.includes('image') && <img src={file} />}
-                {file.includes('video') && (
-                  <video width="320" height="240" controls>
-                    <source src={file} type="video/mp4"></source>
-                  </video>
-                )}
-                {file.includes('audio') && (
-                  <audio controls>
-                    <source src={file} type="audio/mpeg"></source>
-                  </audio>
-                )}
-              </span>
-            </div>
-          )}
+          </div>
           <div className="keep-btn">
+            <div className="btn-flex">
             <button onClick={(e) => this.onDeleteKeep(e, id)}>
               <i className="fa fa-trash"></i>
             </button>
@@ -75,8 +78,8 @@ export class KeepPreview extends React.Component {
             <button onClick={(e) => this.onSendAsEmail(e, id)}>
               <i className="fa-solid fa-envelope"></i>
             </button>
+            </div>
           </div>
-        </article>
       </Link>
     )
   }

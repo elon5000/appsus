@@ -80,7 +80,7 @@ function _add(keepToAdd) {
   const keep = keepToAdd
   keep.id = utilService.makeId()
   keep.isPin = false
-  keeps.push(keep)
+  keeps.unshift(keep)
   _saveToStorage(keeps)
   return Promise.resolve()
 }

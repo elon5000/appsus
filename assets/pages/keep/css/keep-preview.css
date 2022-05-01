@@ -1,28 +1,28 @@
-.keep-preview {
+.keep-list a {
     box-sizing: border-box;
     display: flex;
-    margin: 0.2rem;
+    margin: 0rem;
     flex-direction: column;
     min-height: 6rem;
     max-height: 14rem;
     width: 100%;
+    height: 15rem;
     align-content: center;
-    padding: 0.4rem;
-}
-
-.file-span {
+    padding: 0;
+    animation: fade-in 1s;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    cursor: default;
     display: flex;
-    width: fit-content;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 0.4rem;
 }
 
-.keep-preview img {
-    width: 8rem;
-    height: 8rem;
-}
 
 .keep-preview h2,
 .keep-preview h3 {
-    padding: 0.1rem;
+    padding: 0.2rem;
 }
 
 .keep-preview h1 {
@@ -34,48 +34,35 @@
 }
 
 .keep-preview h3 {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: normal;
 }
 
 .keep-preview li {
     font-size: 0.6rem;
-}
-
-.keep-list article {
-    animation: fade-in 1s;
-    height: min-content;
-    overflow: hidden;
-    transition: 0.2s ease-in-out;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-}
-
-.file-span audio,
-.file-span video {
-    cursor: pointer;
+    margin-right: 2rem;
 }
 
 .file-container {
-    width: min-content;
-    height: min-content;
-    margin: 0.3rem 0;
+    width: 100%;
+    height: 15rem;
+    top: 0;
     align-self: center;
+    display: contents;
+    height: 2rem;
 }
 
-.gallery-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    box-sizing: border-box;
+.file-container img,
+.file-container video {
+    align-self: flex-start;
+    height: 7rem;
+    display: block;
 }
 
-.gallery-item video {
-    width: 9rem;
-    height: min-content;
+.file-container audio {
+    justify-self: center;
+    margin-top: 0.4rem;
+    width: 90%;
 }
 
 .gallery-item li {
@@ -87,12 +74,12 @@
 }
 
 .keep-btn {
+    width: 100%;
+    height: 15rem;
+    bottom: 0;
     align-self: center;
-    display: flex;
-    width: 40%;
-    justify-content: space-around;
-    height: 1.7rem;
-    margin-top: 0.2rem;
+    display: contents;
+    height: 2rem;
 }
 
 .keep-btn button {
@@ -104,4 +91,17 @@
     color: var(--black);
 }
 
+.btn-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-end;
+}
 
+.text-container {
+    display: block;
+    flex-direction: column;
+    padding: 0.2rem;
+    justify-self: center;
+    height: 12rem;
+}

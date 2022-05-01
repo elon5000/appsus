@@ -6,7 +6,7 @@ const keepsData = [
     file: 'assets/pages/keep/file-storage/imgs/image1.jpg',
     backgroundColor: 'rgb(66 133 244)',
     isPin: false,
-    todoData: '',
+    todoData: ''
   },
   {
     id: '5UPi2',
@@ -15,7 +15,7 @@ const keepsData = [
     file: 'assets/pages/keep/file-storage/audio/audio1.m4a',
     backgroundColor: 'rgb(219 68 55)',
     isPin: false,
-    todoData: '',
+    todoData: ''
   },
   {
     id: 'z6Po0',
@@ -24,10 +24,10 @@ const keepsData = [
     file: '',
     backgroundColor: 'rgb(244 180 0)',
     isPin: false,
-    todoData: [
-      ['x5Y', 'buy milk', false],
-      ['zL7', 'buy coockies', true],
-    ],
+    todoData: {
+      1:['x5Y', 'buy milk', false],
+      2:['zL7', 'buy coockies', true],
+    },
   },
   {
     id: '4uY5e',
@@ -36,7 +36,7 @@ const keepsData = [
     file: '',
     backgroundColor: 'rgb(15 157 88)',
     isPin: false,
-    todoData: '',
+    todoData: ''
   },
   {
     id: 'G6ua7',
@@ -45,7 +45,7 @@ const keepsData = [
     file: 'assets/pages/keep/file-storage/vids/video1.mp4',
     backgroundColor: 'rgb(66 133 244)',
     isPin: false,
-    todoData: '',
+    todoData: ''
   },
 ]
 
