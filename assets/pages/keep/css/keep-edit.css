@@ -7,33 +7,40 @@
     flex-direction: column;
     width: 90%;
 }
-.keep-edit h2{
+
+.keep-edit h2 {
     top: 0;
     width: 100%;
     text-align: center;
     margin: 0.4rem;
 }
-.keep-form{
+
+.keep-form {
     display: flex;
     width: 100%;
     flex-direction: column;
 }
 
-.keep-edit input{
+.keep-edit input {
     margin: 0.2rem 0rem;
     width: 50%;
     align-self: center;
 }
 
-.keep-edit button{
+.keep-edit button {
     width: 25%;
     align-self: center;
     margin: 0.2rem;
 }
 
-.todos-form{
+.todos-form {
     display: flex;
     width: 100%;
     flex-direction: column;
 }
 
+.text-input {
+    margin: 0.2rem 0rem;
+    width: 50%;
+    align-self: center;
+}

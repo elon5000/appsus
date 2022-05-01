@@ -4,7 +4,7 @@
     display: grid;
     flex-direction: column;
     justify-content: center;
-    grid-template-columns: repeat(1, 0.9fr);
+    grid-template-columns: repeat(1, fit-content);
     grid-auto-rows: auto;
     grid-gap: 0.3rem;
     overflow: hidden;
@@ -15,6 +15,7 @@
 .gallery-item{
     border-radius: 1rem;
     padding: 1rem;
+    border: 0.2rem solid var(--lgrey);
 }
 
 @media only screen and (min-width: 700px) {

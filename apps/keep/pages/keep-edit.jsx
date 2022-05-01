@@ -64,29 +64,36 @@ export class KeepEdit extends React.Component {
         <h2>Edit keep</h2>
         <form className="keep-form" onSubmit={this.onSaveKeep}>
           <input
+            className="subject-input"
             type="text"
             name="subject"
             onChange={this.handleChange}
             placeholder="title"
             value={subject}
           />
-          <input
+          <textarea
+            className="text-input"
             type="text"
             name="txt"
             onChange={this.handleChange}
-            placeholder="note"
+            placeholder="text"
             value={txt}
           />
-          <input type="file" name="file" onChange={this.handleChange} />
+          {/* <KeepRecorder /> */}
+          <KeepTodo onSaveTodo={this.onSaveTodo} />
           <input
             type="color"
+            className="color-input"
             name="backgroundColor"
             onChange={this.handleChange}
           />
-          {/* <KeepRecorder /> */}
-          <button type="submit">save!</button>
+          <input
+            type="file"
+            name="file"
+            className="file-input"
+            onChange={this.handleChange} />
+          <button className="save-btn" type="submit">done</button>
         </form>
-        <KeepTodo onSaveTodo={this.onSaveTodo} />
       </section>
     )
   }
