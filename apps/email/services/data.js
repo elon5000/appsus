@@ -9,7 +9,7 @@ const emailsData = [
     from: { fullName: 'Elon Mask', email: 'tesle@tesla.com' },
     status: 'inbox',
     isStar: false,
-    file: '../../../assets/pages/email/file-storage/imgs/image1.jpg',
+    file: 'assets/pages/email/file-storage/imgs/image1.jpg',
   },
   {
     id: 'kSnfI',
@@ -45,7 +45,7 @@ const emailsData = [
     from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     status: 'sent',
     isStar: false,
-    file: '../../../assets/pages/email/file-storage/imgs/image3.jpg',
+    file: 'assets/pages/email/file-storage/imgs/image3.jpg',
   },
   {
     id: '1y0Oq',
@@ -57,7 +57,7 @@ const emailsData = [
     from: { fullName: 'Mahatma Appsus', email: 'user@appsus.com' },
     status: 'draft',
     isStar: false,
-    file: '../../../assets/pages/email/file-storage/imgs/image2.jpg',
+    file: 'assets/pages/email/file-storage/imgs/image2.jpg',
   },
   {
     id: 'U2rfZ',

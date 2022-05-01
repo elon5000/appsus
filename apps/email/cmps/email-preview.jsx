@@ -75,7 +75,7 @@ export class EmailPreview extends React.Component {
             {file && (
               <div className="attachment-container">
                 <span className="attachment-span">
-                  <img src="./assets/imgs/attachment.png" />
+                  <img src="assets/imgs/attachment.png" />
                   <span>{file.slice(46)}</span>
                 </span>
               </div>
