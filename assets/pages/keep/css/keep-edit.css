@@ -1,3 +1,39 @@
 .keep-edit {
-    background-color: red;
+    font-size: 1.4rem;
+    display: flex;
+    background-color: var(--lgrey);
+    margin: 0.2rem;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    width: 90%;
 }
+.keep-edit h2{
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0.4rem;
+}
+.keep-form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.keep-edit input{
+    margin: 0.2rem 0rem;
+    width: 50%;
+    align-self: center;
+}
+
+.keep-edit button{
+    width: 25%;
+    align-self: center;
+    margin: 0.2rem;
+}
+
+.todos-form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+

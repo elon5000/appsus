@@ -11,9 +11,8 @@
 }
 
 .file-span {
-    /* display: flex; */
+    display: flex;
     width: fit-content;
-    top: 0;
 }
 .keep-preview img {
     width: 8rem;
